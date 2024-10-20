@@ -1,0 +1,29 @@
+.sidebar {
+    width: 280px;
+    padding: 1rem; /* Adjust padding as needed */
+    background-color: #343a40; /* Bootstrap's bg-dark color */
+    color: white; /* Text color */
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white; /* Text color */
+}
+
+.sidebar .nav-link {
+    color: white; /* Text color for nav links */
+}
+
+.sidebar .nav-link.active {
+    background-color: #495057; /* Bootstrap's active link color */
+}
+
+.sidebar .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* Text color */
+}
