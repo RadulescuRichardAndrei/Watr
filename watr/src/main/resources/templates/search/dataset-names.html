@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div class="container mt-4">
+    <h3>Select a Dataset</h3>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="datasetDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose Dataset
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="datasetDropdown" style="width: 100%;">
+            <!-- Search Field -->
+            <li class="px-3 py-2">
+                <input type="text" class="form-control" placeholder="Search dataset..."
+                       hx-get="/dataset-search" hx-trigger="input" hx-target="#datasetList" hx-indicator="#loading">
+            </li>
+
+            <!-- Dataset List -->
+            <ul id="datasetList" style="max-height: 200px; overflow-y: auto;">
+                <li th:each="fileName : ${fileNames}" class="dropdown-item">
+                    <a href="#" th:text="${fileName}" hx-get="/select-dataset"
+                       hx-vals='{"dataset": [[${fileName}]]}' hx-target="#result"></a>
+                </li>
+            </ul>
+
+            <!-- Pagination Controls -->
+            <li class="dropdown-item text-center">
+                <button class="btn btn-link"
+                        hx-get="/dataset-names?page=${currentPage + 1}"
+                        hx-target="#datasetList"
+                        hx-swap="afterend">Load More</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading" style="display: none;">Loading...</div>
+
+    <!-- Placeholder for Future Action Result -->
+    <div id="result" class="mt-3"></div>
+</div>
+</html>

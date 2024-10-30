@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div id="upload-result"></div>
+
+<form id="upload-form" hx-post="/upload-dataset"
+      hx-encoding='multipart/form-data'
+      hx-target="#upload-result"
+      hx-swap="innerHTML">
+    <div class="mb-3">
+        <label for="file" class="form-label">Choose file to upload:</label>
+        <input type="file" name="file" id="file" class="form-control" required accept=".ttl,.rdf,.json,.nt,.nq,.jsonld">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+</html>
