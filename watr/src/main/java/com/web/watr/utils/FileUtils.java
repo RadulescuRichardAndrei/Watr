@@ -5,10 +5,10 @@ public class FileUtils {
     public static boolean isValidFileType(String fileExtension) {
         return fileExtension.equalsIgnoreCase(".ttl")
                 || fileExtension.equalsIgnoreCase(".rdf")
-                || fileExtension.equalsIgnoreCase(".json")
-                || fileExtension.equalsIgnoreCase(".nd")
+                || fileExtension.equalsIgnoreCase(".nt")
                 || fileExtension.equalsIgnoreCase(".nq")
-                || fileExtension.equalsIgnoreCase(".jsonld");
+                || fileExtension.equalsIgnoreCase(".jsonld")
+                ;
     }
     public static String getFileExtension(String fileName) {
         if (fileName == null || !fileName.contains(".")) {

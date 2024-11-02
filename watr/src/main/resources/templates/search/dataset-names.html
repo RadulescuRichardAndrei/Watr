@@ -1,34 +1,39 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-
 <div class="container mt-4">
     <h3>Select a Dataset</h3>
 
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="datasetDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle"
+                type="button" id="datasetDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
             Choose Dataset
         </button>
 
         <ul class="dropdown-menu" aria-labelledby="datasetDropdown" style="width: 100%;">
             <!-- Search Field -->
             <li class="px-3 py-2">
-                <input type="text" class="form-control" placeholder="Search dataset..."
-                       hx-get="/dataset-search" hx-trigger="input" hx-target="#datasetList" hx-indicator="#loading">
+                <input id="search-input" name="name" type="text" class="form-control" placeholder="Search dataset..."
+                       hx-get="/dataset-names"
+                       hx-trigger="input changed delay:500ms"
+                       hx-target="#datasetList"
+                       hx-indicator="#loading"
+                       hx-swap="innerHTML">
             </li>
 
-            <!-- Dataset List -->
+            <!-- Dataset List, only the items will update -->
             <ul id="datasetList" style="max-height: 200px; overflow-y: auto;">
-                <li th:each="fileName : ${fileNames}" class="dropdown-item">
-                    <a href="#" th:text="${fileName}" hx-get="/select-dataset"
-                       hx-vals='{"dataset": [[${fileName}]]}' hx-target="#result"></a>
-                </li>
+                <th:block th:replace="search/dataset-names-item :: listItems"/>
             </ul>
 
             <!-- Pagination Controls -->
             <li class="dropdown-item text-center">
-                <button class="btn btn-link"
-                        hx-get="/dataset-names?page=${currentPage + 1}"
+                <button class="btn btn-link" type="button"
+                        th:disabled="${fileNames.size()<10}"
+                        hx-get="/dataset-names?page=${currentPage + 1}&name=${param.name}"
                         hx-target="#datasetList"
-                        hx-swap="afterend">Load More</button>
+                        hx-swap="innerHTML"
+                        hx-on="click: event.stopPropagation()">Load More</button>
             </li>
         </ul>
     </div>

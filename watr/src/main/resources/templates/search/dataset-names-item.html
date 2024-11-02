@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<!-- Dataset List -->
+<th:block th:fragment="listItems">
+    <li th:each="fileName : ${fileNames}" class="dropdown-item">
+        <!---<input type="hidden" th:name="dataset" th:value="${fileName}" /> -->
+        <button class="btn btn-link"
+                name="dataset"
+                th:value="${fileName}"
+                th:text="${fileName}"
+                hx-get="/visualize-table-data"
+                hx-target="#table"
+                hx-swap="outerHTML"
+        ></button>
+    </li>
+</th:block>
+
+</html>

@@ -1,5 +1,7 @@
 package com.web.watr.services;
 
+import org.apache.jena.fuseki.main.FusekiServer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,10 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 public class DatasetFileService {
+
+    @Autowired
+    private FusekiServer fusekiServer;
+
     @Value("${fuseki.dataset.path}")
     private String datasetPath;
     private long retentionPeriodDays= 30;
@@ -36,7 +42,6 @@ public class DatasetFileService {
                 }
             }
         }
-
-
     }
+
 }

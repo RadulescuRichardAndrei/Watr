@@ -60,7 +60,9 @@ public class DatasetController {
     }
 
     @GetMapping("/dataset-names")
-    public String getFileNames(@RequestParam(defaultValue = "0") int page, Model model){
+    public String getFileNames(@RequestParam(defaultValue = "0") int page,
+                               @RequestParam(required = false) String name,
+                               Model model){
         File datasetDirectory = new File(datasetPath);
         File[] files = datasetDirectory.listFiles();
 
@@ -69,9 +71,10 @@ public class DatasetController {
             // Filter the files based on valid file types
             List<String> validFileNames = new ArrayList<>();
             for (File file : files) {
-                if (FileUtils.isValidFileType(FileUtils.getFileExtension(file.getName()))) {
-                    validFileNames.add(file.getName());
-                    System.out.println(file.getName());
+                String fileName = file.getName();
+                if (FileUtils.isValidFileType(FileUtils.getFileExtension(fileName)) &&
+                        (name == null || fileName.toLowerCase().startsWith(name.toLowerCase()))) {
+                    validFileNames.add(fileName);
                 }
             }
 
@@ -86,14 +89,14 @@ public class DatasetController {
             model.addAttribute("currentPage", page);
             model.addAttribute("totalPages", (totalFiles + pageSize - 1) / pageSize); // Calculate total pages
         } else {
-            System.out.println("WTF");
             // Handle case where directory is empty or does not exist
             model.addAttribute("fileNames", new ArrayList<>());
             model.addAttribute("currentPage", 0);
             model.addAttribute("totalPages", 0);
         }
 
-        return "/search/dataset-names";
+        return name == null ? "/search/dataset-names" : "/search/dataset-names-item";
 
     }
+
 }
