@@ -1,5 +1,6 @@
 package com.web.watr.controllers;
 
+import com.web.watr.utils.FileUploadException;
 import com.web.watr.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -40,22 +41,20 @@ public class DatasetController {
         try{
 
             if (file.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("<div>File is empty</div>");
+                throw new FileUploadException("File is empty", HttpStatus.BAD_REQUEST);
             }
-            String fileName= file.getOriginalFilename();
+
+            String fileName = file.getOriginalFilename();
             Path filePath = Paths.get(datasetPath, fileName);
 
-            if (!FileUtils.isValidFileType(FileUtils.getFileExtension(fileName))){
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("<div>Invalid file type. Please upload a .ttl, .rdf, .json, .nq, .nd file.</div>");
+            if (!FileUtils.isValidFileType(FileUtils.getFileExtension(fileName))) {
+                throw new FileUploadException("Invalid file type. Please upload a .ttl, .rdf, .json, .nq, .nd, .jsonld file.", HttpStatus.BAD_REQUEST);
             }
 
             Files.write(filePath, file.getBytes());
-
-            return  ResponseEntity.status(HttpStatus.CREATED).body("<div>File uploaded successfully</div>");
-        } catch (IOException e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("<div>Failed to upload file " + e.getMessage() + "</div>");
-
+            return ResponseEntity.status(HttpStatus.CREATED).body("<div>File uploaded successfully</div>");
+        } catch (IOException e) {
+            throw new FileUploadException("Failed to upload file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

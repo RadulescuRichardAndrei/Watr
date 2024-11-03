@@ -8,6 +8,7 @@ public class FileUtils {
                 || fileExtension.equalsIgnoreCase(".nt")
                 || fileExtension.equalsIgnoreCase(".nq")
                 || fileExtension.equalsIgnoreCase(".jsonld")
+                || fileExtension.equalsIgnoreCase(".json")
                 ;
     }
     public static String getFileExtension(String fileName) {

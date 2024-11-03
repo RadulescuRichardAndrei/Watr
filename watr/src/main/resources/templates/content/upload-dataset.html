@@ -2,8 +2,10 @@
 <div id="upload-result"></div>
 
 <form id="upload-form" hx-post="/upload-dataset"
+
       hx-encoding='multipart/form-data'
       hx-target="#upload-result"
+      hx-target-error="#toast-container"
       hx-swap="innerHTML">
     <div class="mb-3">
         <label for="file" class="form-label">Choose file to upload:</label>
