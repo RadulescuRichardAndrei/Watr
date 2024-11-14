@@ -12,10 +12,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="row : ${tableData}">
-            <td th:text="${row[0]}"></td>
-            <td th:text="${row[1]}"></td>
-            <td th:text="${row[2]}"></td>
+        <tr th:each="row : ${tableData}" >
+            <td th:about="${row[1]}" th:text="${row[0]}"></td>
+            <td th:property="${row[3]}" th:text="${row[2]}"></td>
+
+            <td th:attr="__${row[5]}__" th:text="${row[4]}"></td>
+
         </tr>
         </tbody>
     </table>

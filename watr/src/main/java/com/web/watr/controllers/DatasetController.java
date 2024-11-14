@@ -26,9 +26,13 @@ public class DatasetController {
 
     @Value("${fuseki.dataset.path}")
     private String datasetPath;
+
+    @Value("${accepted.file.extensions}")
+    private String allowedExtensions;
     private static final int pageSize = 10;
     @GetMapping("/upload")
     public String uploadDatasetPage(Model model){
+        model.addAttribute("allowedExtensions",allowedExtensions);
         return "/content/upload-dataset";
     }
     @GetMapping("/save")
@@ -48,7 +52,7 @@ public class DatasetController {
             Path filePath = Paths.get(datasetPath, fileName);
 
             if (!FileUtils.isValidFileType(FileUtils.getFileExtension(fileName))) {
-                throw new FileUploadException("Invalid file type. Please upload a .ttl, .rdf, .json, .nq, .nd, .jsonld file.", HttpStatus.BAD_REQUEST);
+                throw new FileUploadException("Invalid file type. Please upload a "+ allowedExtensions +" file.", HttpStatus.BAD_REQUEST);
             }
 
             Files.write(filePath, file.getBytes());

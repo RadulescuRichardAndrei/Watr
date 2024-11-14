@@ -8,8 +8,14 @@ public class FileUtils {
                 || fileExtension.equalsIgnoreCase(".nt")
                 || fileExtension.equalsIgnoreCase(".nq")
                 || fileExtension.equalsIgnoreCase(".jsonld")
-                || fileExtension.equalsIgnoreCase(".json")
-                ;
+                || fileExtension.equalsIgnoreCase(".trig")
+                || fileExtension.equalsIgnoreCase(".owl")
+                || fileExtension.equalsIgnoreCase(".trdf")
+                || fileExtension.equalsIgnoreCase(".rt")
+                || fileExtension.equalsIgnoreCase(".rpb")
+                || fileExtension.equalsIgnoreCase(".pbrdf")
+                || fileExtension.equalsIgnoreCase(".rj")
+                || fileExtension.equalsIgnoreCase(".trix");
     }
     public static String getFileExtension(String fileName) {
         if (fileName == null || !fileName.contains(".")) {

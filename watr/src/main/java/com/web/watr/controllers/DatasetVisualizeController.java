@@ -1,5 +1,7 @@
 package com.web.watr.controllers;
 
+import com.web.watr.services.DatasetQueryService;
+import jakarta.annotation.PostConstruct;
 import org.apache.jena.assembler.Mode;
 import org.apache.jena.fuseki.main.FusekiServer;
 import org.apache.jena.query.*;
@@ -15,6 +17,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Controller
 public class DatasetVisualizeController {
@@ -24,7 +28,14 @@ public class DatasetVisualizeController {
     @Autowired
     private FusekiServer fusekiServer;
 
-    private static int pageSize=20;
+    private static int pageSize;
+    private static DatasetQueryService datasetQueryService;
+
+    @PostConstruct
+    public void init(){
+        pageSize=20;
+        datasetQueryService=new DatasetQueryService(pageSize);
+    }
 
     @GetMapping("/visualize-table-page")
     public String getVisualizePage(){
@@ -35,27 +46,12 @@ public class DatasetVisualizeController {
                                 @RequestParam(required = true) String dataset,
                                 Model model){
         Path path = Paths.get(datasetPath, dataset);
-        Dataset ds= RDFDataMgr.loadDataset(path.toString());
+        Dataset ds= datasetQueryService.loadDataset(path);
 
-        int offset= page* pageSize;
-        String queryString = "SELECT ?subject ?predicate ?object " +
-                "WHERE { GRAPH ?g { ?subject ?predicate ?object } } " + // Use GRAPH to account for named graphs
-                "LIMIT " + pageSize + " OFFSET " + offset;
+        List<List<String>> tableData = datasetQueryService.executePagedSelectQuery(ds, page);
+        //Set<String> namespaces= datasetQueryService.getNamespaces(ds);
 
-        Query query = QueryFactory.create(queryString);
-        List<List<String>> tableData = new ArrayList<>();
-        try (QueryExecution qexec = QueryExecutionFactory.create(query, ds)) {
-            ResultSet results = qexec.execSelect();
-
-            while (results.hasNext()) {
-                QuerySolution soln = results.nextSolution();
-                List<String> row = new ArrayList<>();
-                row.add(soln.get("subject").toString());
-                row.add(soln.get("predicate").toString());
-                row.add(soln.get("object").toString());
-                tableData.add(row);
-            }
-        }
+        //model.addAttribute("namespaces", namespaces);
         model.addAttribute("tableName", dataset.split("\\.")[0]);
         model.addAttribute("nextPage", (tableData.size() == pageSize) ? "/visualize-table-data?page=" + (page + 1) + "&dataset=" + dataset : null);
         model.addAttribute("previousPage", (page>0) ? "/visualize-table-data?page=" + (page - 1) + "&dataset=" + dataset : null);
