@@ -1,9 +1,7 @@
 package com.web.watr.services;
 
-import org.apache.jena.atlas.lib.Pair;
-import org.apache.jena.atlas.lib.tuple.Tuple;
-import org.apache.jena.base.Sys;
 import org.apache.jena.query.*;
+import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.riot.RDFDataMgr;
 
@@ -55,10 +53,10 @@ public class DatasetQueryService {
     private String getPrefix(String uri) {
         for (Map.Entry<String, String> entry : NAMESPACE_PREFIXES.entrySet()) {
             if (uri.startsWith(entry.getKey())) {
-                return entry.getKey();
+                return entry.getValue() + ": " + entry.getKey();
             }
         }
-        return uri;
+        return null;
     }
     private String getSufix(String uri){
         for (Map.Entry<String, String> entry : NAMESPACE_PREFIXES.entrySet()) {
@@ -70,7 +68,6 @@ public class DatasetQueryService {
     }
 
 
-
     public DatasetQueryService(int pageSize) {
         this.pageSize= pageSize;
     }
@@ -79,46 +76,6 @@ public class DatasetQueryService {
         return RDFDataMgr.loadDataset(path.toString());
     }
 
-    public Set<String> getNamespaces(Dataset dataset){
-        String queryString =
-                "SELECT DISTINCT (STR(?namespace) AS ?namespace) WHERE { " +
-                        "  GRAPH ?g { " +
-                        "    ?subject ?predicate ?object " +
-                        "  } " +
-                        "  { " +
-                        "    # Extract namespaces from subject URIs " +
-                        "    ?subject ?p ?o . " +
-                        "    FILTER(ISIRI(?subject)) " +
-                        "    BIND(IRI(STR(?subject)) AS ?namespace) " +
-                        "  } " +
-                        "  UNION " +
-                        "  { " +
-                        "    # Extract namespaces from predicate URIs " +
-                        "    ?s ?predicate ?o . " +
-                        "    FILTER(ISIRI(?predicate)) " +
-                        "    BIND(IRI(STR(?predicate)) AS ?namespace) " +
-                        "  } " +
-                        "  UNION " +
-                        "  { " +
-                        "    # Extract namespaces from object URIs " +
-                        "    ?s ?p ?object . " +
-                        "    FILTER(ISIRI(?object)) " +
-                        "    BIND(IRI(STR(?object)) AS ?namespace) " +
-                        "  } " +
-                        "}";
-        Query query = QueryFactory.create(queryString);
-        Set<String> namespaces = new HashSet<>();
-        try (QueryExecution qexec = QueryExecutionFactory.create(query, dataset)){
-            ResultSet results = qexec.execSelect();
-            while (results.hasNext()) {
-                QuerySolution solution = results.nextSolution();
-                String namespace = solution.getLiteral("namespace").getString();
-                namespaces.add(namespace);
-            }
-        }
-        System.out.println(namespaces);
-        return namespaces;
-    }
     public List<List<String>> executePagedSelectQuery(Dataset dataset, int page) {
         int offset= page* pageSize;
         String queryString = "SELECT ?subject ?predicate ?object " +
@@ -127,6 +84,7 @@ public class DatasetQueryService {
 
         Query query = QueryFactory.create(queryString);
         List<List<String>> tableData = new ArrayList<>();
+        List<String> namespaces= new ArrayList<>();
         try (QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
             ResultSet results = qexec.execSelect();
 
@@ -137,15 +95,22 @@ public class DatasetQueryService {
                 RDFNode subject= soln.get("subject");
                 row.add(subject.toString());
                 row.add(getShortenUri(subject.toString()));
+                if (getPrefix(subject.toString()) != null && !namespaces.contains(getPrefix(subject.toString())))
+                    namespaces.add(getPrefix(subject.toString()));
 
                 RDFNode predicate= soln.get("predicate");
                 row.add(getSufix(predicate.toString()));
                 row.add(getShortenUri(predicate.toString()));
 
-
+                if (getPrefix(predicate.toString())!=null && !namespaces.contains(getPrefix(predicate.toString())))
+                    namespaces.add(getPrefix(predicate.toString()));
 
                 RDFNode object= soln.get("object");
                 row.add(getSufix(object.toString()));
+
+                if (getPrefix(object.toString())!=null && !namespaces.contains(getPrefix(object.toString())))
+                    namespaces.add(getPrefix(object.toString()));
+
                 StringBuilder attributesConstruct= new StringBuilder();
 
                 if (object.isResource()) {
@@ -159,6 +124,7 @@ public class DatasetQueryService {
                 tableData.add(row);
             }
         }
+        tableData.add(namespaces);
         return tableData;
     }
 

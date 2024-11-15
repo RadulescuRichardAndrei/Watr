@@ -3,7 +3,7 @@
 <div id="table"     class="container mt-5">
     <h1 th:text="${tableName}"></h1>
 
-    <table class="table table-bordered">
+    <table class="table table-bordered" th:prefix="${namespaces}">
         <thead>
         <tr>
             <th>Subject</th>

@@ -41,6 +41,11 @@ public class DatasetVisualizeController {
     public String getVisualizePage(){
         return "/content/visualize-dataset-table";
     }
+
+    @GetMapping("/visualize-rdf-graph-page")
+    public String getVisualizeRDFPage(){
+        return "/content/visualize-dataset-rdf";
+    }
     @GetMapping("/visualize-table-data")
     public  String getTableData(@RequestParam(defaultValue = "0") int page,
                                 @RequestParam(required = true) String dataset,
@@ -49,9 +54,11 @@ public class DatasetVisualizeController {
         Dataset ds= datasetQueryService.loadDataset(path);
 
         List<List<String>> tableData = datasetQueryService.executePagedSelectQuery(ds, page);
-        //Set<String> namespaces= datasetQueryService.getNamespaces(ds);
+        List<String> namespaces= tableData.getLast();
+        tableData.remove(tableData.getLast());
 
-        //model.addAttribute("namespaces", namespaces);
+
+        model.addAttribute("namespaces",  String.join(", ", namespaces));
         model.addAttribute("tableName", dataset.split("\\.")[0]);
         model.addAttribute("nextPage", (tableData.size() == pageSize) ? "/visualize-table-data?page=" + (page + 1) + "&dataset=" + dataset : null);
         model.addAttribute("previousPage", (page>0) ? "/visualize-table-data?page=" + (page - 1) + "&dataset=" + dataset : null);
@@ -61,4 +68,8 @@ public class DatasetVisualizeController {
     return "/table/rdftable";
     }
 
+    @GetMapping("/visualize-rdf-data")
+    public String getRDFData(Model model) {
+        return "yes";
+    }
 }

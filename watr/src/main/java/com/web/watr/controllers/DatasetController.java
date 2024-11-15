@@ -65,6 +65,8 @@ public class DatasetController {
     @GetMapping("/dataset-names")
     public String getFileNames(@RequestParam(defaultValue = "0") int page,
                                @RequestParam(required = false) String name,
+                               @RequestParam(required = true) String actionUrl,
+                               @RequestParam(required = true) String target,
                                Model model){
         File datasetDirectory = new File(datasetPath);
         File[] files = datasetDirectory.listFiles();
@@ -97,6 +99,8 @@ public class DatasetController {
             model.addAttribute("currentPage", 0);
             model.addAttribute("totalPages", 0);
         }
+        model.addAttribute("actionUrl", actionUrl);
+        model.addAttribute("target",target);
 
         return name == null ? "/search/dataset-names" : "/search/dataset-names-item";
 
