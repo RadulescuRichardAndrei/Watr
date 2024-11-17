@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:fragment="filterDropdown(label, endpoint, filters, targetId)">
+    <div class="filter-group">
+        <label th:text="${label}"></label>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Select <span th:text="${label}"></span>
+            </button>
+            <ul class="dropdown-menu" id="${targetId}">
+                <!-- Search Input -->
+                <li>
+                    <input type="text" class="form-control"
+                           name=""
+                           placeholder="Search..."
+                           th:hx-get="${endpoint}"
+                           hx-trigger="keyup changed delay:400ms"
+                           th:hx-target="${targetId}"
+                           th:hx-vals="|'{&quot;filters&quot;: &quot;}' ${filters} '&quot;}'|"
+                           autocomplete="off" />
+                </li>
+                <!-- List Items -->
+                <div th:id="${targetId}" th:hx-get="${endpoint}" th:hx-target="${targetId}" hx-swap="outerHTML">
+                    <li th:each="item : ${filters.selectedSubjects}" class="dropdown-item">
+                        <input type="checkbox" class="form-check-input"
+                               th:id="${item}"
+                               th:value="${item}"
+                               th:checked="${filters.selectedSubjects.contains(item)}" />
+                        <label class="form-check-label" th:for="${item}" th:text="${item}"></label>
+                    </li>
+                </div>
+                <!-- Load More -->
+                <li>
+                    <button class="btn btn-link" type="button"
+                            th:disabled="${filters.selectedSubjects.size()<10}"
+                            th:hx-get="${endpoint}"
+                            th:hx-target="${targetId}"
+                            hx-swap="innerHTML"
+                            hx-on="click: event.stopPropagation()">
+                        Load More
+                    </button>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</th:block>
+</html>

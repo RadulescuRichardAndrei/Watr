@@ -1,8 +1,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <div id="search-control">
+
     <div hx-get="/dataset-names" hx-trigger="load"
-         hx-vals='{"actionUrl":"/visualize-rdf-data", "target":"#graph"}'></div>
+         hx-vals='{"actionUrl":"/visualize-rdf-data", "target":"#filter-search"}'></div>
+    <div id="filter-search"></div>
+
 
 
 </div>

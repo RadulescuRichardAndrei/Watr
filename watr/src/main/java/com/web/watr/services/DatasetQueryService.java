@@ -1,5 +1,8 @@
 package com.web.watr.services;
 
+import com.web.watr.beans.FilterBean;
+import com.web.watr.utils.MethodUtils;
+import org.apache.jena.arq.querybuilder.SelectBuilder;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFNode;
@@ -7,6 +10,8 @@ import org.apache.jena.riot.RDFDataMgr;
 
 import java.nio.file.Path;
 import java.util.*;
+
+import static org.apache.jena.vocabulary.OWLResults.output;
 
 public class DatasetQueryService {
 
@@ -126,6 +131,45 @@ public class DatasetQueryService {
         }
         tableData.add(namespaces);
         return tableData;
+    }
+    public FilterBean executePagedSelectByFilterQuery(Dataset dataset, FilterBean filters, int page){
+        FilterBean filterResult= new FilterBean();
+        filterResult.setSelectedDataset(filters.getSelectedDataset());
+
+        SelectBuilder sb= new SelectBuilder();
+        sb.addVar("*").addGraph("?g", new SelectBuilder()
+                .addWhere("?subject", "?predicate", "?object"));
+
+        if (MethodUtils.existsAndNotEmpty(filters.getSelectedSubjects())){
+            sb.addFilter("?subject IN (" + filters.getSelectedSubjects() + ")");
+        }
+        if (MethodUtils.existsAndNotEmpty(filters.getSelectedPredicates())){
+            sb.addFilter("?predicate IN (" + filters.getSelectedPredicates() + ")");
+        }
+        if (MethodUtils.existsAndNotEmpty(filters.getSelectedObjects())){
+            sb.addFilter("?object IN (" + filters.getSelectedObjects() + ")");
+        }
+        Query query= sb.build();
+
+        try(QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet results = qexec.execSelect();
+            filterResult.setSelectedSubjects(new ArrayList<>());
+            filterResult.setSelectedPredicates(new ArrayList<>());
+            filterResult.setSelectedObjects(new ArrayList<>());
+
+            while (results.hasNext()) {
+                QuerySolution solution = results.nextSolution();
+                // Collect values based on the variables selected
+                if (solution.contains("subject")) {
+                    filterResult.addSubject(solution.get("subject").toString());
+                } else if (solution.contains("predicate")) {
+                    filterResult.addPredicate(solution.get("predicate").toString());
+                } else if (solution.contains("object")) {
+                    filterResult.addObject(solution.get("object").toString());
+                }
+            }
+        }
+        return filterResult;
     }
 
 }

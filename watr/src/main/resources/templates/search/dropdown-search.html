@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div id="filter-search">
+
+    <th:block th:replace="~{fragments/filter-drowpdown :: filterDropdown('Subjects', '/filter-subjects', ${filters}, '#subjects')}"/>
+
+
+    <button class="btn btn-primary mt-3"
+            hx-get="/generate-graph"
+            hx-vals='{
+                "dataset": "{{selectedDataset}}",
+                "subjects": "{{selectedSubjects}}",
+                "predicates": "{{selectedPredicates}}",
+                "objects": "{{selectedObjects}}"
+            }'
+            hx-target="#graph"
+            hx-swap="innerHTML">
+        Generate Graph
+    </button>
+</div>
+</html>

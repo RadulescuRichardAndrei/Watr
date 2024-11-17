@@ -1,5 +1,6 @@
 package com.web.watr.controllers;
 
+import com.web.watr.beans.FilterBean;
 import com.web.watr.services.DatasetQueryService;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.assembler.Mode;
@@ -69,7 +70,28 @@ public class DatasetVisualizeController {
     }
 
     @GetMapping("/visualize-rdf-data")
-    public String getRDFData(Model model) {
-        return "yes";
+    public String getRDFData(@RequestParam(required = true) String dataset, Model model) {
+        FilterBean filtes= new FilterBean();
+        filtes.setSelectedDataset(dataset);
+
+        Path path = Paths.get(datasetPath, dataset);
+        Dataset ds= datasetQueryService.loadDataset(path);
+
+        filtes= datasetQueryService.executePagedSelectByFilterQuery(ds, filtes, 0);
+        filtes.removeDuplicates();
+
+        model.addAttribute("filters", filtes);
+        model.addAttribute("selectedDataset",dataset);
+        return "/search/dropdown-search";
+    }
+    @GetMapping("/filter-subjects")
+    public String getRDFDataSubjects(@RequestParam(required = true) String dataset,
+                             Model model){
+
+        FilterBean filtes= new FilterBean();
+
+
+        model.addAttribute("filters", filtes);
+        return "";
     }
 }
