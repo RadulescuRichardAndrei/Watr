@@ -1,28 +1,28 @@
 package com.web.watr.beans;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-@RequestScope
+@SessionScope
 @Component
 public class FilterBean {
-    private String selectedDataset;
-    private List<String> selectedSubjects;
-    private List<String> selectedPredicates;
-    private List<String> selectedObjects;
+    private List<String> selectedSubjects = new ArrayList<>();
+    private List<String> selectedPredicates = new ArrayList<>();
+    private List<String> selectedObjects = new ArrayList<>();
 
-    public String getSelectedDataset() {
-        return selectedDataset;
+    @PostConstruct
+    public void init(){
+        selectedSubjects= new ArrayList<>();
+        selectedPredicates= new ArrayList<>();
+        selectedObjects=new ArrayList<>();
     }
 
-    public void setSelectedDataset(String selectedDataset) {
-        this.selectedDataset = selectedDataset;
-    }
-
+    // Getters and Setters
     public List<String> getSelectedSubjects() {
         return selectedSubjects;
     }
@@ -46,27 +46,38 @@ public class FilterBean {
     public void setSelectedObjects(List<String> selectedObjects) {
         this.selectedObjects = selectedObjects;
     }
-    public void addSubject(String subject){
-        this.selectedSubjects.add(subject);
+
+    // Methods to add/remove selections
+    public void addSubject(String subject) {
+        selectedSubjects.add(subject);
     }
 
-    public void addPredicate(String predicate){
-        this.selectedPredicates.add(predicate);
-    }
-    public void addObject(String object){
-        this.selectedObjects.add(object);
+    public void removeSubject(String subject) {
+        selectedSubjects.remove(subject);
     }
 
-    public void removeDuplicates() {
-        // Remove duplicates by converting lists to Sets and then back to Lists
-        if (selectedSubjects != null) {
-            selectedSubjects = new ArrayList<>(new HashSet<>(selectedSubjects));
-        }
-        if (selectedPredicates != null) {
-            selectedPredicates = new ArrayList<>(new HashSet<>(selectedPredicates));
-        }
-        if (selectedObjects != null) {
-            selectedObjects = new ArrayList<>(new HashSet<>(selectedObjects));
-        }
+    public void addPredicate(String predicate) {
+        selectedPredicates.add(predicate);
+    }
+
+    public void removePredicate(String predicate) {
+        selectedPredicates.remove(predicate);
+    }
+
+    public void addObject(String object) {
+        selectedObjects.add(object);
+    }
+
+    public void removeObject(String object) {
+        selectedObjects.remove(object);
+    }
+    public boolean containsInList(String label, String smth){
+        if (label.equals("subject"))
+            return selectedSubjects.contains(smth);
+        if (label.equals("predicate"))
+            return selectedPredicates.contains(smth);
+        if (label.equals("object"))
+            return selectedObjects.contains(smth);
+        return false;
     }
 }

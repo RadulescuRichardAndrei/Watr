@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div class="dropdown" th:id="'dropdown-'+${label}">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+        Select <span th:text="${label}"></span>
+    </button>
+    <ul class="dropdown-menu" >
+        <!-- Search Input -->
+        <li>
+            <input type="text" class="form-control"
+                   name="search"
+                   placeholder="Search..."
+                   th:hx-get="${endpoint}"
+                   hx-trigger="keyup changed delay:400ms"
+                   th:hx-target="${label} + '-list'"
+                   autocomplete="off" />
+        </li>
+        <th:block th:replace="~{fragments/filter-dropdown-list :: listItems()}"></th:block>
+
+    </ul>
+</div>
+</html>

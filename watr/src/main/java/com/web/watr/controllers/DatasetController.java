@@ -65,8 +65,8 @@ public class DatasetController {
     @GetMapping("/dataset-names")
     public String getFileNames(@RequestParam(defaultValue = "0") int page,
                                @RequestParam(required = false) String name,
-                               @RequestParam(required = true) String actionUrl,
-                               @RequestParam(required = true) String target,
+                               @RequestParam() String actionUrl,
+                               @RequestParam() String target,
                                Model model){
         File datasetDirectory = new File(datasetPath);
         File[] files = datasetDirectory.listFiles();

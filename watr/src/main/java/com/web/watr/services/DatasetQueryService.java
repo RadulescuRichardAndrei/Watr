@@ -1,21 +1,17 @@
 package com.web.watr.services;
 
-import com.web.watr.beans.FilterBean;
 import com.web.watr.utils.MethodUtils;
 import org.apache.jena.arq.querybuilder.SelectBuilder;
 import org.apache.jena.query.*;
-import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.riot.RDFDataMgr;
 
 import java.nio.file.Path;
-import java.util.*;
-
-import static org.apache.jena.vocabulary.OWLResults.output;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class DatasetQueryService {
-
-    private final int pageSize;
 
     private static final Map<String, String> NAMESPACE_PREFIXES = Map.ofEntries(
             Map.entry("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf"),
@@ -72,16 +68,11 @@ public class DatasetQueryService {
         return uri;
     }
 
-
-    public DatasetQueryService(int pageSize) {
-        this.pageSize= pageSize;
-    }
-
     public Dataset loadDataset(Path path) {
         return RDFDataMgr.loadDataset(path.toString());
     }
 
-    public List<List<String>> executePagedSelectQuery(Dataset dataset, int page) {
+    public List<List<String>> executePagedSelectQuery(Dataset dataset, int page, int pageSize) {
         int offset= page* pageSize;
         String queryString = "SELECT ?subject ?predicate ?object " +
                 "WHERE { GRAPH ?g { ?subject ?predicate ?object } } " + // Use GRAPH to account for named graphs
@@ -132,44 +123,112 @@ public class DatasetQueryService {
         tableData.add(namespaces);
         return tableData;
     }
-    public FilterBean executePagedSelectByFilterQuery(Dataset dataset, FilterBean filters, int page){
-        FilterBean filterResult= new FilterBean();
-        filterResult.setSelectedDataset(filters.getSelectedDataset());
+
+    public List<String> executePagedSelectSubjects(Dataset dataset, int page, int pageSize, String subjectName) {
+        int offset = page * pageSize;
+        String queryString = "SELECT DISTINCT ?subject " +
+                "WHERE { GRAPH ?g { ?subject ?predicate ?object } " +
+                (subjectName != null && !subjectName.isEmpty() ?
+                        "FILTER STRSTARTS(STR(?subject), '" + subjectName + "'). " : "") +
+                "} " +
+                "LIMIT " + pageSize + " OFFSET " + offset;
+
+        Query query = QueryFactory.create(queryString);
+        List<String> subjects = new ArrayList<>();
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet results = qexec.execSelect();
+
+            while (results.hasNext()) {
+                QuerySolution soln = results.nextSolution();
+                subjects.add(getShortenUri(soln.get("subject").toString()));
+            }
+        }
+        return subjects;
+    }
+
+    public List<String> executePagedSelectPredicates(Dataset dataset, int page, int pageSize, String predicateName) {
+        int offset = page * pageSize;
+        String queryString = "SELECT DISTINCT ?predicate " +
+                "WHERE { GRAPH ?g { ?subject ?predicate ?object } " +
+                (predicateName != null && !predicateName.isEmpty() ?
+                        "FILTER STRSTARTS(STR(?predicate), '" + predicateName + "'). " : "") +
+                "} " +
+                "LIMIT " + pageSize + " OFFSET " + offset;
+
+        Query query = QueryFactory.create(queryString);
+        List<String> predicates = new ArrayList<>();
+
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet results = qexec.execSelect();
+
+            while (results.hasNext()) {
+                QuerySolution soln = results.nextSolution();
+                predicates.add(getShortenUri(soln.get("predicate").toString()));
+            }
+        }
+
+        return predicates;
+    }
+
+
+    public List<String> executePagedSelectObjects(Dataset dataset, int page, int pageSize, String objectName) {
+        int offset = page * pageSize;
+        String queryString = "SELECT DISTINCT ?object " +
+                "WHERE { GRAPH ?g { ?subject ?predicate ?object } " +
+                (objectName != null && !objectName.isEmpty() ?
+                        "FILTER STRSTARTS(STR(?object), '" + objectName + "'). " : "") +
+                "} " +
+                "LIMIT " + pageSize + " OFFSET " + offset;
+
+        Query query = QueryFactory.create(queryString);
+        List<String> objects = new ArrayList<>();
+
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet results = qexec.execSelect();
+
+            while (results.hasNext()) {
+                QuerySolution soln = results.nextSolution();
+                objects.add(getShortenUri(soln.get("object").toString()));
+            }
+        }
+
+        return objects;
+    }
+    public List<List<String>> executePagedSelectByFilterQuery(Dataset dataset, List<List<String>> filters){
 
         SelectBuilder sb= new SelectBuilder();
         sb.addVar("*").addGraph("?g", new SelectBuilder()
                 .addWhere("?subject", "?predicate", "?object"));
 
-        if (MethodUtils.existsAndNotEmpty(filters.getSelectedSubjects())){
-            sb.addFilter("?subject IN (" + filters.getSelectedSubjects() + ")");
+        if (MethodUtils.existsAndNotEmpty(filters.get(0))){
+            sb.addFilter("?subject IN (" + filters.get(0) + ")");
         }
-        if (MethodUtils.existsAndNotEmpty(filters.getSelectedPredicates())){
-            sb.addFilter("?predicate IN (" + filters.getSelectedPredicates() + ")");
+        if (MethodUtils.existsAndNotEmpty(filters.get(1))){
+            sb.addFilter("?predicate IN (" + filters.get(1) + ")");
         }
-        if (MethodUtils.existsAndNotEmpty(filters.getSelectedObjects())){
-            sb.addFilter("?object IN (" + filters.getSelectedObjects() + ")");
+        if (MethodUtils.existsAndNotEmpty(filters.get(2))){
+            sb.addFilter("?object IN (" + filters.get(2) + ")");
         }
         Query query= sb.build();
 
+        List<List<String>> resultList= List.of(new ArrayList<>(),new ArrayList<>(), new ArrayList<>());
+
         try(QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
             ResultSet results = qexec.execSelect();
-            filterResult.setSelectedSubjects(new ArrayList<>());
-            filterResult.setSelectedPredicates(new ArrayList<>());
-            filterResult.setSelectedObjects(new ArrayList<>());
 
             while (results.hasNext()) {
                 QuerySolution solution = results.nextSolution();
                 // Collect values based on the variables selected
                 if (solution.contains("subject")) {
-                    filterResult.addSubject(solution.get("subject").toString());
+                    resultList.get(0).add(solution.get("subject").toString());
                 } else if (solution.contains("predicate")) {
-                    filterResult.addPredicate(solution.get("predicate").toString());
+                    resultList.get(1).add(solution.get("predicate").toString());
                 } else if (solution.contains("object")) {
-                    filterResult.addObject(solution.get("object").toString());
+                    resultList.get(2).add(solution.get("object").toString());
                 }
             }
         }
-        return filterResult;
+        return  resultList;
     }
 
 }

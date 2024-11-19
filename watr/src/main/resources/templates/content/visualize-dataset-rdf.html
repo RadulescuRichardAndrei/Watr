@@ -1,18 +1,19 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<div id="search-control">
+<div id="search-control" class="">
 
     <div hx-get="/dataset-names" hx-trigger="load"
-         hx-vals='{"actionUrl":"/visualize-rdf-data", "target":"#filter-search"}'></div>
-    <div id="filter-search"></div>
+         hx-vals='{"actionUrl":"/visualize-rdf-data", "target":"#filter-search"}'
+            ></div>
+    <div id="filter-search" class="d-flex justify-content-between gap-3"></div>
 
 
 
 </div>
-<div class="container-fluid h-100" >
+<div class="container-fluid h-100 mt-3" >
     <div class="row align-items-start h-100" >
         <!-- Graph section (takes 9 columns on large screens) -->
-        <div id="graph" class="col-12 col-lg-9" style="height: 100%;">
+        <div id="graph" class="col-12 col-lg-9 border-1     " style="height: 100%;">
             <!-- Your graph visualization content goes here -->
 
         </div>

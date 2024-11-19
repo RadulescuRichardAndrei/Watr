@@ -1,8 +1,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:fragment="filterSearch()">
 
-<div id="filter-search">
+<div id="filter-search" class="d-flex flex-row gap-3">
 
-    <th:block th:replace="~{fragments/filter-drowpdown :: filterDropdown('Subjects', '/filter-subjects', ${filters}, '#subjects')}"/>
+    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'subjects', '/filter-subjects', '#subjects')}"/>
+    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'predicates', '/filter-predicates', '#predicates')}"/>
+    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'objects', '/filter-objects', '#objects')}"/>
 
 
     <button class="btn btn-primary mt-3"
@@ -18,4 +21,5 @@
         Generate Graph
     </button>
 </div>
+</th:block>
 </html>
