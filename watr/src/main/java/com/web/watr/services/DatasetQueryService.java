@@ -126,16 +126,31 @@ public class DatasetQueryService {
 
     public List<String> executePagedSelectSubjects(Dataset dataset, int page, int pageSize, String subjectName) {
         int offset = page * pageSize;
-        String queryString = "SELECT DISTINCT ?subject " +
+        /*String queryString = "SELECT DISTINCT ?subject " +
                 "WHERE { GRAPH ?g { ?subject ?predicate ?object } " +
                 (subjectName != null && !subjectName.isEmpty() ?
-                        "FILTER STRSTARTS(STR(?subject), '" + subjectName + "'). " : "") +
+                        "FILTER STRSTARTS(STR(?subject), ?subjectName). " : "") +  // Bind subjectName safely
                 "} " +
-                "LIMIT " + pageSize + " OFFSET " + offset;
+                "ORDER BY ?subject " +
+                "LIMIT ?pageSize OFFSET ?offset";*/ // To be removed unsafe because of sql injection
 
+        SelectBuilder selectBuilder = new SelectBuilder().setDistinct(true)
+                .addVar("subject").addGraph("?g","?subject", "?predicate", "?object");
+
+        if (subjectName != null && !subjectName.isEmpty()) {
+            selectBuilder.addFilter("STRSTARTS(STR(?subject), ?subjectName)");
+        }
+
+        selectBuilder.addOrderBy("subject")
+                .setLimit(pageSize).setOffset(offset);
+
+        String queryString = selectBuilder.buildString();
         Query query = QueryFactory.create(queryString);
+
+
         List<String> subjects = new ArrayList<>();
         try (QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
+
             ResultSet results = qexec.execSelect();
 
             while (results.hasNext()) {

@@ -5,8 +5,12 @@
     <li th:each="item : ${paginatedList}" class="dropdown-item">
         <input type="checkbox" class="form-check-input"
                th:id="${item}"
-               th:value="${item}"
-               th:checked="${filters.containsInList(label,item)}" />
+               th:checked="${filters.containsInList(label,item)}"
+               th:hx-target="'#active-filter-' + ${label} + 's'"
+               th:hx-post="'/toggle-'+${label}+'?'+${label}+'='+${item}"
+               hx-swap="outerHTML"
+               hx-trigger="change"
+        />
         <label class="form-check-label" th:for="${item}" th:text="${item}"></label>
     </li>
     <!-- Load More -->
@@ -16,15 +20,19 @@
                     th:disabled="${currentPage == 0}"
                     th:hx-get="${previousPage}"
                     th:hx-target="'#' + ${label}+ '-list'"
-                    hx-swap="outerHTML">
+                    hx-vals='{"later-request": "true"}'
+                    hx-swap="outerHTML"
+                    >
                 Previous
             </button>
 
             <button class="btn btn-secondary"
-                    th:disabled="${paginatedList.size() < 20}"
+                    th:disabled="${paginatedList.size() < 8}"
                     th:hx-get="${nextPage}"
                     th:hx-target="'#' + ${label} + '-list'"
-                    hx-swap="outerHTML">
+                    hx-vals='{"later-request": "true"}'
+                    hx-swap="outerHTML"
+                    >
                 Next
             </button>
         </div>

@@ -51,7 +51,7 @@ public class DatasetVisualizeController {
     }
     @GetMapping("/visualize-table-data")
     public  String getTableData(@RequestParam(defaultValue = "0") int page,
-                                @RequestParam(required = true) String dataset,
+                                @RequestParam() String dataset,
                                 Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -81,6 +81,7 @@ public class DatasetVisualizeController {
     public String getRDFDataSubjects(@RequestParam String dataset,
                                      @RequestParam(defaultValue = "0") int page,
                                      @RequestParam(required = false) String search,
+                                     @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                              Model model){
 
         Path path = Paths.get(datasetPath, dataset);
@@ -94,18 +95,20 @@ public class DatasetVisualizeController {
 
         model.addAttribute("paginatedList", subjects);
         model.addAttribute("label","subject");
-        model.addAttribute("endpoint","/filter-subject");
+        model.addAttribute("endpoint","/filter-subjects?dataset=" + dataset);
         model.addAttribute("currentPage",page);
         model.addAttribute("nextPage", (subjects.size() == pageSizeSmall) ? "/filter-subjects?dataset=" +
                                                     dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-subjects?dataset=" +
                                                     dataset + "&page=" + (page - 1) + searchParam : null);
-        return (search==null || page>0) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
     }
+
     @GetMapping("/filter-predicates")
     public String getRDFDataPredicates(@RequestParam String dataset,
                                        @RequestParam(defaultValue = "0") int page,
                                        @RequestParam(required = false) String search,
+                                       @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                                        Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -117,18 +120,19 @@ public class DatasetVisualizeController {
         model.addAttribute("filters", filters);
         model.addAttribute("paginatedList", subjects);
         model.addAttribute("label","predicate");
-        model.addAttribute("endpoint","/filter-subject");
+        model.addAttribute("endpoint","/filter-predicates?dataset=" + dataset);
         model.addAttribute("currentPage",page);
-        model.addAttribute("nextPage", (subjects.size() == pageSizeSmall) ? "/filter-subjects?dataset=" +
+        model.addAttribute("nextPage", (subjects.size() == pageSizeSmall) ? "/filter-predicates?dataset=" +
                 dataset + "&page=" + (page + 1) + searchParam : null);
-        model.addAttribute("previousPage", (page > 0) ? "/filter-subjects?dataset=" +
+        model.addAttribute("previousPage", (page > 0) ? "/filter-predicates?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
-        return (search==null || page>0) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
     }
     @GetMapping("/filter-objects")
     public String getRDFDataObjects(@RequestParam String dataset,
                                        @RequestParam(defaultValue = "0") int page,
                                        @RequestParam(required = false) String search,
+                                    @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                                        Model model){
 
         Path path = Paths.get(datasetPath, dataset);
@@ -141,12 +145,12 @@ public class DatasetVisualizeController {
         model.addAttribute("filters", filters);
         model.addAttribute("paginatedList", subjects);
         model.addAttribute("label","object");
-        model.addAttribute("endpoint","/filter-subject");
+        model.addAttribute("endpoint","/filter-objects?dataset=" + dataset);
         model.addAttribute("currentPage",page);
-        model.addAttribute("nextPage", (subjects.size() == pageSizeSmall) ? "/filter-subjects?dataset=" +
+        model.addAttribute("nextPage", (subjects.size() == pageSizeSmall) ? "/filter-objects?dataset=" +
                 dataset + "&page=" + (page + 1) + searchParam : null);
-        model.addAttribute("previousPage", (page > 0) ? "/filter-subjects?dataset=" +
+        model.addAttribute("previousPage", (page > 0) ? "/filter-objects?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
-        return (search==null || page>0) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
     }
 }

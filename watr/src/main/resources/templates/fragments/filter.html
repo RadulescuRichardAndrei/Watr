@@ -1,10 +1,15 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<th:block th:fragment="filter(dataset, label, endpoint, targetId)">
+<th:block th:fragment="filter(dataset, label, endpointDropdown, endpointActiveFilters, targetId)">
     <div class="filter-group d-flex flex-column align-items-start gap-1" >
-        <label th:text="${#strings.toUpperCase(label)}" th:for="'active-filters-'+${label}"/>
-        <div th:id="'#active-filters-'+${label}"></div>
+        <label th:text="${#strings.toUpperCase(label)}" th:for="'active-filter-'+${label}"/>
+
+        <div th:id="'active-filter-'+${label}"
+        th:hx-get="${endpointActiveFilters}"
+             hx-trigger="load"
+            hx-swap="outerHTML"></div>
+
         <div th:id="'dropdown-'+${label}"
-             th:hx-get="${endpoint}"
+             th:hx-get="${endpointDropdown}"
              hx-trigger="load"
              hx-swap="outerHTML"
              th:hx-vals="'{&quot;dataset&quot;: &quot;' + ${dataset} + '&quot;}'"

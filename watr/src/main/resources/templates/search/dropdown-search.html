@@ -3,9 +3,12 @@
 
 <div id="filter-search" class="d-flex flex-row gap-3">
 
-    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'subjects', '/filter-subjects', '#subjects')}"/>
-    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'predicates', '/filter-predicates', '#predicates')}"/>
-    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'objects', '/filter-objects', '#objects')}"/>
+    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'subjects', '/filter-subjects?first-request=true',
+                                                                            '/get-subjects', '#subjects')}"/>
+    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'predicates', '/filter-predicates?first-request=true',
+                                                                            '/get-predicates','#predicates')}"/>
+    <th:block th:replace="~{fragments/filter :: filter(${selectedDataset}, 'objects', '/filter-objects?first-request=true',
+                                                                            '/get-objects','#objects')}"/>
 
 
     <button class="btn btn-primary mt-3"

@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block th:fragment="filterElement(filter,removeButtonEndpoint)"  >
+    <div  class="badge bg-primary d-inline-block me-2 mb-2">
+        <span th:text="${filter}"></span>
+        <button type="button"
+                class="btn-close btn-close-white btn-sm ms-2"
+                th:hx-post="${removeButtonEndpoint}"
+                th:hx-target="'#filter-' + ${#strings.replace(filter,':','')}"
+                hx-swap="outerHTML"
+                hx-on="htmx:afterSwap: triggerCheckboxUpdate()">
+
+        </button>
+    </div>
+</th:block>
+
+</html>
