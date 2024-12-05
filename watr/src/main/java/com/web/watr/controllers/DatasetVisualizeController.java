@@ -2,12 +2,10 @@ package com.web.watr.controllers;
 
 import com.web.watr.beans.FilterBean;
 import com.web.watr.services.DatasetQueryService;
-import com.web.watr.utils.MethodUtils;
 import jakarta.annotation.PostConstruct;
-import org.apache.jena.assembler.Mode;
+import jakarta.servlet.http.HttpSession;
 import org.apache.jena.fuseki.main.FusekiServer;
-import org.apache.jena.query.*;
-import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.query.Dataset;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,11 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.List;
 
 @Controller
 public class DatasetVisualizeController {
 
+    @Autowired
+    private HttpSession session;
     @Autowired
     private FilterBean filters;
     @Value("${fuseki.dataset.path}")
@@ -83,7 +83,6 @@ public class DatasetVisualizeController {
                                      @RequestParam(required = false) String search,
                                      @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                              Model model){
-
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
 
@@ -152,5 +151,17 @@ public class DatasetVisualizeController {
         model.addAttribute("previousPage", (page > 0) ? "/filter-objects?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
         return (firstRequest!=null && firstRequest) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
+    }
+    @GetMapping("/generate-graph")
+    public String getGraphRepresentation(@RequestParam String dataset, Model model){
+
+        Path path = Paths.get(datasetPath, dataset);
+        Dataset ds= datasetQueryService.loadDataset(path);
+        var result = datasetQueryService.executePagedSelectByFilterQuery(ds, filters);
+
+        model.addAttribute("nodes",result.get("nodes"));
+        model.addAttribute("edges",result.get("edges"));
+
+        return "/fragments/graph-container";
     }
 }

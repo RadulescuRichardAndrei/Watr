@@ -1,15 +1,16 @@
 package com.web.watr.services;
 
+import com.web.watr.beans.FilterBean;
 import com.web.watr.utils.MethodUtils;
 import org.apache.jena.arq.querybuilder.SelectBuilder;
+import org.apache.jena.atlas.json.JsonArray;
+import org.apache.jena.atlas.json.JsonObject;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.riot.RDFDataMgr;
 
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DatasetQueryService {
 
@@ -209,41 +210,61 @@ public class DatasetQueryService {
 
         return objects;
     }
-    public List<List<String>> executePagedSelectByFilterQuery(Dataset dataset, List<List<String>> filters){
+    public  Map<String, JsonArray> executePagedSelectByFilterQuery(Dataset dataset, FilterBean filters){
 
         SelectBuilder sb= new SelectBuilder();
         sb.addVar("*").addGraph("?g", new SelectBuilder()
                 .addWhere("?subject", "?predicate", "?object"));
 
-        if (MethodUtils.existsAndNotEmpty(filters.get(0))){
-            sb.addFilter("?subject IN (" + filters.get(0) + ")");
+        if (MethodUtils.existsAndNotEmpty(filters.getSelectedObjects())){
+            sb.addFilter("?subject IN (" + filters.getSelectedSubjects() + ")");
         }
-        if (MethodUtils.existsAndNotEmpty(filters.get(1))){
-            sb.addFilter("?predicate IN (" + filters.get(1) + ")");
+        if (MethodUtils.existsAndNotEmpty(filters.getSelectedPredicates())){
+            sb.addFilter("?predicate IN (" + filters.getSelectedPredicates() + ")");
         }
-        if (MethodUtils.existsAndNotEmpty(filters.get(2))){
-            sb.addFilter("?object IN (" + filters.get(2) + ")");
+        if (MethodUtils.existsAndNotEmpty(filters.getSelectedObjects())){
+            sb.addFilter("?object IN (" + filters.getSelectedObjects() + ")");
         }
         Query query= sb.build();
 
-        List<List<String>> resultList= List.of(new ArrayList<>(),new ArrayList<>(), new ArrayList<>());
+        Map<String, JsonArray> result = new HashMap<>();
+        JsonArray nodes= new JsonArray();
+        JsonArray edges= new JsonArray();
+        Set<String> nodeSet = new HashSet<>();
 
         try(QueryExecution qexec = QueryExecutionFactory.create(query, dataset)) {
             ResultSet results = qexec.execSelect();
 
             while (results.hasNext()) {
                 QuerySolution solution = results.nextSolution();
-                // Collect values based on the variables selected
-                if (solution.contains("subject")) {
-                    resultList.get(0).add(solution.get("subject").toString());
-                } else if (solution.contains("predicate")) {
-                    resultList.get(1).add(solution.get("predicate").toString());
-                } else if (solution.contains("object")) {
-                    resultList.get(2).add(solution.get("object").toString());
+                String subject = solution.get("subject").toString();
+                String object = solution.get("object").toString();
+                String predicate = solution.get("predicate").toString();
+                if (!nodeSet.contains(subject)) {
+                    JsonObject jsonNode= new JsonObject();
+                    jsonNode.put("id",subject);
+                    jsonNode.put("label", subject);
+                    nodes.add(jsonNode);
+                    nodeSet.add(subject);
                 }
+                if (!nodeSet.contains(object)) {
+                    JsonObject jsonNode= new JsonObject();
+                    jsonNode.put("id",object);
+                    jsonNode.put("label", object);
+                    nodes.add(jsonNode);
+                    if(solution.get("object").isResource())
+                        nodeSet.add(object);
+                }
+                JsonObject jsonNode= new JsonObject();
+                jsonNode.put("from",subject);
+                jsonNode.put("to",object);
+                jsonNode.put("label",predicate);
+                edges.add(jsonNode);
             }
         }
-        return  resultList;
+        result.put("nodes", nodes);
+        result.put("edges", edges);
+        return  result;
     }
 
 }

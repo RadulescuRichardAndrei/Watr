@@ -13,13 +13,8 @@
 
     <button class="btn btn-primary mt-3"
             hx-get="/generate-graph"
-            hx-vals='{
-                "dataset": "{{selectedDataset}}",
-                "subjects": "{{selectedSubjects}}",
-                "predicates": "{{selectedPredicates}}",
-                "objects": "{{selectedObjects}}"
-            }'
-            hx-target="#graph"
+            th:hx-vals="'{&quot;dataset&quot;: &quot;' + ${selectedDataset} + '&quot;}'"
+            hx-target="#graph-container"
             hx-swap="innerHTML">
         Generate Graph
     </button>

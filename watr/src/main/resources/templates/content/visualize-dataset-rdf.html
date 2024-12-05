@@ -10,56 +10,8 @@
 
 
 </div>
-<div class="container-fluid h-100 mt-3" >
-    <div class="row align-items-start h-100" >
-        <!-- Graph section (takes 9 columns on large screens) -->
-        <div id="graph" class="col-12 col-lg-9 border-1     " style="height: 100%;">
-            <!-- Your graph visualization content goes here -->
+<div class="container-fluid h-100 mt-3" id="graph-container">
 
-        </div>
-        <!-- Node Information (takes 3 columns on large screens) -->
-        <div class="col-12 col-lg-3" id="node-info-container">
-            <div class="card">
-                <div class="card-header" id="node-info-header">
-                    Node Information
-                </div>
-                <div id="node-info" class="collapse show">
-                    <div class="card-body">
-                        <!-- Your node information content goes here -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-<script>
-    // Create an array of nodes
-    var nodes = new vis.DataSet([
-        { id: 1, label: 'Node 1' },
-        { id: 2, label: 'Node 2' },
-        { id: 3, label: 'Node 3' },
-        { id: 4, label: 'Node 4' }
-    ]);
 
-    // Create an array of edges
-    var edges = new vis.DataSet([
-        { from: 1, to: 2 },
-        { from: 1, to: 3 },
-        { from: 2, to: 4 }
-    ]);
-
-    // Create a network
-    var container = document.getElementById('graph');
-    var data = {
-        nodes: nodes,
-        edges: edges
-    };
-    var options = {
-        physics: {
-            enabled: true
-        }
-    };
-
-    var network = new vis.Network(container, data, options);
-</script>
 </html>

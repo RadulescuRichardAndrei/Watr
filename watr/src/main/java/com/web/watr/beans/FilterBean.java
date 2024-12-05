@@ -4,22 +4,24 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 @SessionScope
 @Component
-public class FilterBean {
+public class FilterBean implements Serializable {
     private List<String> selectedSubjects = new ArrayList<>();
     private List<String> selectedPredicates = new ArrayList<>();
     private List<String> selectedObjects = new ArrayList<>();
+
 
     @PostConstruct
     public void init(){
         selectedSubjects= new ArrayList<>();
         selectedPredicates= new ArrayList<>();
         selectedObjects=new ArrayList<>();
+        System.out.println("Init");
     }
 
     // Getters and Setters
