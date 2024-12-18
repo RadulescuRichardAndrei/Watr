@@ -11,6 +11,7 @@ import org.apache.jena.riot.RDFDataMgr;
 
 import java.nio.file.Path;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DatasetQueryService {
 
@@ -35,9 +36,6 @@ public class DatasetQueryService {
             Map.entry("http://www.w3.org/ns/solid/terms#", "solid"),
             Map.entry("https://www.w3.org/ns/activitystreams#", "as"),
             Map.entry("https://www.w3.org/ns/webvtt#", "vtt"),
-            Map.entry("http://www.w3.org/1999/02/22-rdf-syntax-ns#Bag", "rdf:Bag"),
-            Map.entry("http://www.w3.org/1999/02/22-rdf-syntax-ns#Alt", "rdf:Alt"),
-            Map.entry("http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq", "rdf:Seq"),
             Map.entry("http://www.w3.org/ns/oa#", "oa"),
             Map.entry("http://www.w3.org/2001/XMLSchema-instance#", "xsi")
     );
@@ -50,6 +48,14 @@ public class DatasetQueryService {
                 return entry.getValue() + ":" + localName;
             }
         }
+        return uri;
+    }
+    private String getLongUri(String uri){
+        for (Map.Entry<String, String> entry : NAMESPACE_PREFIXES.entrySet())
+            if(uri.startsWith(entry.getValue())){
+                String localName= uri.substring(entry.getValue().length()+1);
+                return entry.getKey() + localName;
+            }
         return uri;
     }
     private String getPrefix(String uri) {
@@ -213,17 +219,22 @@ public class DatasetQueryService {
     public  Map<String, JsonArray> executePagedSelectByFilterQuery(Dataset dataset, FilterBean filters){
 
         SelectBuilder sb= new SelectBuilder();
+
+
         sb.addVar("*").addGraph("?g", new SelectBuilder()
                 .addWhere("?subject", "?predicate", "?object"));
 
         if (MethodUtils.existsAndNotEmpty(filters.getSelectedObjects())){
-            sb.addFilter("?subject IN (" + filters.getSelectedSubjects() + ")");
+            String subjects= filters.getSelectedSubjects().stream().map(this::getLongUri).collect(Collectors.joining());
+            sb.addFilter("?subject IN (" + subjects + ")");
         }
         if (MethodUtils.existsAndNotEmpty(filters.getSelectedPredicates())){
-            sb.addFilter("?predicate IN (" + filters.getSelectedPredicates() + ")");
+            String predicates= filters.getSelectedPredicates().stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining());
+            sb.addFilter("?predicate IN (" + predicates + ")");
         }
         if (MethodUtils.existsAndNotEmpty(filters.getSelectedObjects())){
-            sb.addFilter("?object IN (" + filters.getSelectedObjects() + ")");
+            String objects= filters.getSelectedObjects().stream().map(this::getLongUri).collect(Collectors.joining());
+            sb.addFilter("?object IN (" + objects + ")");
         }
         Query query= sb.build();
 

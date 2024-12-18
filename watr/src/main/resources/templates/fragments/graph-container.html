@@ -1,4 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+<span th:value="${nodes}">
+    </span>
 <div class="row align-items-start h-100" >
     <!-- Graph section (takes 9 columns on large screens) -->
     <div  class="col-12 col-lg-9 border-1" style="height: 100%;" id="graph">
@@ -18,13 +20,20 @@
             </div>
         </div>
     </div>
+
 </div>
-<script>
-    // Create an array of nodes
-    var nodes = new vis.DataSet(/*[[${nodes}]]*/);
+
+<script th:inline="javascript">
+
+    var nodesJson= /*[[${nodes}]]*/ null;
+    alert(nodesJson)
+    var edgesJson= /*[[${edges}]]*/ null;
+
+    var nodes = new vis.DataSet(JSON.parse(nodesJson));
+
 
     // Create an array of edges
-    var edges = new vis.DataSet(/*[[${edges}]]*/);
+    var edges = new vis.DataSet(JSON.parse(edgesJson));
 
     // Create a network
     var container = document.getElementById('graph');
@@ -39,5 +48,6 @@
     };
 
     var network = new vis.Network(container, data, options);
-</script>
+
+</script>-->
 </html>

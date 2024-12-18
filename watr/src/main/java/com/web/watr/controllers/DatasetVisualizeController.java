@@ -158,9 +158,9 @@ public class DatasetVisualizeController {
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
         var result = datasetQueryService.executePagedSelectByFilterQuery(ds, filters);
-
-        model.addAttribute("nodes",result.get("nodes"));
-        model.addAttribute("edges",result.get("edges"));
+        System.out.println(result.get("nodes"));
+        model.addAttribute("nodes",result.get("nodes").toString());
+        model.addAttribute("edges",result.get("edges").toString());
 
         return "/fragments/graph-container";
     }
