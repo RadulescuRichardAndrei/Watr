@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <div th:id="${id}">
     <ul style="list-style-type: none">
-        <li th:each="filter : ${filters}" th:id="'filter-' + ${#strings.replace(filter,':','')}">
+        <li th:each="filter : ${filters}" th:id="'filter-' + ${@methodUtils.sanitizeFilterId(filter)}">
             <div th:replace="~{fragments/filter-element::filterElement(filter=${filter},
                  removeButtonEndpoint=${removeButtonEndpoint + filter})}"></div>
         </li>

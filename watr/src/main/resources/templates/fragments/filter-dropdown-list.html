@@ -4,7 +4,7 @@
     <div th:id="${label}+ '-list'">
     <li th:each="item : ${paginatedList}" class="dropdown-item">
         <input type="checkbox" class="form-check-input"
-               th:id="${item}"
+               th:id="${label}+ '-list-item-' +${item}"
                th:checked="${filters.containsInList(label,item)}"
                th:hx-target="'#active-filter-' + ${label} + 's'"
                th:hx-post="'/toggle-'+${label}+'?'+${label}+'='+${item}"

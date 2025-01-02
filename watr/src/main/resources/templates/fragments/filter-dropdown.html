@@ -12,7 +12,7 @@
                    name="search"
                    placeholder="Search..."
                    th:hx-get="${endpoint}"
-                   hx-trigger="input changed delay:500ms, recheckCheckboxes from:body"
+                   hx-trigger="input changed delay:1000ms, recheckCheckboxes from:body"
                    th:hx-target="'#' + ${label} + '-list'"
                    hx-swap="outerHTML"
                    autocomplete="off" />

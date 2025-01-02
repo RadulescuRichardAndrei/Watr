@@ -14,9 +14,9 @@ public class FusekiConfig {
     private String directory;
     @Bean
     public FusekiServer fusekiServer() {
-        // Create an in-memory or persistent dataset (TDB2 in this case)
 
         Dataset dataset = TDB2Factory.connectDataset(directory);
+        //TDB2.getContext().set(TDB2.symUnionDefaultGraph, true);
 
         // Start Fuseki server on a specific port and bind the dataset to a SPARQL endpoint
         FusekiServer server = FusekiServer.create()

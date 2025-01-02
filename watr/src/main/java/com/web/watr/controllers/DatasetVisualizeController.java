@@ -159,6 +159,7 @@ public class DatasetVisualizeController {
         Dataset ds= datasetQueryService.loadDataset(path);
         var result = datasetQueryService.executePagedSelectByFilterQuery(ds, filters);
         System.out.println(result.get("nodes"));
+        System.out.println(result.get("edges"));
         model.addAttribute("nodes",result.get("nodes").toString());
         model.addAttribute("edges",result.get("edges").toString());
 

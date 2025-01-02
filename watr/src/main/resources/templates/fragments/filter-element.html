@@ -6,7 +6,7 @@
         <button type="button"
                 class="btn-close btn-close-white btn-sm ms-2"
                 th:hx-post="${removeButtonEndpoint}"
-                th:hx-target="'#filter-' + ${#strings.replace(filter,':','')}"
+                th:hx-target="'#filter-' + ${@methodUtils.sanitizeFilterId(filter)}"
                 hx-swap="outerHTML"
                 hx-on="htmx:afterSwap: triggerCheckboxUpdate()">
 

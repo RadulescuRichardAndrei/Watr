@@ -1,7 +1,6 @@
 package com.web.watr.beans;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
@@ -23,13 +22,7 @@ public class FilterBean implements Serializable {
         selectedPredicates= new ArrayList<>();
         selectedObjects=new ArrayList<>();
     }
-    @PreDestroy
-    public void delete(){
-        System.out.println("Destroyed");
-    }
-
-    // Getters and Setters
-    public List<String> getSelectedSubjects() {
+       public List<String> getSelectedSubjects() {
         return selectedSubjects;
     }
 
