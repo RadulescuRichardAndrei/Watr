@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <div th:fragment="statistic-predicate(statisticDetailsCount, statisticDetailsCoOc, dataset)"
+        typeof="qb:DataSet" th:about="${dataset}"
+    >
+        <div class="section-item">
+            <h6>Predicate Count In Triplets</h6>
+
+            <!-- Display statisticDetailsCoOc -->
+            <div class="badge bg-success me-2 mb-2" typeof="qb:Observation">
+                <div rel="qb:dimension" resource="#predicateDimension">
+                    <span th:text="'Predicate: ' + ${statisticDetailsCount[0]}"></span>
+                </div>
+                <!-- RDF Data Cube Annotation for the Measure (triplet count) -->
+                <div property="qb:measure" th:content="${statisticDetailsCount[1]}">
+                    <span th:text="'Total Triplets: ' + ${statisticDetailsCount[1]}"></span>
+                </div>
+            </div>
+        </div>
+        <div class="section-item">
+            <h6> Co-occurrence Predicates</h6>
+            <div th:each="item : ${statisticDetailsCoOc}" typeof="qb:Observation">
+                <div class="badge bg-success me-2 mb-2">
+                    <span rel="qb:dimension" resource="#predicateDimension" th:text="${item[0]}"></span>
+                    <span property="qb:measure" th:content="${item[1]}" th:text="': ' + ${item[1]}"></span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</html>

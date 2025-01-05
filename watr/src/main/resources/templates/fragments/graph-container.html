@@ -1,11 +1,23 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<span th:value="${nodes}">
-    </span>
+
 <div class="row align-items-start h-100" >
     <!-- Graph section (takes 9 columns on large screens) -->
-    <div  class="col-12 col-lg-9 border-1" style="height: 100%;" id="graph">
+    <div  class="col-12 col-lg-9 border-1 position-relative" style="height: 100%;" >
         <!-- Your graph visualization content goes here -->
+        <div id="graph" style="height: 100%"></div>
 
+        <div class="position-absolute top-0 end-0 m-2 d-flex flex-column" style="z-index: 10;">
+            <a id="canvasImg" download="" style="display: none;"></a>
+            <button
+                    type="button"
+                    class="btn btn-primary mb-2"
+                    onclick="document.getElementById('canvasImg').click();">
+                <i class="fas fa-download"></i> Save Image
+            </button>
+            <a id="fileDownload" class="btn btn-primary mb-2"
+               th:href="'/generate-jsonld?dataset=' + ${selectedDataset}" target="_blank" download>  Download Data</a>
+
+        </div>
     </div>
     <!-- Node Information (takes 3 columns on large screens) -->
     <div class="col-12 col-lg-3" id="node-info-container">
@@ -15,7 +27,11 @@
             </div>
             <div id="node-info" class="collapse show">
                 <div class="card-body">
-                    <!-- Your node information content goes here -->
+                    <!-- Your n coode informationntent goes here -->
+                    <div id="details" hx-get="" hx-trigger="triggerDetailsRequest delay:100ms"
+                         hx-target="#node-content"
+                         style="display: none" ></div>
+                    <div id="node-content"></div>
                 </div>
             </div>
         </div>
@@ -29,8 +45,13 @@
 
     var edgesJson= /*[[${edges}]]*/ null;
 
+    var dataset= /*[[${selectedDataset}]]*/ null;
+
     var nodes = new vis.DataSet(JSON.parse(nodesJson));
 
+    if (window.network) {
+        window.network.destroy(); // Destroy the old network instance
+    }
 
     // Create an array of edges
     var edges = new vis.DataSet(JSON.parse(edgesJson));
@@ -46,8 +67,44 @@
             enabled: true
         }
     };
+    window.network = new vis.Network(container, data, options);
+    network.on("afterDrawing", function(ctx) {
+        var dataURL = ctx.canvas.toDataURL();
+        document.getElementById('canvasImg').href = dataURL;
+    })
+    network.on("click", function (params){
+        if (params.nodes.length > 0) {
 
-    var network = new vis.Network(container, data, options);
+            var nodeId = params.nodes[0];
+            var node = nodes.get(nodeId);
 
-</script>-->
+            if (node) {
+
+                document.getElementById('details').setAttribute(
+                    'hx-get',
+                    `/details-node?dataset=${encodeURIComponent(dataset)}&name=${encodeURIComponent(node.label)}`
+                );
+                htmx.process(document.getElementById('details'));
+                htmx.trigger("#details","triggerDetailsRequest")
+                //document.body.dispatchEvent(new Event('triggerDetailsRequest'))
+            }
+        }
+        else if (params.edges.length > 0) {
+
+            var edgeId = params.edges[0];
+            var edge = edges.get(edgeId);
+
+            if (edge) {
+                // Trigger an HTMX request to load details
+                document.getElementById('details').setAttribute(
+                    'hx-get',
+                    `/details-edge?dataset=${encodeURIComponent(dataset)}&name=${encodeURIComponent(edge.label)}`
+                );
+                //document.body.dispatchEvent(new Event('triggerDetailsRequest'));
+                htmx.process(document.getElementById('details'));
+                htmx.trigger("#details","triggerDetailsRequest")
+            }
+        }
+    })
+</script>
 </html>

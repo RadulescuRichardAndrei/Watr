@@ -79,4 +79,9 @@ public class FilterBean implements Serializable {
             return selectedObjects.contains(smth);
         return false;
     }
+    public void resetFilter(){
+        selectedSubjects.clear();
+        selectedPredicates.clear();
+        selectedObjects.clear();
+    }
 }

@@ -1,0 +1,85 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="nav-item">
+    <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#detailsContent" type="button" role="tab" aria-controls="detailsContent" aria-selected="true">Details</button>
+    <li role="presentation" class="nav-item">
+    <button class="nav-link" id="relations-tab" data-bs-toggle="tab" data-bs-target="#relationsContent" type="button" role="tab" aria-controls="relationsContent" aria-selected="false">Relations</button>
+    <li role="presentation" class="nav-item">
+    <button class="nav-link" id="statistics-tab" data-bs-toggle="tab" data-bs-target="#statisticsContent" type="button" role="tab" aria-controls="statisticsContent" aria-selected="false">Statistics</button>
+</ul>
+
+<div class="tab-content">
+    <!-- Details Section -->
+    <div role="tabpanel" class="tab-pane fade show active" id="detailsContent" aria-labelledby="detailsContent">
+        <div th:each="item :${vocabDetails}">
+
+            <div class="section-item" th:if="${item.getValue() != null}">
+                <h6 th:text="${item.getKey()}"></h6>
+
+                <div class="badge bg-primary me-2 mb-2">
+                        <span th:text="${item.getValue()}"></span>
+                </div>
+            </div>
+
+            <div class="section-item" th:if="${item.getValue() == null}">
+                <h6 th:text="${item.getKey()}"></h6>
+                <div class="badge bg-primary me-2 mb-2">
+                    <p>Could not be determined</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade" id="relationsContent" labelledby="relationsContent">
+        <div th:if="${relationDetails != null}">
+            <div class="section-item">
+                <h6>Equivalent Properties</h6>
+                <div th:each="item : ${relationDetails[0]}" class="badge bg-primary me-2 mb-2">
+                    <span th:text="${item}"></span>
+                </div>
+            </div>
+            <div class="section-item">
+                <h6>Sub Properties</h6>
+                <div th:each="item : ${relationDetails[1]}" class="badge bg-secondary me-2 mb-2">
+                    <span th:text="${item}"></span>
+                </div>
+            </div>
+            <div class="section-item">
+                <h6>Inverse Properties</h6>
+                <div th:each="item : ${relationDetails[2]}" class="badge bg-info me-2 mb-2">
+                    <span th:text="${item}"></span>
+                </div>
+            </div>
+            <div class="section-item">
+                <h6>Domains</h6>
+                <div th:each="item : ${relationDetails[3]}" class="badge bg-warning me-2 mb-2">
+                    <span th:text="${item}"></span>
+                </div>
+            </div>
+            <div class="section-item">
+                <h6>Ranges</h6>
+                <div th:each="item : ${relationDetails[4]}" class="badge bg-success me-2 mb-2">
+                    <span th:text="${item}"></span>
+                </div>
+            </div>
+        </div>
+        <div th:if="${relationDetails == null}">
+            <p>No details found</p>
+        </div>
+    </div>
+    <!-- Statistics Section (example, you can add your own content here) -->
+    <div role="tabpanel" class="tab-pane fade" id="statisticsContent" aria-labelledby="statisticsContent" th:switch="${statisticType}">
+        <div th:case="'predicate'" th:replace="~{fragments/graph-details-statistics/graph-details-predicate::
+         statistic-predicate(statisticDetailsCount= ${statisticDetailsCount}, statisticDetailsCoOc = ${statisticDetailsCoOc}, dataset=${dataset})}"
+        ></div>
+        <!-- <div th:case="'predicate'" th:replace="graph-details-statistics/graph-details-predicate:: statistic-predicate"></div>
+        <div th:case="'predicate'" th:replace="graph-details-statistics/graph-details-predicate:: statistic-predicate"></div> -->
+    </div>
+</div>
+
+</html>

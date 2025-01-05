@@ -1,0 +1,9 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div id="search-control"
+     hx-get="/dataset-names" hx-trigger="load"
+     hx-vals='{"actionUrl":"/visualize-table-data", "target":"#Statistics"}'
+></div>
+
+<div id="table"></div>
+</html>

@@ -3,11 +3,14 @@ package com.web.watr.controllers;
 import com.web.watr.beans.FilterBean;
 import com.web.watr.services.DatasetQueryService;
 import jakarta.annotation.PostConstruct;
-import jakarta.servlet.http.HttpSession;
-import org.apache.jena.fuseki.main.FusekiServer;
 import org.apache.jena.query.Dataset;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,19 +18,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.AbstractMap;
 import java.util.List;
 
 @Controller
 public class DatasetVisualizeController {
 
     @Autowired
-    private HttpSession session;
-    @Autowired
     private FilterBean filters;
     @Value("${fuseki.dataset.path}")
     private String datasetPath;
-    @Autowired
-    private FusekiServer fusekiServer;
 
     private static int pageSize;
     private static int pageSizeSmall;
@@ -73,7 +73,7 @@ public class DatasetVisualizeController {
 
     @GetMapping("/visualize-rdf-data")
     public String getRDFData(@RequestParam(required = true) String dataset, Model model) {
-
+        filters.resetFilter();
         model.addAttribute("selectedDataset", dataset);
         return "/search/dropdown-search";
     }
@@ -158,11 +158,58 @@ public class DatasetVisualizeController {
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
         var result = datasetQueryService.executePagedSelectByFilterQuery(ds, filters);
-        System.out.println(result.get("nodes"));
-        System.out.println(result.get("edges"));
+        model.addAttribute("selectedDataset", dataset);
         model.addAttribute("nodes",result.get("nodes").toString());
         model.addAttribute("edges",result.get("edges").toString());
 
         return "/fragments/graph-container";
+    }
+    @GetMapping("/generate-jsonld")
+    public ResponseEntity<Object> getJsonLDRepresentation(@RequestParam String dataset, Model model){
+
+        Path path = Paths.get(datasetPath, dataset);
+        Dataset ds= datasetQueryService.loadDataset(path);
+        var result = datasetQueryService.executePagedSelectByFilterQueryAndReturnJSONLD(ds, filters);
+        if (result == null)
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error in processing the data");
+
+        return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"data.jsonld\"")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body(new ByteArrayResource(result));
+
+    }
+    @GetMapping("/details-node")
+    public String getNodeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
+        //Path path = Paths.get(datasetPath, dataset);
+        //Dataset ds= datasetQueryService.loadDataset(path);
+        System.out.println("HEY");
+
+        return "fragments/graph-details";
+    }
+    @GetMapping("/details-edge")
+    public String getEdgeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
+        Path path = Paths.get(datasetPath, dataset);
+        Dataset ds= datasetQueryService.loadDataset(path);
+        var result = datasetQueryService.getDetailsAboutPredicate(ds, name);
+        var vc= datasetQueryService.getAllDetails(name);
+
+        var vcContent=List.of(
+                new AbstractMap.SimpleEntry<>("Prefix", vc.get(0)),
+                new AbstractMap.SimpleEntry<>("Long URI", vc.get(1)),
+                new AbstractMap.SimpleEntry<>("Suffix", vc.get(2))
+        );
+        var statisticCount= datasetQueryService.executePredicateCountQuery(ds, name);
+        var statisticCoOc= datasetQueryService.executeCoOccurringPredicatesQuery(ds, name);
+
+        model.addAttribute("relationDetails", result);
+        model.addAttribute("vocabDetails", vcContent);
+        model.addAttribute("statisticDetailsCount", statisticCount);
+        model.addAttribute("statisticDetailsCoOc", statisticCoOc);
+        model.addAttribute("statisticType","predicate");
+        model.addAttribute("dataset",dataset);
+
+        return "fragments/graph-details";
     }
 }

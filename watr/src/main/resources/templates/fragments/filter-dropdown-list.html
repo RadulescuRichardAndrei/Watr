@@ -8,7 +8,7 @@
                th:checked="${filters.containsInList(label,item)}"
                th:hx-target="'#active-filter-' + ${label} + 's'"
                th:hx-post="'/toggle-'+${label}+'?'+${label}+'='+${item}"
-               hx-swap="outerHTML"
+               hx-swap="beforeEnd"
                hx-trigger="change"
         />
         <label class="form-check-label" th:for="${item}" th:text="${item}"></label>
