@@ -45,6 +45,7 @@ public class DatasetVisualizeController {
         return "/content/visualize-dataset-table";
     }
 
+
     @GetMapping("/visualize-rdf-graph-page")
     public String getVisualizeRDFPage(){
         return "/content/visualize-dataset-rdf";
@@ -72,7 +73,7 @@ public class DatasetVisualizeController {
     }
 
     @GetMapping("/visualize-rdf-data")
-    public String getRDFData(@RequestParam(required = true) String dataset, Model model) {
+    public String getRDFData(@RequestParam() String dataset, Model model) {
         filters.resetFilter();
         model.addAttribute("selectedDataset", dataset);
         return "/search/dropdown-search";

@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<canvas id="myChart" style="display: block"></canvas>
+
+<script th:inline="javascript">
+
+    var counts = /*[[${counts}]]*/ null;
+    if (window.myChart) {
+        window.myChart.destroy();
+        console.log("Destroy")
+    }
+    if (counts !== null) {
+
+        var labels = counts.map(function(item) {
+            return item[0];  // Extract the URIs or subject names
+        });
+
+        var data = counts.map(function(item) {
+            return item[1];  // Extract the count values
+        });
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Counts',
+                    data: data,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1    // Border width
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                aspectRatio: 16/9,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                }
+            }
+        });
+
+
+    }
+</script>
+</html>

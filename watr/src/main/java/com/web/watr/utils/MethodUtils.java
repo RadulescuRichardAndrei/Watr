@@ -10,7 +10,9 @@ public class MethodUtils {
     public static <T> boolean existsAndNotEmpty(List<T> list){
         return  (list !=null && !list.isEmpty());
     }
-
+    public static enum TRIPLE_TYPE {
+        SUBJECT, PREDICATE, OBJECT;
+    }
     public String sanitizeFilterId(String filterId){
         if (filterId == null)
             return null;

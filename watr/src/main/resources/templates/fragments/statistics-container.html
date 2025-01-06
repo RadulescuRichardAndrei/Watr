@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<div class="container-fluid d-flex flex-column" id="statistics">
+    <div class="row">
+        <label for="tripleType" class="form-label">Select Triple Type</label>
+        <select id="tripleType" class="form-select"  name="tripleType"
+                th:hx-get="'/statistic-count?dataset=' + ${selectedDataset}"
+                hx-target="#count-statistic"
+                hx-trigger="change">
+            <option value="predicate" selected>Predicate</option>
+            <option value="subject">Subject</option>
+            <option value="object">Object</option>
+        </select>
+
+
+    </div>
+    <div id="count-statistic" class="container-fluid" style="width: 100%; height: auto; position: relative;"></div>
+
+</div>
+</html>

@@ -58,7 +58,6 @@ public class DatasetQueryService {
 
     public DatasetQueryService() {
         NAMESPACE_PREFIXES.sort(Comparator.comparingInt((Map.Entry<String, String> entry) -> entry.getValue().length()).reversed());
-        System.out.println("yes");
     }
 
     private String getShortenUri(String uri) {
@@ -599,15 +598,25 @@ public class DatasetQueryService {
         return result;
     }
 
-    public List<List<String>> executeCountPredicatesQuery(Dataset dataset) {
+    public List<List<String>> executeCountQuery(Dataset dataset, MethodUtils.TRIPLE_TYPE countType) {
         List<List<String>> result = new ArrayList<>();
+
+        String selectField = "?s";
+        if (countType == MethodUtils.TRIPLE_TYPE.PREDICATE) {
+            selectField = "?p";
+        } else if (countType == MethodUtils.TRIPLE_TYPE.OBJECT) {
+            selectField = "?o";
+        }
 
         ParameterizedSparqlString queryString = new ParameterizedSparqlString();
         queryString.setCommandText(
-                "SELECT ?p (COUNT(*) AS ?count) " +
-                        "WHERE { ?s ?p ?o . } " +
-                        "GROUP BY ?p " +
-                        "ORDER BY DESC(?count)"
+                "SELECT " + selectField + " (COUNT(*) AS ?count) " +
+                        "WHERE { { ?s ?p ?o . } " +
+                        " UNION " +
+                        " { GRAPH ?g { ?s ?p ?o . } } }" +
+                        "GROUP BY " + selectField + " " +
+                        "ORDER BY DESC(?count) " +
+                        "LIMIT 10"
         );
 
         Query query = queryString.asQuery();
@@ -617,7 +626,7 @@ public class DatasetQueryService {
             while (results.hasNext()) {
                 var list= new ArrayList<String>();
                 QuerySolution solution = results.next();
-                list.add(getShortenUri(solution.getResource("p").getURI()));
+                list.add(getShortenUri(solution.getResource(selectField).getURI()));
                 list.add(solution.getLiteral("count").getString());
 
                 result.add(list);
@@ -628,15 +637,25 @@ public class DatasetQueryService {
         return result;
     }
 
-    public byte[] executeCountPredicatesQueryAndReturnByteArray(Dataset dataset) {
+    public byte[] executeCountQueryAndReturnByteArray(Dataset dataset, MethodUtils.TRIPLE_TYPE countType) {
         List<List<String>> result = new ArrayList<>();
+
+        String selectField = "?s";
+        if (countType == MethodUtils.TRIPLE_TYPE.PREDICATE) {
+            selectField = "?p";
+        } else if (countType == MethodUtils.TRIPLE_TYPE.OBJECT) {
+            selectField = "?o";
+        }
 
         ParameterizedSparqlString queryString = new ParameterizedSparqlString();
         queryString.setCommandText(
-                "SELECT ?p (COUNT(*) AS ?count) " +
-                        "WHERE { ?s ?p ?o . } " +
-                        "GROUP BY ?p " +
-                        "ORDER BY DESC(?count)"
+                "SELECT " + selectField + " (COUNT(*) AS ?count) " +
+                        "WHERE { { ?s ?p ?o . } " +
+                        " UNION " +
+                        " { GRAPH ?g { ?s ?p ?o . } } }" +
+                        "GROUP BY " + selectField + " " +
+                        "ORDER BY DESC(?count) " +
+                        "LIMIT 10"
         );
 
         // Prepare the query
