@@ -1,6 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
     <div th:fragment="statistic-predicate(statisticDetailsCount, statisticDetailsCoOc, dataset)"
         typeof="qb:DataSet" th:about="${dataset}"
+         th:unless="${statisticDetailsCount == null or statisticDetailsCount.size() == 0}"
     >
         <div class="section-item">
             <h6>Predicate Count In Triplets</h6>
@@ -19,13 +20,15 @@
         <div class="section-item">
             <h6> Co-occurrence Predicates</h6>
             <div th:each="item : ${statisticDetailsCoOc}" typeof="qb:Observation">
-                <div class="badge bg-success me-2 mb-2">
+                <div class="badge bg-success me-2 mb-2"
+                     th:hx-post=" '/toggle-predicate?predicate='+ ${item[0]}"
+                     hx-target="#active-filter-predicates"
+                    hx-swap="beforeEnd" hx-trigger="click">
                     <span rel="qb:dimension" resource="#predicateDimension" th:text="${item[0]}"></span>
                     <span property="qb:measure" th:content="${item[1]}" th:text="': ' + ${item[1]}"></span>
                 </div>
 
             </div>
         </div>
-
     </div>
 </html>

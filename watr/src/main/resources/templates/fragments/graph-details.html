@@ -72,13 +72,16 @@
             <p>No details found</p>
         </div>
     </div>
+
     <!-- Statistics Section (example, you can add your own content here) -->
-    <div role="tabpanel" class="tab-pane fade" id="statisticsContent" aria-labelledby="statisticsContent" th:switch="${statisticType}">
-        <div th:case="'predicate'" th:replace="~{fragments/graph-details-statistics/graph-details-predicate::
-         statistic-predicate(statisticDetailsCount= ${statisticDetailsCount}, statisticDetailsCoOc = ${statisticDetailsCoOc}, dataset=${dataset})}"
-        ></div>
-        <!-- <div th:case="'predicate'" th:replace="graph-details-statistics/graph-details-predicate:: statistic-predicate"></div>
-        <div th:case="'predicate'" th:replace="graph-details-statistics/graph-details-predicate:: statistic-predicate"></div> -->
+    <div role="tabpanel" class="tab-pane fade" id="statisticsContent" aria-labelledby="statisticsContent">
+         <div th:if="${statisticType == 'predicate'}" th:replace="~{fragments/graph-details-statistics/graph-details-predicate::
+          statistic-predicate(statisticDetailsCount= ${statisticDetailsCount}, statisticDetailsCoOc = ${statisticDetailsCoOc}, dataset=${dataset})}"
+         ></div>
+         <div th:if="${statisticType == 'subject'}" th:replace="~{fragments/graph-details-statistics/graph-details-subject::
+          statistic-subject(statisticCount= ${statisticCount}, outDegree = ${outDegree}, dataset=${dataset})}"
+         ></div>
+
     </div>
 </div>
 

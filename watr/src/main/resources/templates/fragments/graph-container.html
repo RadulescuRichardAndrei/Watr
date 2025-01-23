@@ -79,14 +79,19 @@
             var node = nodes.get(nodeId);
 
             if (node) {
-
-                document.getElementById('details').setAttribute(
-                    'hx-get',
-                    `/details-node?dataset=${encodeURIComponent(dataset)}&name=${encodeURIComponent(node.label)}`
-                );
+                if (node.type === 'subject'){
+                    document.getElementById('details').setAttribute(
+                        'hx-get',
+                        `/details-subject?dataset=${encodeURIComponent(dataset)}&name=${encodeURIComponent(node.label)}`
+                    );
+                } else if (node.type === 'object'){
+                    document.getElementById('details').setAttribute(
+                        'hx-get',
+                        `/details-object?dataset=${encodeURIComponent(dataset)}&name=${encodeURIComponent(node.label)}`
+                    );
+                }
                 htmx.process(document.getElementById('details'));
                 htmx.trigger("#details","triggerDetailsRequest")
-                //document.body.dispatchEvent(new Event('triggerDetailsRequest'))
             }
         }
         else if (params.edges.length > 0) {

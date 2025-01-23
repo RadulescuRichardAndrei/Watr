@@ -1,4 +1,4 @@
-package com.web.watr.services;
+package com.web.watr.services.query;
 
 import com.web.watr.beans.FilterBean;
 import com.web.watr.utils.MethodUtils;
@@ -7,7 +7,6 @@ import org.apache.jena.arq.querybuilder.SelectBuilder;
 import org.apache.jena.arq.querybuilder.WhereBuilder;
 import org.apache.jena.atlas.json.JsonArray;
 import org.apache.jena.atlas.json.JsonObject;
-import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.riot.Lang;
@@ -16,122 +15,19 @@ import org.apache.jena.sparql.expr.ExprVar;
 import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.syntax.ElementGroup;
 import org.apache.jena.sparql.syntax.ElementService;
-import org.apache.jena.vocabulary.RDF;
 
 import java.io.ByteArrayOutputStream;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class DatasetQueryService {
+public class DatasetQueryService extends GenericQueryService {
 
-    private static final List<Map.Entry<String,String>> NAMESPACE_PREFIXES = new ArrayList<>(List.of(
-            Map.entry("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "rdf"),
-            Map.entry("http://www.w3.org/2000/01/rdf-schema#", "rdfs"),
-            Map.entry("http://www.w3.org/2002/07/owl#", "owl"),
-            Map.entry("http://schema.org/", "schema"),
-            Map.entry("http://www.w3.org/2001/XMLSchema#", "xsd"),
-            Map.entry("http://www.w3.org/ns/foaf#", "foaf"),
-            Map.entry("http://xmlns.com/foaf/0.1/", "foaf1"),
-            Map.entry("http://www.w3.org/2002/12/cal/ical#", "ical"),
-            Map.entry("http://www.w3.org/ns/dc#", "dc"),
-            Map.entry("http://purl.org/dc/elements/1.1/", "dc1"),
-            Map.entry("http://purl.org/dc/terms/", "dcterms"),
-            Map.entry("http://www.w3.org/ns/prov#", "prov"),
-            Map.entry("http://www.w3.org/ns/skos#", "skos"),
-            Map.entry("http://www.w3.org/2004/02/skos/core#", "skos"),
-            Map.entry("http://www.opengis.net/ont/geosparql#", "geo"),
-            Map.entry("http://www.w3.org/ns/ldp#", "ldp"),
-            Map.entry("http://www.w3.org/ns/shacl#", "shacl"),
-            Map.entry("http://www.w3.org/ns/solid/terms#", "solid"),
-            Map.entry("https://www.w3.org/ns/activitystreams#", "as"),
-            Map.entry("https://www.w3.org/ns/webvtt#", "vtt"),
-            Map.entry("http://www.w3.org/ns/oa#", "oa"),
-            Map.entry("http://www.w3.org/2001/XMLSchema-instance#", "xsi"),
-            Map.entry("http://dbpedia.org/property/", "dbpedia"),
-            Map.entry("http://www.wikidata.org/entity/", "wikidata"),
-            Map.entry("http://dbpedia.org/ontology/", "dbpedia_ontology"),
-            Map.entry("http://www.openlinksw.com/schemas/virtrdf#", "virtrdf"),
-            Map.entry("http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#", "dul")
-
-    ));
 
     public DatasetQueryService() {
-        NAMESPACE_PREFIXES.sort(Comparator.comparingInt((Map.Entry<String, String> entry) -> entry.getValue().length()).reversed());
+        super();
     }
-
-    private String getShortenUri(String uri) {
-        if (uri == null)
-            return null;
-
-        for (Map.Entry<String, String> entry : NAMESPACE_PREFIXES) {
-            if (uri.startsWith(entry.getKey())) {
-                String localName = uri.substring(entry.getKey().length());
-                return entry.getValue() + ":" + localName;
-            }
-        }
-        return uri;
-    }
-
-    private String getLongUri(String uri){
-        if (uri == null)
-            return null;
-        if (!uri.contains(":")){
-            var exactMatch= NAMESPACE_PREFIXES.stream().filter(entry -> entry.getValue().equals(uri)).findFirst().orElse(null);
-            if (exactMatch != null)
-                return exactMatch.getKey();
-
-            var result= NAMESPACE_PREFIXES.stream().filter(entry -> entry.getValue().startsWith(uri)).findFirst().orElse(null);
-            return (result != null) ? result.getKey() : null;
-        }
-
-        for (Map.Entry<String, String> entry : NAMESPACE_PREFIXES)
-            if(uri.startsWith(entry.getValue())){
-                String localName= uri.substring(entry.getValue().length()+1);
-                return entry.getKey() + localName;
-            }
-        return uri;
-    }
-    private String getPrefix(String uri) {
-        for (Map.Entry<String, String> entry : NAMESPACE_PREFIXES) {
-            if (uri.startsWith(entry.getKey())) {
-                return entry.getValue() + ": " + entry.getKey();
-            }
-        }
-        return null;
-    }
-    private String getSuffix(String uri){
-        for (Map.Entry<String, String> entry : NAMESPACE_PREFIXES) {
-            if (uri.startsWith(entry.getKey())) {
-                return uri.substring(entry.getKey().length());
-            }
-        }
-        return uri;
-    }
-    public List<String> getAllDetails(String uri){
-        String longUri = getLongUri(uri);
-        List<String> details = new ArrayList<>();
-        NAMESPACE_PREFIXES.stream()
-                .filter(entry-> longUri.startsWith(entry.getKey()))
-                .findFirst().ifPresentOrElse(
-                    entry -> details.add(entry.getKey()),
-                    () -> details.add(null)
-                );
-        details.add(longUri);
-        int index= Math.max(uri.lastIndexOf(':'), uri.lastIndexOf('/'));
-        details.add(index > -1 ? uri.substring(index+1) : null);
-        return details;
-    }
-
-    public Dataset loadDataset(Path path) {
-        return RDFDataMgr.loadDataset(path.toString());
-    }
-
     public List<List<String>> executePagedSelectQuery(Dataset dataset, int page, int pageSize) {
         int offset= page* pageSize;
-        /*String queryString = "SELECT ?subject ?predicate ?object " +
-                "WHERE { GRAPH ?g { ?subject ?predicate ?object } } " + // Use GRAPH to account for named graphs
-                "LIMIT " + pageSize + " OFFSET " + offset;*/
 
         SelectBuilder selectBuilder = new SelectBuilder().addVar("subject")
                 .addVar("predicate")
@@ -365,6 +261,7 @@ public class DatasetQueryService {
                     JsonObject jsonNode= new JsonObject();
                     jsonNode.put("id",subject);
                     jsonNode.put("label", getShortenUri(subject));
+                    jsonNode.put("type","subject");
                     nodes.add(jsonNode);
                     nodeSet.add(subject);
                 }
@@ -373,9 +270,9 @@ public class DatasetQueryService {
 
                     jsonNode.put("id",object);
                     jsonNode.put("label", getShortenUri(object));
+                    jsonNode.put("type","object");
                     nodes.add(jsonNode);
-                    //if(solution.get("object").isResource())
-                        nodeSet.add(object);
+                    nodeSet.add(object);
                 }
                 JsonObject jsonNode= new JsonObject();
                 jsonNode.put("from",subject);
@@ -520,181 +417,8 @@ public class DatasetQueryService {
         return Arrays.asList(equivalentProperties, subProperties, inverseProperties, domains, ranges);
     }
 
-    public List<Integer> executePredicateCountQuery(Dataset dataset, String predicate) {
-        List<Integer> statistic = new ArrayList<>();
 
-        predicate= new StringBuilder().append("<").append(getLongUri(predicate)).append(">").toString();
-        var queryString= new ParameterizedSparqlString();
-        queryString.setCommandText("SELECT (COUNT(*) AS ?count)" +
-                "WHERE { " +
-                "?subject ?predicate ?object . " +
-                "FILTER (?predicate = " + predicate + ") " +  // Filter for the specific predicate
-                "}");
 
-        Query query = queryString.asQuery();
 
-        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
-            ResultSet result = qe.execSelect();
-            if (result.hasNext()) {
-                QuerySolution sol = result.next();
-                statistic.add(sol.getLiteral("count").getInt());
-            }
-        } catch (Exception e) {
-            return null;
-        }
-        queryString= new ParameterizedSparqlString();
-        queryString.setCommandText("SELECT (COUNT(*) AS ?count)" +
-                "WHERE { " +
-                "?subject ?predicate ?object . " +
-                "}");
-
-        query = queryString.asQuery();
-
-        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
-            ResultSet result = qe.execSelect();
-            if (result.hasNext()) {
-                QuerySolution sol = result.next();
-                statistic.add(sol.getLiteral("count").getInt());
-            }
-        } catch (Exception e) {
-            return null;
-        }
-
-        return statistic;
-    }
-
-    public List<List<String>> executeCoOccurringPredicatesQuery(Dataset dataset, String predicate) {
-        List<List<String>> result = new ArrayList<>();
-
-        predicate= new StringBuilder().append("<").append(getLongUri(predicate)).append(">").toString();
-
-        ParameterizedSparqlString queryString = new ParameterizedSparqlString();
-        queryString.setCommandText(
-                "SELECT ?p (COUNT(*) AS ?count) " +
-                        "WHERE { " +
-                        " ?s "+ predicate +" ?o ." +
-                        " ?s ?p ?o2 . " +
-                        "  FILTER(?p != " + predicate + ") " +       // Exclude the same predicate
-                        "} " +
-                        "GROUP BY ?p " +
-                        "ORDER BY DESC(?count)"
-        );
-
-        Query query = queryString.asQuery();
-
-        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
-            ResultSet results = qe.execSelect();
-            while (results.hasNext()) {
-                var list= new ArrayList<String>();
-                QuerySolution solution = results.next();
-                list.add(getShortenUri(solution.getResource("p").getURI()));
-                list.add(solution.getLiteral("count").getString());
-
-                result.add(list);
-            }
-        } catch (Exception e) {
-            return null;
-        }
-        return result;
-    }
-
-    public List<List<String>> executeCountQuery(Dataset dataset, MethodUtils.TRIPLE_TYPE countType) {
-        List<List<String>> result = new ArrayList<>();
-
-        String selectField = "?s";
-        if (countType == MethodUtils.TRIPLE_TYPE.PREDICATE) {
-            selectField = "?p";
-        } else if (countType == MethodUtils.TRIPLE_TYPE.OBJECT) {
-            selectField = "?o";
-        }
-
-        ParameterizedSparqlString queryString = new ParameterizedSparqlString();
-        queryString.setCommandText(
-                "SELECT " + selectField + " (COUNT(*) AS ?count) " +
-                        "WHERE { { ?s ?p ?o . } " +
-                        " UNION " +
-                        " { GRAPH ?g { ?s ?p ?o . } } }" +
-                        "GROUP BY " + selectField + " " +
-                        "ORDER BY DESC(?count) " +
-                        "LIMIT 10"
-        );
-
-        Query query = queryString.asQuery();
-
-        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
-            ResultSet results = qe.execSelect();
-            while (results.hasNext()) {
-                var list= new ArrayList<String>();
-                QuerySolution solution = results.next();
-                list.add(getShortenUri(solution.getResource(selectField).getURI()));
-                list.add(solution.getLiteral("count").getString());
-
-                result.add(list);
-            }
-        } catch (Exception e) {
-            return null;
-        }
-        return result;
-    }
-
-    public byte[] executeCountQueryAndReturnByteArray(Dataset dataset, MethodUtils.TRIPLE_TYPE countType) {
-        List<List<String>> result = new ArrayList<>();
-
-        String selectField = "?s";
-        if (countType == MethodUtils.TRIPLE_TYPE.PREDICATE) {
-            selectField = "?p";
-        } else if (countType == MethodUtils.TRIPLE_TYPE.OBJECT) {
-            selectField = "?o";
-        }
-
-        ParameterizedSparqlString queryString = new ParameterizedSparqlString();
-        queryString.setCommandText(
-                "SELECT " + selectField + " (COUNT(*) AS ?count) " +
-                        "WHERE { { ?s ?p ?o . } " +
-                        " UNION " +
-                        " { GRAPH ?g { ?s ?p ?o . } } }" +
-                        "GROUP BY " + selectField + " " +
-                        "ORDER BY DESC(?count) " +
-                        "LIMIT 10"
-        );
-
-        // Prepare the query
-        Query query = queryString.asQuery();
-
-        // Create a new model to hold the RDF Data Cube data
-        Model model = ModelFactory.createDefaultModel();
-        Resource observationClass = model.createResource("http://www.w3.org/ns/sd#Observation");
-        Property dimensionProperty = model.createProperty("http://purl.org/qb#dimension");
-        Property measureProperty = model.createProperty("http://purl.org/qb#measure");
-        Property typeProperty = RDF.type;
-
-        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
-            ResultSet results = qe.execSelect();
-
-            // Iterate through the results and add them to the model
-            while (results.hasNext()) {
-                QuerySolution solution = results.next();
-                String predicateUri = solution.getResource("p").getURI();
-                String count = solution.getLiteral("count").getString();
-
-                Resource observation = model.createResource();
-
-                observation.addProperty(typeProperty, observationClass);
-
-                observation.addProperty(dimensionProperty, model.createResource(predicateUri));
-
-                observation.addProperty(measureProperty, model.createTypedLiteral(count, XSDDatatype.XSDint));
-            }
-        } catch (Exception e) {
-            return null;
-        }
-
-        // Serialize the model to JSON-LD format
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        RDFDataMgr.write(outputStream, model, Lang.JSONLD);
-
-        // Return the byte array
-        return outputStream.toByteArray();
-    }
 
 }

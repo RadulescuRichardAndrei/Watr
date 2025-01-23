@@ -1,7 +1,8 @@
 package com.web.watr.controllers;
 
 import com.web.watr.beans.FilterBean;
-import com.web.watr.services.DatasetQueryService;
+import com.web.watr.services.query.DatasetQueryService;
+import com.web.watr.services.query.StatisticQueryService;
 import com.web.watr.utils.MethodUtils;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.query.Dataset;
@@ -23,10 +24,12 @@ public class DatasetStatisticController {
     @Autowired
     private FilterBean filters;
     private static DatasetQueryService datasetQueryService;
+    private static StatisticQueryService statisticQueryService;
 
     @PostConstruct
     public void init(){
         datasetQueryService=new DatasetQueryService();
+        statisticQueryService= new StatisticQueryService();
     }
 
     @GetMapping("/visualize-statistic-page")
@@ -43,8 +46,8 @@ public class DatasetStatisticController {
 
         var type=MethodUtils.TRIPLE_TYPE.valueOf(tripleType.toUpperCase());
         Path path = Paths.get(datasetPath, dataset);
-        Dataset ds= datasetQueryService.loadDataset(path);
-        var result = datasetQueryService.executeCountQuery(ds, type);
+        Dataset ds= statisticQueryService.loadDataset(path);
+        var result = statisticQueryService.executeCountQuery(ds, type);
         model.addAttribute("counts", result);
         return "/fragments/statistics/counts";
     }

@@ -1,7 +1,8 @@
 package com.web.watr.controllers;
 
 import com.web.watr.beans.FilterBean;
-import com.web.watr.services.DatasetQueryService;
+import com.web.watr.services.query.DatasetQueryService;
+import com.web.watr.services.query.StatisticQueryService;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.query.Dataset;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,14 @@ public class DatasetVisualizeController {
     private static int pageSize;
     private static int pageSizeSmall;
     private static DatasetQueryService datasetQueryService;
+    private static StatisticQueryService statisticQueryService;
 
     @PostConstruct
     public void init(){
         pageSize=20;
         pageSizeSmall=8;
         datasetQueryService=new DatasetQueryService();
+        statisticQueryService= new StatisticQueryService();
     }
 
     @GetMapping("/visualize-table-page")
@@ -181,19 +184,53 @@ public class DatasetVisualizeController {
                     .body(new ByteArrayResource(result));
 
     }
-    @GetMapping("/details-node")
+    @GetMapping("/details-subject")
     public String getNodeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
-        //Path path = Paths.get(datasetPath, dataset);
-        //Dataset ds= datasetQueryService.loadDataset(path);
-        System.out.println("HEY");
+        Path path = Paths.get(datasetPath, dataset);
+        Dataset ds1= datasetQueryService.loadDataset(path);
+        Dataset ds2= statisticQueryService.loadDataset(path);
 
+        var vc= datasetQueryService.getAllDetails(name);
+        var vcContent=List.of(
+                new AbstractMap.SimpleEntry<>("Prefix", vc.get(0)),
+                new AbstractMap.SimpleEntry<>("Long URI", vc.get(1)),
+                new AbstractMap.SimpleEntry<>("Suffix", vc.get(2))
+        );
+        var outDegree= statisticQueryService.getOutDegreeSubject(ds2, name);
+        var statisticCount= statisticQueryService.getPredicateObjectCountsForSubject(ds2, name);
+
+        model.addAttribute("relationDetails", null);
+        model.addAttribute("statisticType","subject");
+        model.addAttribute("outDegree", outDegree);
+        model.addAttribute("statisticCount", statisticCount);
+        model.addAttribute("vocabDetails", vcContent);
+        model.addAttribute("dataset",dataset);
         return "fragments/graph-details";
     }
+    /*
+    * Object
+
+Is Resource / Is Literal
+In-Degree
+Out-Degree (r)
+Predicate Count
+Datatype (l)
+Range [min max] (l)
+Average (l)
+Language tag
+
+TO DO TOMORRRRROW details-object
+    *
+    * */
+
+
     @GetMapping("/details-edge")
     public String getEdgeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
         Path path = Paths.get(datasetPath, dataset);
-        Dataset ds= datasetQueryService.loadDataset(path);
-        var result = datasetQueryService.getDetailsAboutPredicate(ds, name);
+        Dataset ds1= datasetQueryService.loadDataset(path);
+        Dataset ds2= statisticQueryService.loadDataset(path);
+
+        var result = datasetQueryService.getDetailsAboutPredicate(ds1, name);
         var vc= datasetQueryService.getAllDetails(name);
 
         var vcContent=List.of(
@@ -201,8 +238,8 @@ public class DatasetVisualizeController {
                 new AbstractMap.SimpleEntry<>("Long URI", vc.get(1)),
                 new AbstractMap.SimpleEntry<>("Suffix", vc.get(2))
         );
-        var statisticCount= datasetQueryService.executePredicateCountQuery(ds, name);
-        var statisticCoOc= datasetQueryService.executeCoOccurringPredicatesQuery(ds, name);
+        var statisticCount= statisticQueryService.executePredicateCountQuery(ds2, name);
+        var statisticCoOc= statisticQueryService.executeCoOccurringPredicatesQuery(ds2, name);
 
         model.addAttribute("relationDetails", result);
         model.addAttribute("vocabDetails", vcContent);
@@ -213,4 +250,6 @@ public class DatasetVisualizeController {
 
         return "fragments/graph-details";
     }
+
+
 }

@@ -1,3 +1,33 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <div th:fragment="statistic-subject(statisticCount, outDegree, dataset)"
+         typeof="qb:DataSet" th:about="${dataset}"
+         th:unless="${statisticCount == null or statisticCount.size() == 0}"
+    >
+        <div class="section-item" >
+            <h6>Object count for subject-predicate pair</h6>
+
+            <div th:each="item: ${statisticCount}">
+                <div class="badge bg-success me-2 mb-2" typeof="qb:Observation" rel="qb:dimension" resource="#objectDimension">
+                        <span th:text="${item[0]}"></span>
+                </div>
+                <div class="badge bg-success me-2 mb-2" typeof="qb:Observation" property="qb:measure" th:content="${item[1]}">
+                    <span th:text="${item[1]}"></span>
+                </div>
+            </div>
+        </div>
+        <div class="section-item">
+            <h6>Out-Degree</h6>
+            <div class="badge bg-success me-2 mb-2" typeof="qb:Observation">
+                <!-- Predicate -->
+                <div rel="qb:dimension" resource="#predicateObjectCount">
+                    <span th:text="'Predicate-Object Pairs for subject count:'"></span>
+                </div>
+
+                <!-- Count Value -->
+                <div property="qb:measure" th:content="${outDegree}">
+                    <span th:text="${outDegree}"></span>
+                </div>
+            </div>
+        </div>
 
 </html>
