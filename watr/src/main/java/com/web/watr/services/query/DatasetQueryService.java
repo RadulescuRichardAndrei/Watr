@@ -267,7 +267,6 @@ public class DatasetQueryService extends GenericQueryService {
                 }
                 if (!nodeSet.contains(object)) {
                     JsonObject jsonNode= new JsonObject();
-
                     jsonNode.put("id",object);
                     jsonNode.put("label", getShortenUri(object));
                     jsonNode.put("type","object");

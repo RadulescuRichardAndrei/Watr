@@ -129,10 +129,17 @@ public class StatisticQueryService extends GenericQueryService{
         queryString.setCommandText(
                 "SELECT ?p (COUNT(*) AS ?count) " +
                         "WHERE { " +
-                        " ?s "+ predicate +" ?o ." +
-                        " ?s ?p ?o2 . " +
-                        "  FILTER(?p != " + predicate + ") " +       // Exclude the same predicate
-                        "} " +
+                        "  { " +
+                        "    ?s " + predicate + " ?o . " +
+                        "    ?s ?p ?o2 . " +
+                        "    FILTER(?p != " + predicate + ") " + // Exclude the same predicate
+                        "  } " +
+                        "  UNION { " +
+                        "    GRAPH ?g { " +
+                        "      ?s " + predicate + " ?o . " +
+                        "      ?s ?p ?o2 . " +
+                        "      FILTER(?p != " + predicate + ") " + // Exclude the same predicate
+                        "    } } } " +
                         "GROUP BY ?p " +
                         "ORDER BY DESC(?count)"
         );
@@ -232,6 +239,116 @@ public class StatisticQueryService extends GenericQueryService{
         return predicateCounts;
     }
 
+    public List<List<String>> getPredicateSubjectCountsForObject(Dataset dataset, String object) {
+        List<List<String>> predicateCounts = new ArrayList<>();
+
+        object = new StringBuilder().append("<").append(getLongUri(object)).append(">").toString();
+        var queryString = new ParameterizedSparqlString();
+
+        queryString.setCommandText("SELECT ?predicate (COUNT(?subject) AS ?count) " +
+                "WHERE { " +
+                "?subject ?predicate " + object + " . " +
+                "} GROUP BY ?predicate");
+
+        Query query = queryString.asQuery();
+
+        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet result = qe.execSelect();
+
+            while (result.hasNext()) {
+                QuerySolution sol = result.next();
+                String predicate = sol.getResource("predicate").toString();
+                int count = sol.getLiteral("count").getInt();
+
+                List<String> entry = new ArrayList<>();
+                entry.add(predicate);
+                entry.add(String.valueOf(count));
+
+                predicateCounts.add(entry);
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        return predicateCounts;
+    }
+
+    public List<List<String>> extractInfoForObject(Dataset dataset, String object) {
+        if (!MethodUtils.isObjectLiteral(object))
+            object = new StringBuilder().append("<").append(getLongUri(object)).append(">").toString();
+        else if (object.contains("^^")) {
+            String[] parts = object.split("\\^\\^");
+            object = parts[0] + "^^" + '<' + getLongUri(parts[1]) + '>';
+        } else
+            object = getLongUri(object);
+        List<List<String>> literalInfo = new ArrayList<>();
+
+        String queryText= null;
+        if(!MethodUtils.isObjectLiteral(object)){
+            queryText= "SELECT ?p (COUNT(?o) as ?count) ?lang "+
+                    "WHERE { { ?s ?p ?o .} " +
+                    "UNION { GRAPH ?g {?s ?p ?o} }" +
+                    "FILTER(?o = " + object + ") " +
+                    "OPTIONAL { BIND(LANG(?o) AS ?lang)} }" +
+                    "GROUP BY ?p ?lang";
+        }else {
+            queryText = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
+                    "SELECT ?p ?datatype " +
+                    "(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), MIN(?o), '') AS ?min) " +
+                    "(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), MAX(?o), '') AS ?max) " +
+                    "(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), AVG(?o), '') AS ?avg) " +
+                    "WHERE { " +
+                    "{ ?s ?p ?o . } " +
+                    "UNION { GRAPH ?g { ?s ?p ?o } } " +
+                    "FILTER(?o = " + object + ") " +
+                    "} " +
+                    "GROUP BY ?p ?datatype ?o";
+        }
+        var queryString = new ParameterizedSparqlString(queryText);
+
+        Query query = queryString.asQuery();
+
+        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet result = qe.execSelect();
+
+            while (result.hasNext()) {
+                QuerySolution sol = result.next();
+                List<String> entry = new ArrayList<>();
+
+                String predicate = getShortenUri(sol.getResource("p").toString());
+                if (!MethodUtils.isObjectLiteral(object)){
+                    entry.add("Resource");
+                    entry.add(predicate);
+
+                    var count= sol.getLiteral("count").getInt();
+                    String languageTag = sol.contains("lang") ? sol.getLiteral("lang").getString() : "null";
+                    entry.add(String.valueOf(count));
+                    entry.add(languageTag);
+
+                }else{
+                    entry.add("Literal");
+                    entry.add(predicate);
+
+                    String datatype = sol.contains("datatype") ? sol.getResource("datatype").toString() : "null";
+                    String min = sol.contains("min") && !sol.getLiteral("min").getString().isEmpty() ? sol.getLiteral("min").getString() : "null";
+                    String max = sol.contains("max") && !sol.getLiteral("max").getString().isEmpty()  ? sol.getLiteral("max").getString() : "null";
+                    String avg = sol.contains("avg") && !sol.getLiteral("avg").getString().isEmpty()  ? sol.getLiteral("avg").getString() : "null";
+
+                    entry.add(datatype);
+                    entry.add(min);
+                    entry.add(max);
+                    entry.add(avg);
+                }
+                literalInfo.add(entry);
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        return literalInfo;
+    }
+
+
     public Integer getOutDegreeSubject(Dataset dataset, String subject) {
         int outDegree = 0;
 
@@ -239,8 +356,10 @@ public class StatisticQueryService extends GenericQueryService{
         var queryString = new ParameterizedSparqlString();
 
         queryString.setCommandText("SELECT (COUNT(*) AS ?count) " +
-                "WHERE { " +
-                subject + " ?predicate ?object . " +
+                "WHERE { {" +
+                subject + " ?predicate ?object . }" +
+                " UNION " +
+                " { GRAPH ?g { " + subject + " ?predicate ?object . } }" +
                 "}");
 
         Query query = queryString.asQuery();
@@ -257,6 +376,42 @@ public class StatisticQueryService extends GenericQueryService{
         }
 
         return outDegree;
+    }
+
+    public Integer getInDegreeObject(Dataset dataset, String object) {
+        int inDegree = 0;
+        if (!MethodUtils.isObjectLiteral(object))
+            object = new StringBuilder().append("<").append(getLongUri(object)).append(">").toString();
+        else if (object.contains("^^")) {
+            String[] parts = object.split("\\^\\^");
+            object = parts[0] + "^^" + '<' + getLongUri(parts[1]) + '>';
+        } else
+            object = getLongUri(object);
+
+
+        var queryString = new ParameterizedSparqlString();
+
+        queryString.setCommandText("SELECT (COUNT(*) AS ?count) " +
+                "WHERE { { ?subject ?predicate ?object . }" +
+                " UNION " +
+                " { GRAPH ?g { ?subject ?predicate ?object . } } "+
+                "FILTER(?object = " + object + ")"+
+                "}");
+
+        Query query = queryString.asQuery();
+
+        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet result = qe.execSelect();
+
+            if (result.hasNext()) {
+                QuerySolution sol = result.next();
+                inDegree = sol.getLiteral("count").getInt();
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        return inDegree;
     }
 
 

@@ -2,7 +2,7 @@
 
 <th:block th:fragment="listItems()">
     <div th:id="${label}+ '-list'">
-    <li th:each="item : ${paginatedList}" class="dropdown-item">
+    <li th:each="item, iterStart : ${paginatedList}" class="dropdown-item">
         <input type="checkbox" class="form-check-input"
                th:id="${label}+ '-list-item-' +${item}"
                th:checked="${filters.containsInList(label,item)}"
@@ -10,8 +10,10 @@
                th:hx-post="'/toggle-'+${label}+'?'+${label}+'='+${item}"
                hx-swap="beforeEnd"
                hx-trigger="change"
+               th:name="${item}"
         />
-        <label class="form-check-label" th:for="${item}" th:text="${item}"></label>
+        <label class="form-check-label" th:for="${label}+ '-list-item-' +${item}"
+                th:text="${item}"></label>
     </li>
     <!-- Load More -->
     <li>

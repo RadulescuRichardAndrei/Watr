@@ -1,3 +1,72 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:fragment="statistic-object(statisticObject, outDegree, inDegree, dataset)"
+     typeof="qb:DataSet" th:about="${dataset}"
+     th:unless="${statisticObject == null and inDegree == null}"
+>
+    <div class="section-item">
+        <h6>Out-Degree / In-Degree</h6>
+        <div class="badge bg-success me-2 mb-2" typeof="qb:Observation">
+
+            <div rel="qb:dimension" resource="#objectOutDegree">
+                <span text="Out-Degree:"></span>
+            </div>
+
+            <div property="qb:measure" th:content="${outDegree}" id="objectOutDegree">
+                <span th:text="${outDegree}"></span>
+            </div>
+        </div>
+
+        <div class="badge bg-success me-2 mb-2"> <span>/</span></div>
+
+        <div class="badge bg-success me-2 mb-2" typeof="qb:Observation">
+
+            <div rel="qb:dimension" resource="#objectInDegree">
+                <span text="In-Degree: "></span>
+            </div>
+            <div property="qb:measure" th:content="${inDegree}" id="objectInDegree">
+                <span th:text="${inDegree}"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div th:each="item: ${statisticObject}" class="overflow-scroll" style="max-height: 500px;">
+            <div class="section-item">
+                <h6> Type of object</h6>
+                <div class="badge bg-success me-2 mb-2" >
+                    <span th:text="${item[0]}"></span>
+                </div>
+            </div>
+            <div class="section-item">
+                <h6>Object statistic by predicate</h6>
+                <div th:if="${item[0] == 'Resource'}"  class="badge bg-success me-2 mb-2" >
+                    <span th:text="${item[1]} + ' appears with object: ' + ${item[2]} + ' times'"></span>
+                </div>
+                <div th:if="${item[0] == 'Resource' and item[3] != 'null'}"  class="badge bg-success me-2 mb-2" >
+                    <span th:text="'Language of object is: ' + ${item[3]}"></span>
+                </div>
+
+                <div th:if="${item[0] == 'Literal'}"  class="badge bg-success me-2 mb-2" >
+                    <span th:text="${item[1]} + ' appears with object'"></span>
+                </div>
+                <div th:if="${item[0] == 'Literal' and item[2] != 'null'}"  class="badge bg-success me-2 mb-2" >
+                    <span th:text="'Has datatype: ' + ${item[2]}"></span>
+                </div>
+
+                <div th:if="${item[0] == 'Literal' and item[3] != 'null'}"  class="badge bg-success me-2 mb-2" >
+                    <span th:text="'Minimum value for predicate: ' + ${item[3]}"></span>
+                </div>
+                <div th:if="${item[0] == 'Literal' and item[4] != 'null'}"  class="badge bg-success me-2 mb-2" >
+                    <span th:text="'Maximum value for predicate: ' + ${item[4]}"></span>
+                </div>
+                <div th:if="${item[0] == 'Literal' and item[5] != 'null'}"  class="badge bg-success me-2 mb-2" >
+                    <span th:text="'Average value for predicate: ' + ${item[5]}"></span>
+                </div>
+
+            </div>
+        </div>
+
+
 
 </html>

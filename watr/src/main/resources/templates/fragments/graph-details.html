@@ -81,6 +81,9 @@
          <div th:if="${statisticType == 'subject'}" th:replace="~{fragments/graph-details-statistics/graph-details-subject::
           statistic-subject(statisticCount= ${statisticCount}, outDegree = ${outDegree}, dataset=${dataset})}"
          ></div>
+        <div th:if="${statisticType == 'object'}" th:replace="~{fragments/graph-details-statistics/graph-details-object::
+          statistic-object(statisticObject= ${statisticObject}, outDegree = ${outDegree}, inDegree = ${inDegree}, dataset=${dataset})}"
+        ></div>
 
     </div>
 </div>

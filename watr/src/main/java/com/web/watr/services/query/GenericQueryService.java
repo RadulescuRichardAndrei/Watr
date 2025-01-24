@@ -94,6 +94,7 @@ public class GenericQueryService {
     }
     public List<String> getAllDetails(String uri){
         String longUri = getLongUri(uri);
+        if (longUri == null) return  null;
         List<String> details = new ArrayList<>();
         NAMESPACE_PREFIXES.stream()
                 .filter(entry-> longUri.startsWith(entry.getKey()))

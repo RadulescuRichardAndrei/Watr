@@ -10,6 +10,7 @@ public class MethodUtils {
     public static <T> boolean existsAndNotEmpty(List<T> list){
         return  (list !=null && !list.isEmpty());
     }
+    private static String languageTagRegex = "^[a-zA-Z]{2,8}(-[a-zA-Z0-9]{1,8})*(?:-[a-zA-Z]{2,3})*(?:-[a-zA-Z0-9]{1,8})*$";
     public static enum TRIPLE_TYPE {
         SUBJECT, PREDICATE, OBJECT;
     }
@@ -18,5 +19,10 @@ public class MethodUtils {
             return null;
 
         return filterId.replace(":","").replace('.','_').replace("//","_").replace("/","_");
+    }
+
+    public static boolean isObjectLiteral(String object){
+        return  (object.startsWith("\"") || object.contains("^^") || object.matches(".*@(" + languageTagRegex + ").*")
+        || (!object.contains("/") && !object.contains(":")));
     }
 }
