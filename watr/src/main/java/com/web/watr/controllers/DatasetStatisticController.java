@@ -52,7 +52,13 @@ public class DatasetStatisticController {
     public String getObjectDistributionForPredicate(@RequestParam() String dataset,
                                                     @RequestParam() String predicate,
                                                     Model model){
-        return "";
+
+        Path path = Paths.get(datasetPath, dataset);
+        Dataset ds= statisticQueryService.loadDataset(path);
+        var result= statisticQueryService.categorizeObjects(ds, predicate);
+        model.addAttribute("resourceObjects", result.getOtherObjects().isEmpty() ? null : result.getOtherObjects());
+        model.addAttribute("literalObjects", result.getNumericalLiterals().isEmpty() ? null : result.getNumericalLiterals());
+        return "/fragments/statistics/distribution";
     }
 
 

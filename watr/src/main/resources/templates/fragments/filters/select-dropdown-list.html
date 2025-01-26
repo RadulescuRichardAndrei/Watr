@@ -3,8 +3,8 @@
 <th:block th:fragment="listItems()">
     <div id="predicates-list'">
         <li th:each="item, iterStart : ${paginatedList}" class="dropdown-item">
-            <button class="btn btn-link" name="predicate" th:text="${item}"
-                    th:hx-get="${endpoint} + '&predicate=' + ${item}"
+            <button class="btn btn-link" name="predicate" th:text="${item}" th:value="${item}"
+                    th:hx-get="${endpoint}"
                     hx-target="#predicate-statistic" hx-swap="outerHTML"></button>
         </li>
         <!-- Load More -->

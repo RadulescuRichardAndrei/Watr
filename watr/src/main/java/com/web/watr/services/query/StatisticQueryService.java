@@ -431,6 +431,48 @@ public class StatisticQueryService extends GenericQueryService{
 
         return inDegree;
     }
+    public MethodUtils.CategorizedObjects categorizeObjects(Dataset dataset, String predicate) {
+        List<String> numericalLiterals = new ArrayList<>();
+        List<String> otherObjects = new ArrayList<>();
+
+
+        predicate =  new StringBuilder().append("<").append(getLongUri(predicate)).append(">").toString();
+
+        // SPARQL query to retrieve objects
+        var queryString = new ParameterizedSparqlString();
+        queryString.setCommandText("SELECT DISTINCT ?object WHERE { { ?s " + predicate +
+                " ?object . } UNION { GRAPH ?g { ?s "
+                 + predicate + "?object . } } }");
+
+        Query query = queryString.asQuery();
+
+        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet result = qe.execSelect();
+
+            while (result.hasNext()) {
+                QuerySolution sol = result.next();
+                var objNode = sol.get("object");
+
+                if (objNode != null) {
+                    if (objNode.isLiteral()) {
+                        String literalValue = objNode.asLiteral().getString();
+                        if (MethodUtils.isNumeric(literalValue)) {
+                            numericalLiterals.add(literalValue);
+                        } else {
+                            otherObjects.add(literalValue);
+                        }
+                    } else if (objNode.isResource()) {
+                        String resourceValue = getShortenUri(objNode.asResource().getURI());
+                        otherObjects.add(resourceValue);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        return new MethodUtils.CategorizedObjects(numericalLiterals, otherObjects);
+    }
 
 
 

@@ -1,0 +1,99 @@
+<html lang="en">
+<div class="d-flex flex-column align-items-center" id="predicate-statistic">
+    <!-- Pie Chart for Resource Objects -->
+    <div class="w-75 my-3" id="resource-chart-container">
+        <canvas id="myChart1" style="display: block"></canvas>
+    </div>
+    <!-- Density Chart for Literal Objects -->
+    <div class="w-75 my-3" id="literal-chart-container">
+        <canvas id="myChart2" style="display: block"></canvas>
+    </div>
+</div>
+
+<script th:inline="javascript">
+
+    var resourceObjects = /*[[${resourceObjects}]]*/ null;
+    var literalObjects = /*[[${literalObjects}]]*/ null;
+
+    // Hide the resource chart container if resourceObjects is null
+    if (resourceObjects === null) {
+        document.getElementById('resource-chart-container').style.display = 'none';
+    } else {
+        if (window.pieChart) {
+            window.pieChart.destroy();
+        }
+        // Aggregating data for unique resource objects
+        const resourceData = resourceObjects.reduce((acc, obj) => {
+            acc[obj] = (acc[obj] || 0) + 1;
+            return acc;
+        }, {});
+
+        const resourceLabels = Object.keys(resourceData);
+        const resourceValues = Object.values(resourceData);
+
+        // Creating the Pie Chart for Resource Objects
+        const ctx1 = document.getElementById('myChart1').getContext('2d');
+        var pieChart = new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: resourceLabels,
+                datasets: [{
+                    data: resourceValues,
+                    backgroundColor: resourceLabels.map((_, i) => `hsl(${i * 40}, 70%, 60%)`),
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    }
+
+    // Hide the literal chart container if literalObjects is null
+    if (literalObjects === null) {
+        document.getElementById('literal-chart-container').style.display = 'none';
+    } else {
+        if (window.distChart) {
+            window.distChart.destroy();
+        }
+        // Aggregating data for numerical literals
+        const literalValues = literalObjects.map(Number).sort((a, b) => b - a);
+
+        // Creating the Density Chart for Literal Objects
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
+        var distChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: literalValues,
+                datasets: [{
+                    label: 'Density',
+                    data: literalValues,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Literals'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Count'
+                        }
+                    }
+                }
+            }
+        });
+    }
+</script>
+</html>
