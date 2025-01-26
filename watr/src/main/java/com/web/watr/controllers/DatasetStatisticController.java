@@ -1,12 +1,10 @@
 package com.web.watr.controllers;
 
-import com.web.watr.beans.FilterBean;
 import com.web.watr.services.query.DatasetQueryService;
 import com.web.watr.services.query.StatisticQueryService;
 import com.web.watr.utils.MethodUtils;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.query.Dataset;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +19,7 @@ public class DatasetStatisticController {
 
     @Value("${fuseki.dataset.path}")
     private String datasetPath;
-    @Autowired
-    private FilterBean filters;
+
     private static DatasetQueryService datasetQueryService;
     private static StatisticQueryService statisticQueryService;
 
@@ -51,11 +48,10 @@ public class DatasetStatisticController {
         model.addAttribute("counts", result);
         return "/fragments/statistics/counts";
     }
-    @GetMapping("/general-statistics")
-    public String getGeneralStatistics(@RequestParam() String dataset,
-                                       Model model){
-
-        
+    @GetMapping("/statistic-predicate")
+    public String getObjectDistributionForPredicate(@RequestParam() String dataset,
+                                                    @RequestParam() String predicate,
+                                                    Model model){
         return "";
     }
 

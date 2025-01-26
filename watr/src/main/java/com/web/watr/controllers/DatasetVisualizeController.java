@@ -3,7 +3,6 @@ package com.web.watr.controllers;
 import com.web.watr.beans.FilterBean;
 import com.web.watr.services.query.DatasetQueryService;
 import com.web.watr.services.query.StatisticQueryService;
-import com.web.watr.utils.MethodUtils;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.query.Dataset;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,7 +105,7 @@ public class DatasetVisualizeController {
                                                     dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-subjects?dataset=" +
                                                     dataset + "&page=" + (page - 1) + searchParam : null);
-        return (firstRequest!=null && firstRequest) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ? "/fragments/filters/filter-dropdown" : "/fragments/filters/filter-dropdown-list" ;
     }
 
     @GetMapping("/filter-predicates")
@@ -131,7 +130,29 @@ public class DatasetVisualizeController {
                 dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-predicates?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
-        return (firstRequest!=null && firstRequest) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ? "/fragments/filters/filter-dropdown" : "/fragments/filters/filter-dropdown-list" ;
+    }
+    @GetMapping("/select-predicate")
+    public String getRDFDataPredicates2(@RequestParam String dataset,
+                                       @RequestParam(defaultValue = "0") int page,
+                                       @RequestParam(required = false) String search,
+                                       @RequestParam(name = "first-request", required = false) Boolean firstRequest,
+                                       Model model){
+        Path path = Paths.get(datasetPath, dataset);
+        Dataset ds= datasetQueryService.loadDataset(path);
+
+        List<String> subjects= datasetQueryService.executePagedSelectPredicates(ds,page, pageSizeSmall, search);
+
+        String searchParam = search != null && !search.isEmpty() ? "&search=" + search : "";
+
+        model.addAttribute("paginatedList", subjects);
+        model.addAttribute("endpoint","/statistic-predicate?dataset=" + dataset);
+        model.addAttribute("currentPage",page);
+        model.addAttribute("nextPage", (subjects.size() == pageSizeSmall) ? "/filter-predicates?dataset=" +
+                dataset + "&page=" + (page + 1) + searchParam : null);
+        model.addAttribute("previousPage", (page > 0) ? "/filter-predicates?dataset=" +
+                dataset + "&page=" + (page - 1) + searchParam : null);
+        return (firstRequest!=null && firstRequest) ? "/fragments/filters/select-dropdown" : "/fragments/filters/select-dropdown-list" ;
     }
     @GetMapping("/filter-objects")
     public String getRDFDataObjects(@RequestParam String dataset,
@@ -156,7 +177,7 @@ public class DatasetVisualizeController {
                 dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-objects?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
-        return (firstRequest!=null && firstRequest) ? "/fragments/filter-dropdown" : "/fragments/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ? "/fragments/filters/filter-dropdown" : "/fragments/filters/filter-dropdown-list" ;
     }
     @GetMapping("/generate-graph")
     public String getGraphRepresentation(@RequestParam String dataset, Model model){
@@ -211,7 +232,9 @@ public class DatasetVisualizeController {
     }
 
     @GetMapping("/details-object")
-    public String getObjectNodeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
+    public String getObjectNodeDetails(@RequestParam String dataset, @RequestParam String name,
+                                       @RequestParam(name = "object-type") String objectType,
+                                       Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds1= datasetQueryService.loadDataset(path);
         Dataset ds2= statisticQueryService.loadDataset(path);
@@ -229,10 +252,10 @@ public class DatasetVisualizeController {
         }
 
         int outDegree= 0;
-        if (!MethodUtils.isObjectLiteral(name))
+        if (objectType.equals("resource"))
             outDegree= statisticQueryService.getOutDegreeSubject(ds2, name);
-        var inDegree= statisticQueryService.getInDegreeObject(ds2, name);
-        var statisticObject= statisticQueryService.extractInfoForObject(ds2, name);
+        var inDegree= statisticQueryService.getInDegreeObject(ds2, name, objectType);
+        var statisticObject= statisticQueryService.extractInfoForObject(ds2, name, objectType);
 
         model.addAttribute("relationDetails", null);
         model.addAttribute("statisticType","object");

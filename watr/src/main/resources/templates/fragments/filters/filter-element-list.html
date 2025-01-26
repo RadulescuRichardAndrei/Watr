@@ -2,7 +2,7 @@
 <div th:id="${id}" class="overflow-auto" style="max-height: 150px;">
     <ul style="list-style-type: none">
         <li th:each="filter : ${filters}" th:id="'filter-' + ${@methodUtils.sanitizeFilterId(filter)}">
-            <div th:replace="~{fragments/filter-element::filterElement(filter=${filter},
+            <div th:replace="~{fragments/filters/filter-element::filterElement(filter=${filter},
                  removeButtonEndpoint=${removeButtonEndpoint + filter})}"></div>
         </li>
     </ul>

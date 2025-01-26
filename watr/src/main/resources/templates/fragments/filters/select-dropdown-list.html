@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block th:fragment="listItems()">
+    <div id="predicates-list'">
+        <li th:each="item, iterStart : ${paginatedList}" class="dropdown-item">
+            <button class="btn btn-link" name="predicate" th:text="${item}"
+                    th:hx-get="${endpoint} + '&predicate=' + ${item}"
+                    hx-target="#predicate-statistic" hx-swap="outerHTML"></button>
+        </li>
+        <!-- Load More -->
+        <li>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-secondary"
+                        th:disabled="${currentPage == 0}"
+                        th:hx-get="${previousPage}"
+                        th:hx-target="'#' + ${label}+ '-list'"
+                        hx-vals='{"later-request": "true"}'
+                        hx-swap="outerHTML"
+                >
+                    Previous
+                </button>
+
+                <button class="btn btn-secondary"
+                        th:disabled="${paginatedList.size() < 8}"
+                        th:hx-get="${nextPage}"
+                        th:hx-target="'#' + ${label} + '-list'"
+                        hx-vals='{"later-request": "true"}'
+                        hx-swap="outerHTML"
+                >
+                    Next
+                </button>
+            </div>
+        </li>
+    </div>
+</th:block>
+</html>

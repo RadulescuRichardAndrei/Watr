@@ -270,6 +270,12 @@ public class DatasetQueryService extends GenericQueryService {
                     jsonNode.put("id",object);
                     jsonNode.put("label", getShortenUri(object));
                     jsonNode.put("type","object");
+                    if (solution.get("object").isResource())
+                        jsonNode.put("type_object","resource");
+                    else if (solution.get("object").isLiteral())
+                        jsonNode.put("type_object","literal");
+                    else
+                        jsonNode.put("type_object","null");
                     nodes.add(jsonNode);
                     nodeSet.add(object);
                 }

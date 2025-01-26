@@ -21,19 +21,19 @@ public class FilterContoller {
     public String addSubject(@RequestParam() String subject, Model model){
         filters.addSubject(subject);
         model.addAttribute("removeButtonEndpoint", "/remove-subject?subject="+subject);
-        return "fragments/filter-element";
+        return "fragments/filters/filter-element";
     }
     @PostMapping("/add-predicate")
     public String addPredicate(@RequestParam("predicate") String predicate, Model model) {
         filters.addPredicate(predicate);
         model.addAttribute("removeButtonEndpoint", "/remove-predicate?predicate="+predicate);
-        return "fragments/filter-element";
+        return "fragments/filters/filter-element";
     }
     @PostMapping("/add-object")
     public String addObject(@RequestParam("object") String object, Model model) {
         filters.addObject(object);
         model.addAttribute("removeButtonEndpoint", "/remove-object?object="+object);
-        return "fragments/filter-element";
+        return "fragments/filters/filter-element";
     }
 
     //          REMOVE
@@ -74,7 +74,7 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedSubjects());
         model.addAttribute("id","active-filter-subjects");
         model.addAttribute("removeButtonEndpoint", "/remove-subject?subject=");
-        return "fragments/filter-element-list";
+        return "fragments/filters/filter-element-list";
     }
 
     @PostMapping("/toggle-predicate")
@@ -87,7 +87,7 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedPredicates());
         model.addAttribute("id", "active-filter-predicates");
         model.addAttribute("removeButtonEndpoint", "/remove-predicate?predicate=");
-        return "fragments/filter-element-list";
+        return "fragments/filters/filter-element-list";
     }
     @PostMapping("/toggle-object")
     public String toggleObject(@RequestParam() String object, Model model) {
@@ -99,7 +99,7 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedObjects());
         model.addAttribute("id", "active-filter-objects");
         model.addAttribute("removeButtonEndpoint", "/remove-object?object=");
-        return "fragments/filter-element-list";
+        return "fragments/filters/filter-element-list";
     }
 
     //              GET-ALL
@@ -108,7 +108,7 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedSubjects());
         model.addAttribute("id","active-filter-subjects");
         model.addAttribute("removeButtonEndpoint", "/remove-subject?subject=");
-        return "fragments/filter-element-list";
+        return "fragments/filters/filter-element-list";
     }
 
     @GetMapping("/get-predicates")
@@ -116,7 +116,7 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedPredicates());
         model.addAttribute("id","active-filter-predicates");
         model.addAttribute("removeButtonEndpoint", "/remove-predicate?predicate=");
-        return "fragments/filter-element-list";
+        return "fragments/filters/filter-element-list";
     }
 
     @GetMapping("/get-objects")
@@ -124,7 +124,7 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedObjects());
         model.addAttribute("id","active-filter-objects");
         model.addAttribute("removeButtonEndpoint", "/remove-object?object=");
-        return "fragments/filter-element-list";
+        return "fragments/filters/filter-element-list";
     }
 
 }

@@ -25,22 +25,36 @@ public class StatisticQueryService extends GenericQueryService{
         List<List<String>> result = new ArrayList<>();
 
         String selectField = "?s";
+
         if (countType == MethodUtils.TRIPLE_TYPE.PREDICATE) {
             selectField = "?p";
         } else if (countType == MethodUtils.TRIPLE_TYPE.OBJECT) {
             selectField = "?o";
         }
 
-        ParameterizedSparqlString queryString = new ParameterizedSparqlString();
-        queryString.setCommandText(
-                "SELECT " + selectField + " (COUNT(*) AS ?count) " +
-                        "WHERE { { ?s ?p ?o . } " +
-                        " UNION " +
-                        " { GRAPH ?g { ?s ?p ?o . } } }" +
-                        "GROUP BY " + selectField + " " +
-                        "ORDER BY DESC(?count) " +
-                        "LIMIT 10"
-        );
+        var queryString = new ParameterizedSparqlString();
+
+        if (countType == MethodUtils.TRIPLE_TYPE.OBJECT) {
+            queryString.setCommandText(
+                    "SELECT (STR(?o2) AS ?o) (COUNT(*) AS ?count) " +
+                            "WHERE { { ?s ?p ?o2 . } " +
+                            " UNION " +
+                            " { GRAPH ?g { ?s ?p ?o2 . } } }" +
+                            "GROUP BY ?o2 " +
+                            "ORDER BY DESC(?count) " +
+                            "LIMIT 10"
+            );
+        }else {
+            queryString.setCommandText(
+                    "SELECT " + selectField + " (COUNT(*) AS ?count) " +
+                            "WHERE { { ?s ?p ?o . } " +
+                            " UNION " +
+                            " { GRAPH ?g { ?s ?p ?o . } } }" +
+                            "GROUP BY " + selectField + " " +
+                            "ORDER BY DESC(?count) " +
+                            "LIMIT 10"
+            );
+        }
 
         Query query = queryString.asQuery();
 
@@ -49,7 +63,11 @@ public class StatisticQueryService extends GenericQueryService{
             while (results.hasNext()) {
                 var list= new ArrayList<String>();
                 QuerySolution solution = results.next();
-                list.add(getShortenUri(solution.getResource(selectField).getURI()));
+                if (countType != MethodUtils.TRIPLE_TYPE.OBJECT)
+                    list.add(getShortenUri(solution.getResource(selectField).getURI()));
+                else
+                    list.add(getShortenUri(solution.get(selectField).toString()));
+
                 list.add(solution.getLiteral("count").getString());
 
                 result.add(list);
@@ -273,30 +291,31 @@ public class StatisticQueryService extends GenericQueryService{
         return predicateCounts;
     }
 
-    public List<List<String>> extractInfoForObject(Dataset dataset, String object) {
-        if (!MethodUtils.isObjectLiteral(object))
+    public List<List<String>> extractInfoForObject(Dataset dataset, String object, String objectType) {
+        if (objectType.equals("resource"))
             object = new StringBuilder().append("<").append(getLongUri(object)).append(">").toString();
-        else if (object.contains("^^")) {
+        if (object.contains("^^") && objectType.equals("literal")) {
             String[] parts = object.split("\\^\\^");
             object = parts[0] + "^^" + '<' + getLongUri(parts[1]) + '>';
-        } else
-            object = getLongUri(object);
+            }
+        else if (objectType.equals("literal"))
+            object = "\"" + object + "\"";
         List<List<String>> literalInfo = new ArrayList<>();
 
         String queryText= null;
-        if(!MethodUtils.isObjectLiteral(object)){
+        if(objectType.equals("resource")){
             queryText= "SELECT ?p (COUNT(?o) as ?count) ?lang "+
                     "WHERE { { ?s ?p ?o .} " +
                     "UNION { GRAPH ?g {?s ?p ?o} }" +
                     "FILTER(?o = " + object + ") " +
                     "OPTIONAL { BIND(LANG(?o) AS ?lang)} }" +
                     "GROUP BY ?p ?lang";
-        }else {
+        }else if (objectType.equals("literal")){
             queryText = "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>" +
                     "SELECT ?p ?datatype " +
-                    "(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), MIN(?o), '') AS ?min) " +
-                    "(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), MAX(?o), '') AS ?max) " +
-                    "(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), AVG(?o), '') AS ?avg) " +
+                    //"(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), MIN(?o), '') AS ?min) " +
+                    //"(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), MAX(?o), '') AS ?max) " +
+                    //"(IF(DATATYPE(?o) IN (xsd:decimal, xsd:float, xsd:integer), AVG(?o), '') AS ?avg) " +
                     "WHERE { " +
                     "{ ?s ?p ?o . } " +
                     "UNION { GRAPH ?g { ?s ?p ?o } } " +
@@ -316,7 +335,7 @@ public class StatisticQueryService extends GenericQueryService{
                 List<String> entry = new ArrayList<>();
 
                 String predicate = getShortenUri(sol.getResource("p").toString());
-                if (!MethodUtils.isObjectLiteral(object)){
+                if (objectType.equals("resource")){
                     entry.add("Resource");
                     entry.add(predicate);
 
@@ -325,7 +344,7 @@ public class StatisticQueryService extends GenericQueryService{
                     entry.add(String.valueOf(count));
                     entry.add(languageTag);
 
-                }else{
+                } else if (objectType.equals("literal")){
                     entry.add("Literal");
                     entry.add(predicate);
 
@@ -378,16 +397,15 @@ public class StatisticQueryService extends GenericQueryService{
         return outDegree;
     }
 
-    public Integer getInDegreeObject(Dataset dataset, String object) {
+    public Integer getInDegreeObject(Dataset dataset, String object, String objectType) {
         int inDegree = 0;
-        if (!MethodUtils.isObjectLiteral(object))
+        if (objectType.equals("resource"))
             object = new StringBuilder().append("<").append(getLongUri(object)).append(">").toString();
-        else if (object.contains("^^")) {
+        if (object.contains("^^") && objectType.equals("literal")) {
             String[] parts = object.split("\\^\\^");
             object = parts[0] + "^^" + '<' + getLongUri(parts[1]) + '>';
-        } else
-            object = getLongUri(object);
-
+        } else if (objectType.equals("literal"))
+            object = "\"" + object + "\"";
 
         var queryString = new ParameterizedSparqlString();
 

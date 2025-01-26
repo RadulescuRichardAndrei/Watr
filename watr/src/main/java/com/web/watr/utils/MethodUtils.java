@@ -21,8 +21,4 @@ public class MethodUtils {
         return filterId.replace(":","").replace('.','_').replace("//","_").replace("/","_");
     }
 
-    public static boolean isObjectLiteral(String object){
-        return  (object.startsWith("\"") || object.contains("^^") || object.matches(".*@(" + languageTagRegex + ").*")
-        || (!object.contains("/") && !object.contains(":")));
-    }
 }
