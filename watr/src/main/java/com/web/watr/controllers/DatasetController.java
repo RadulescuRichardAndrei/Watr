@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Controller
 public class DatasetController {
@@ -31,13 +33,16 @@ public class DatasetController {
     private String allowedExtensions;
     private static final int pageSize = 10;
     @GetMapping("/upload")
-    public String uploadDatasetPage(Model model){
+    @Async
+    public CompletableFuture<String> uploadDatasetPage(Model model){
         model.addAttribute("allowedExtensions",allowedExtensions);
-        return "/content/upload-dataset";
+        return CompletableFuture.completedFuture("/content/upload-dataset");
     }
     @GetMapping("/save")
-    public String saveDatasetPage(Model model){
-        return "/content/save-dataset";
+    @Async
+    public CompletableFuture<String> saveDatasetPage(Model model){
+
+        return CompletableFuture.completedFuture("/content/save-dataset");
     }
 
     @PostMapping(value = "upload-dataset", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
@@ -63,7 +68,8 @@ public class DatasetController {
     }
 
     @GetMapping("/dataset-names")
-    public String getFileNames(@RequestParam(defaultValue = "0") int page,
+    @Async
+    public CompletableFuture<String> getFileNames(@RequestParam(defaultValue = "0") int page,
                                @RequestParam(required = false) String name,
                                @RequestParam(defaultValue = "item", required = false) String action,
                                @RequestParam() String actionUrl,
@@ -110,8 +116,11 @@ public class DatasetController {
         String viewFile = "/search/dataset-names-" + action;
         model.addAttribute("viewFile",viewFile);
 
-        return name == null ? "/search/dataset-names" : viewFile;
-
+        if (name != null) {
+            return CompletableFuture.completedFuture(viewFile);
+        }else {
+            return CompletableFuture.completedFuture("/search/dataset-names");
+        }
     }
 
     @GetMapping("/download-file")

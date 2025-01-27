@@ -6,6 +6,7 @@ import com.web.watr.utils.MethodUtils;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.query.Dataset;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.CompletableFuture;
 
 @Controller
 public class DatasetStatisticController {
@@ -30,14 +32,21 @@ public class DatasetStatisticController {
     }
 
     @GetMapping("/visualize-statistic-page")
-    public String getStatisticPage() {return "/content/statistics-dataset";}
-    @GetMapping("/visualize-statistics")
-    public String getStatistics(@RequestParam() String dataset, Model model){
-        model.addAttribute("selectedDataset", dataset);
-        return "/fragments/statistics-container";
+    @Async
+    public CompletableFuture<String> getStatisticPage() {
+        return CompletableFuture.completedFuture("/content/statistics-dataset");
     }
+
+    @GetMapping("/visualize-statistics")
+    @Async
+    public CompletableFuture<String> getStatistics(@RequestParam() String dataset, Model model){
+        model.addAttribute("selectedDataset", dataset);
+        return CompletableFuture.completedFuture("/fragments/statistics-container");
+    }
+
     @GetMapping("/statistic-count")
-    public String getCounts(@RequestParam() String dataset,
+    @Async
+    public CompletableFuture<String> getCounts(@RequestParam() String dataset,
                             @RequestParam() String tripleType,
                                      Model model){
 
@@ -46,10 +55,12 @@ public class DatasetStatisticController {
         Dataset ds= statisticQueryService.loadDataset(path);
         var result = statisticQueryService.executeCountQuery(ds, type);
         model.addAttribute("counts", result);
-        return "/fragments/statistics/counts";
+        return CompletableFuture.completedFuture("/fragments/statistics/counts");
     }
+
     @GetMapping("/statistic-predicate")
-    public String getObjectDistributionForPredicate(@RequestParam() String dataset,
+    @Async
+    public CompletableFuture<String> getObjectDistributionForPredicate(@RequestParam() String dataset,
                                                     @RequestParam() String predicate,
                                                     Model model){
 
@@ -58,7 +69,7 @@ public class DatasetStatisticController {
         var result= statisticQueryService.categorizeObjects(ds, predicate);
         model.addAttribute("resourceObjects", result.getOtherObjects().isEmpty() ? null : result.getOtherObjects());
         model.addAttribute("literalObjects", result.getNumericalLiterals().isEmpty() ? null : result.getNumericalLiterals());
-        return "/fragments/statistics/distribution";
+        return CompletableFuture.completedFuture("/fragments/statistics/distribution");
     }
 
 

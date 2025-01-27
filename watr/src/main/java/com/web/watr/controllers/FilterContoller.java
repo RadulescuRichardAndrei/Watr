@@ -5,11 +5,14 @@ import com.web.watr.beans.FilterBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.concurrent.CompletableFuture;
 
 @Controller
 public class FilterContoller {
@@ -18,22 +21,27 @@ public class FilterContoller {
 
     //          ADD
     @PostMapping("/add-subject")
-    public String addSubject(@RequestParam() String subject, Model model){
+    @Async
+    public CompletableFuture<String> addSubject(@RequestParam() String subject, Model model){
         filters.addSubject(subject);
         model.addAttribute("removeButtonEndpoint", "/remove-subject?subject="+subject);
-        return "fragments/filters/filter-element";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element");
     }
+
     @PostMapping("/add-predicate")
-    public String addPredicate(@RequestParam("predicate") String predicate, Model model) {
+    @Async
+    public CompletableFuture<String> addPredicate(@RequestParam("predicate") String predicate, Model model) {
         filters.addPredicate(predicate);
         model.addAttribute("removeButtonEndpoint", "/remove-predicate?predicate="+predicate);
-        return "fragments/filters/filter-element";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element");
     }
+
     @PostMapping("/add-object")
-    public String addObject(@RequestParam("object") String object, Model model) {
+    @Async
+    public CompletableFuture<String> addObject(@RequestParam("object") String object, Model model) {
         filters.addObject(object);
         model.addAttribute("removeButtonEndpoint", "/remove-object?object="+object);
-        return "fragments/filters/filter-element";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element");
     }
 
     //          REMOVE
@@ -65,7 +73,8 @@ public class FilterContoller {
 
     //          TOGGLE
     @PostMapping("/toggle-subject")
-    public String toggleSubject(@RequestParam() String subject, Model model){
+    @Async
+    public CompletableFuture<String> toggleSubject(@RequestParam() String subject, Model model){
         if (filters.getSelectedSubjects().contains(subject))
             filters.removeSubject(subject);
         else
@@ -74,11 +83,12 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedSubjects());
         model.addAttribute("id","active-filter-subjects");
         model.addAttribute("removeButtonEndpoint", "/remove-subject?subject=");
-        return "fragments/filters/filter-element-list";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element-list");
     }
 
     @PostMapping("/toggle-predicate")
-    public String togglePredicate(@RequestParam() String predicate, Model model) {
+    @Async
+    public CompletableFuture<String> togglePredicate(@RequestParam() String predicate, Model model) {
         if (filters.getSelectedPredicates().contains(predicate))
             filters.removePredicate(predicate);
         else
@@ -87,10 +97,12 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedPredicates());
         model.addAttribute("id", "active-filter-predicates");
         model.addAttribute("removeButtonEndpoint", "/remove-predicate?predicate=");
-        return "fragments/filters/filter-element-list";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element-list");
     }
+
     @PostMapping("/toggle-object")
-    public String toggleObject(@RequestParam() String object, Model model) {
+    @Async
+    public CompletableFuture<String> toggleObject(@RequestParam() String object, Model model) {
         if (filters.getSelectedObjects().contains(object))
             filters.removeObject(object);
         else
@@ -99,32 +111,35 @@ public class FilterContoller {
         model.addAttribute("filters", filters.getSelectedObjects());
         model.addAttribute("id", "active-filter-objects");
         model.addAttribute("removeButtonEndpoint", "/remove-object?object=");
-        return "fragments/filters/filter-element-list";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element-list");
     }
 
     //              GET-ALL
     @GetMapping("/get-subjects")
-    public String getSubjects(Model model){
+    @Async
+    public CompletableFuture<String> getSubjects(Model model){
         model.addAttribute("filters", filters.getSelectedSubjects());
         model.addAttribute("id","active-filter-subjects");
         model.addAttribute("removeButtonEndpoint", "/remove-subject?subject=");
-        return "fragments/filters/filter-element-list";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element-list");
     }
 
     @GetMapping("/get-predicates")
-    public String getPredicates(Model model) {
+    @Async
+    public CompletableFuture<String> getPredicates(Model model) {
         model.addAttribute("filters", filters.getSelectedPredicates());
         model.addAttribute("id","active-filter-predicates");
         model.addAttribute("removeButtonEndpoint", "/remove-predicate?predicate=");
-        return "fragments/filters/filter-element-list";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element-list");
     }
 
     @GetMapping("/get-objects")
-    public String getObjects(Model model) {
+    @Async
+    public CompletableFuture<String> getObjects(Model model) {
         model.addAttribute("filters", filters.getSelectedObjects());
         model.addAttribute("id","active-filter-objects");
         model.addAttribute("removeButtonEndpoint", "/remove-object?object=");
-        return "fragments/filters/filter-element-list";
+        return CompletableFuture.completedFuture("fragments/filters/filter-element-list");
     }
 
 }

@@ -48,17 +48,21 @@ public class DatasetVisualizeController {
     }
 
     @GetMapping("/visualize-table-page")
-    public String getVisualizePage(){
-        return "/content/visualize-dataset-table";
+    @Async
+    public CompletableFuture<String> getVisualizePage(){
+        return CompletableFuture.completedFuture("/content/visualize-dataset-table");
     }
 
 
     @GetMapping("/visualize-rdf-graph-page")
-    public String getVisualizeRDFPage(){
-        return "/content/visualize-dataset-rdf";
+    @Async
+    public CompletableFuture<String> getVisualizeRDFPage(){
+        return CompletableFuture.completedFuture("/content/visualize-dataset-rdf");
     }
+
     @GetMapping("/visualize-table-data")
-    public  String getTableData(@RequestParam(defaultValue = "0") int page,
+    @Async
+    public  CompletableFuture<String> getTableData(@RequestParam(defaultValue = "0") int page,
                                 @RequestParam() String dataset,
                                 Model model){
         Path path = Paths.get(datasetPath, dataset);
@@ -76,15 +80,17 @@ public class DatasetVisualizeController {
         model.addAttribute("tableData", tableData);
         model.addAttribute("currentPage", page);
 
-    return "/table/rdftable";
+    return CompletableFuture.completedFuture("/table/rdftable");
     }
 
     @GetMapping("/visualize-rdf-data")
-    public String getRDFData(@RequestParam() String dataset, Model model) {
+    @Async
+    public CompletableFuture<String> getRDFData(@RequestParam() String dataset, Model model) {
         filters.resetFilter();
         model.addAttribute("selectedDataset", dataset);
-        return "/search/dropdown-search";
+        return CompletableFuture.completedFuture("/search/dropdown-search");
     }
+
     @GetMapping("/filter-subjects")
     @Async
     public CompletableFuture<String> getRDFDataSubjects(@RequestParam String dataset,
@@ -114,7 +120,8 @@ public class DatasetVisualizeController {
     }
 
     @GetMapping("/filter-predicates")
-    public String getRDFDataPredicates(@RequestParam String dataset,
+    @Async
+    public CompletableFuture<String> getRDFDataPredicates(@RequestParam String dataset,
                                        @RequestParam(defaultValue = "0") int page,
                                        @RequestParam(required = false) String search,
                                        @RequestParam(name = "first-request", required = false) Boolean firstRequest,
@@ -135,10 +142,14 @@ public class DatasetVisualizeController {
                 dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-predicates?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
-        return (firstRequest!=null && firstRequest) ? "/fragments/filters/filter-dropdown" : "/fragments/filters/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ?
+                CompletableFuture.completedFuture("/fragments/filters/filter-dropdown")
+                : CompletableFuture.completedFuture("/fragments/filters/filter-dropdown-list") ;
     }
+
     @GetMapping("/select-predicate")
-    public String getRDFDataPredicates2(@RequestParam String dataset,
+    @Async
+    public CompletableFuture<String> getRDFDataPredicates2(@RequestParam String dataset,
                                        @RequestParam(defaultValue = "0") int page,
                                        @RequestParam(required = false) String search,
                                        @RequestParam(name = "first-request", required = false) Boolean firstRequest,
@@ -157,10 +168,14 @@ public class DatasetVisualizeController {
                 dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-predicates?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
-        return (firstRequest!=null && firstRequest) ? "/fragments/filters/select-dropdown" : "/fragments/filters/select-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ?
+                CompletableFuture.completedFuture("/fragments/filters/select-dropdown")
+                : CompletableFuture.completedFuture("/fragments/filters/select-dropdown-list") ;
     }
+
     @GetMapping("/filter-objects")
-    public String getRDFDataObjects(@RequestParam String dataset,
+    @Async
+    public CompletableFuture<String> getRDFDataObjects(@RequestParam String dataset,
                                        @RequestParam(defaultValue = "0") int page,
                                        @RequestParam(required = false) String search,
                                     @RequestParam(name = "first-request", required = false) Boolean firstRequest,
@@ -182,10 +197,14 @@ public class DatasetVisualizeController {
                 dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-objects?dataset=" +
                 dataset + "&page=" + (page - 1) + searchParam : null);
-        return (firstRequest!=null && firstRequest) ? "/fragments/filters/filter-dropdown" : "/fragments/filters/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ?
+                CompletableFuture.completedFuture("/fragments/filters/filter-dropdown")
+                : CompletableFuture.completedFuture("/fragments/filters/filter-dropdown-list");
     }
+
     @GetMapping("/generate-graph")
-    public String getGraphRepresentation(@RequestParam String dataset, Model model){
+    @Async
+    public CompletableFuture<String> getGraphRepresentation(@RequestParam String dataset, Model model){
 
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -194,8 +213,9 @@ public class DatasetVisualizeController {
         model.addAttribute("nodes",result.get("nodes").toString());
         model.addAttribute("edges",result.get("edges").toString());
 
-        return "/fragments/graph-container";
+        return CompletableFuture.completedFuture("/fragments/graph-container");
     }
+
     @GetMapping("/generate-jsonld")
     public ResponseEntity<Object> getJsonLDRepresentation(@RequestParam String dataset, Model model){
 
@@ -212,8 +232,11 @@ public class DatasetVisualizeController {
                     .body(new ByteArrayResource(result));
 
     }
+
     @GetMapping("/details-subject")
-    public String getSubjectNodeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
+    @Async
+    public CompletableFuture<String> getSubjectNodeDetails(@RequestParam String dataset,
+                                                           @RequestParam String name, Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds1= datasetQueryService.loadDataset(path);
         Dataset ds2= statisticQueryService.loadDataset(path);
@@ -233,11 +256,12 @@ public class DatasetVisualizeController {
         model.addAttribute("statisticCount", statisticCount);
         model.addAttribute("vocabDetails", vcContent);
         model.addAttribute("dataset",dataset);
-        return "fragments/graph-details";
+        return CompletableFuture.completedFuture("fragments/graph-details");
     }
 
     @GetMapping("/details-object")
-    public String getObjectNodeDetails(@RequestParam String dataset, @RequestParam String name,
+    @Async
+    public CompletableFuture<String> getObjectNodeDetails(@RequestParam String dataset, @RequestParam String name,
                                        @RequestParam(name = "object-type") String objectType,
                                        Model model){
         Path path = Paths.get(datasetPath, dataset);
@@ -269,11 +293,12 @@ public class DatasetVisualizeController {
         model.addAttribute("statisticObject", statisticObject);
         model.addAttribute("vocabDetails", vcContent);
         model.addAttribute("dataset",dataset);
-        return "fragments/graph-details";
+        return CompletableFuture.completedFuture("fragments/graph-details");
     }
 
     @GetMapping("/details-edge")
-    public String getEdgeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
+    @Async
+    public CompletableFuture<String> getEdgeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds1= datasetQueryService.loadDataset(path);
         Dataset ds2= statisticQueryService.loadDataset(path);
@@ -296,7 +321,7 @@ public class DatasetVisualizeController {
         model.addAttribute("statisticType","predicate");
         model.addAttribute("dataset",dataset);
 
-        return "fragments/graph-details";
+        return CompletableFuture.completedFuture("fragments/graph-details");
     }
 
     @GetMapping("/dataset-matcher")
