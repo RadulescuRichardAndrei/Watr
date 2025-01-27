@@ -65,11 +65,17 @@ public class DatasetController {
     @GetMapping("/dataset-names")
     public String getFileNames(@RequestParam(defaultValue = "0") int page,
                                @RequestParam(required = false) String name,
+                               @RequestParam(defaultValue = "item", required = false) String action,
                                @RequestParam() String actionUrl,
                                @RequestParam() String target,
                                Model model){
         File datasetDirectory = new File(datasetPath);
         File[] files = datasetDirectory.listFiles();
+
+        //action can be item for show items, or save for download files
+        if(!action.equals("save")) {
+            action = "item";
+        }
 
         // Check if the directory is valid and contains files
         if (files != null) {
@@ -101,9 +107,48 @@ public class DatasetController {
         }
         model.addAttribute("actionUrl", actionUrl);
         model.addAttribute("target",target);
+        String viewFile = "/search/dataset-names-" + action;
+        model.addAttribute("viewFile",viewFile);
 
-        return name == null ? "/search/dataset-names" : "/search/dataset-names-item";
+        return name == null ? "/search/dataset-names" : viewFile;
 
     }
+
+    @GetMapping("/download-file")
+    public ResponseEntity<byte[]> downloadDatasetFile(@RequestParam("fileName") String fileName) {
+        try {
+            //System.out.println("Request received for file: " + fileName);  // Debugging
+
+            // Verificăm dacă extensia fișierului este validă
+            String fileExtension = FileUtils.getFileExtension(fileName);
+            if (!FileUtils.isValidFileType(fileExtension)) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                        .body(("Invalid file type. Only files with extensions: " + allowedExtensions).getBytes());
+            }
+
+            // Calea completă către fișier
+            Path filePath = Paths.get(datasetPath, fileName);
+
+            // Verificăm dacă fișierul există
+            if (!Files.exists(filePath)) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+
+            // Citim conținutul fișierului
+            byte[] fileContent = Files.readAllBytes(filePath);
+
+            // Returnăm fișierul ca răspuns HTTP
+            return ResponseEntity.ok()
+                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
+                    .body(fileContent);
+
+        } catch (IOException e) {
+            // Gestionăm erorile de citire a fișierului
+            //System.err.println("Error during file download: " + e.getMessage());  // Debugging
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
+
 
 }

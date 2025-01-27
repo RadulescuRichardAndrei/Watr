@@ -23,7 +23,7 @@
 
             <!-- Dataset List, only the items will update -->
             <ul id="datasetList" style="max-height: 200px; overflow-y: auto;">
-                <th:block th:replace="~{search/dataset-names-item :: listItems(actionUrl=${actionUrl}, target=${target})}"/>
+                <th:block th:replace="~{${viewFile} :: listItems(actionUrl=${actionUrl}, target=${target})}"/>
             </ul>
 
             <!-- Pagination Controls -->

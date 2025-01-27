@@ -1,4 +1,8 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<h1>This is where we will save a dataset</h1>
+
+<div id="search-control"
+     hx-get="/dataset-names" hx-trigger="load"
+     hx-vals='{"actionUrl":"/download-file", "target":"_blank", "action":"save"}'
+></div>
 
 </html>

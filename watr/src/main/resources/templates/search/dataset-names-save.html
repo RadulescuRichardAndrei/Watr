@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<!-- Dataset List -->
+<th:block th:fragment="listItems(actionUrl, target)">
+    <li th:each="fileName : ${fileNames}" class="dropdown-item">
+        <!---<input type="hidden" th:name="dataset" th:value="${fileName}" /> -->
+        <a class="btn btn-link"
+           th:href="@{${actionUrl}(fileName=${fileName})}"
+           th:text="${fileName}"
+           th:target="${target}"
+        >
+        </a>
+    </li>
+</th:block>
+
+</html>
