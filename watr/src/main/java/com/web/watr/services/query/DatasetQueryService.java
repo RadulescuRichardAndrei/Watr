@@ -22,6 +22,9 @@ import java.util.stream.Collectors;
 
 public class DatasetQueryService extends GenericQueryService {
 
+    private static String dbpediaEndpoint = "http://dbpedia.org/sparql";
+    private static String wikidataEndpoint = "http://query.wikidata.org/sparql";
+
 
     public DatasetQueryService() {
         super();
@@ -380,7 +383,7 @@ public class DatasetQueryService extends GenericQueryService {
 
         Query query = sb.build();
         ElementGroup body = new ElementGroup();
-        body.addElement(new ElementService("http://dbpedia.org/sparql", query.getQueryPattern()));
+        body.addElement(new ElementService(dbpediaEndpoint, query.getQueryPattern()));
         //body.addElement(new ElementService("https://query.wikidata.org/sparql", query.getQueryPattern()));
 
         query.setQueryPattern(body);
@@ -422,8 +425,124 @@ public class DatasetQueryService extends GenericQueryService {
         return Arrays.asList(equivalentProperties, subProperties, inverseProperties, domains, ranges);
     }
 
+    public List<List<String>> getDistinctElementsFromTriplets(Dataset dataset) {
+        var resultLists = new ArrayList<List<String>>();
+        List<String> subjects = new ArrayList<>();
+        List<String> predicates = new ArrayList<>();
+        List<String> objects = new ArrayList<>();
+
+        var queryString = new ParameterizedSparqlString();
+
+        queryString.setCommandText(
+                "SELECT DISTINCT ?subject ?predicate ?object " +
+                        "WHERE { " +
+                        "  { ?subject ?predicate ?object } " +
+                        "  UNION " +
+                        "  { GRAPH ?g { ?subject ?predicate ?object } } " +
+                        "  FILTER(isIRI(?subject) && isIRI(?object)) " +
+                        "}"
+        );
+
+        Query query = queryString.asQuery();
+
+        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet resultSet = qe.execSelect();
+
+            while (resultSet.hasNext()) {
+                QuerySolution sol = resultSet.next();
+
+                if (sol.contains("subject")) {
+                    subjects.add(sol.getResource("subject").getURI());
+                }
+
+                if (sol.contains("predicate")) {
+                    predicates.add(sol.getResource("predicate").getURI());
+                }
+
+                if (sol.contains("object")) {
+                    objects.add(sol.getResource("object").getURI());
+                }
+            }
+        } catch (Exception e) {
+            return null;
+        }
 
 
+        resultLists.add(subjects);
+        resultLists.add(predicates);
+        resultLists.add(objects);
 
+        return resultLists;
+    }
+
+    public List<AbstractMap.SimpleEntry<String, String>> findEquivalentPropertiesDBpedia(List<String> firstList, List<String> secondList) {
+        var matches = new ArrayList<AbstractMap.SimpleEntry<String,String>>();
+
+        var firstString= firstList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
+        var secondString= secondList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
+
+        String queryString = "PREFIX owl: <http://www.w3.org/2002/07/owl#> " +
+                "SELECT DISTINCT ?prop1 ?prop2 " +
+                "WHERE { " +
+                "  SERVICE <" + dbpediaEndpoint + "> { " +
+                "    VALUES ?prop1 { " + firstString + " } " +
+                "    VALUES ?prop2 { " + secondString + " } " +
+                "    { ?prop1 owl:equivalentProperty ?prop2 } " +
+                "    UNION " +
+                "    { ?prop2 owl:equivalentProperty ?prop1 } " +
+                "  } " +
+                "}";
+
+        Query query= QueryFactory.create(queryString);
+        try (QueryExecution qexec = QueryExecutionFactory.create(query)) {
+            ResultSet results = qexec.execSelect();
+            while (results.hasNext()) {
+                QuerySolution sol = results.next();
+                String prop1 = sol.getResource("prop1").getURI();
+                String prop2 = sol.getResource("prop2").getURI();
+                matches.add(new AbstractMap.SimpleEntry<>(prop1, prop2){});
+            }
+        }catch (Exception e){
+            return null;
+        }
+        return matches;
+    }
+
+    public List<AbstractMap.SimpleEntry<String, String>> findEquivalentPropertiesWikidata(List<String> firstList, List<String> secondList) {
+        var matches = new ArrayList<AbstractMap.SimpleEntry<String, String>>();
+
+        // Convert lists into SPARQL-friendly format
+        var firstString = firstList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
+        var secondString = secondList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
+
+        // SPARQL query with SERVICE and rdf prefix
+        String queryString = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
+                "SELECT DISTINCT ?prop1 ?prop2 " +
+                "WHERE { " +
+                "  SERVICE <" + wikidataEndpoint + "> { " +
+                "    VALUES ?prop1 { " + firstString + " } " +
+                "    VALUES ?prop2 { " + secondString + " } " +
+                "    { ?prop1 rdf:equivalentProperty ?prop2 } " +
+                "    UNION " +
+                "    { ?prop2 rdf:equivalentProperty ?prop1 } " +
+                "  } " +
+                "}";
+
+        Query query = QueryFactory.create(queryString);
+
+        try (QueryExecution qexec = QueryExecutionFactory.create(query)) {
+            ResultSet results = qexec.execSelect();
+            while (results.hasNext()) {
+                QuerySolution sol = results.next();
+                String prop1 = sol.getResource("prop1").getURI();
+                String prop2 = sol.getResource("prop2").getURI();
+                matches.add(new AbstractMap.SimpleEntry<>(prop1, prop2));
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        return matches;
+    }
 
 }

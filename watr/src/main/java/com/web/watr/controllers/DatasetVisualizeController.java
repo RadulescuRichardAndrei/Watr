@@ -1,6 +1,7 @@
 package com.web.watr.controllers;
 
 import com.web.watr.beans.FilterBean;
+import com.web.watr.services.TripletsMatcher;
 import com.web.watr.services.query.DatasetQueryService;
 import com.web.watr.services.query.StatisticQueryService;
 import jakarta.annotation.PostConstruct;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,7 @@ import java.nio.file.Paths;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Controller
 public class DatasetVisualizeController {
@@ -83,7 +86,8 @@ public class DatasetVisualizeController {
         return "/search/dropdown-search";
     }
     @GetMapping("/filter-subjects")
-    public String getRDFDataSubjects(@RequestParam String dataset,
+    @Async
+    public CompletableFuture<String> getRDFDataSubjects(@RequestParam String dataset,
                                      @RequestParam(defaultValue = "0") int page,
                                      @RequestParam(required = false) String search,
                                      @RequestParam(name = "first-request", required = false) Boolean firstRequest,
@@ -105,7 +109,8 @@ public class DatasetVisualizeController {
                                                     dataset + "&page=" + (page + 1) + searchParam : null);
         model.addAttribute("previousPage", (page > 0) ? "/filter-subjects?dataset=" +
                                                     dataset + "&page=" + (page - 1) + searchParam : null);
-        return (firstRequest!=null && firstRequest) ? "/fragments/filters/filter-dropdown" : "/fragments/filters/filter-dropdown-list" ;
+        return (firstRequest!=null && firstRequest) ? CompletableFuture.completedFuture("/fragments/filters/filter-dropdown")
+                : CompletableFuture.completedFuture("/fragments/filters/filter-dropdown-list");
     }
 
     @GetMapping("/filter-predicates")
@@ -294,5 +299,44 @@ public class DatasetVisualizeController {
         return "fragments/graph-details";
     }
 
+    @GetMapping("/dataset-matcher")
+    @Async
+    public CompletableFuture<String> getMatches(@RequestParam(name= "first-dataset") String firstDataset,
+                             @RequestParam(name="second-dataset") String secondDataset,
+                             Model model){
+
+        Path path1 = Paths.get(datasetPath, firstDataset);
+        Path path2 = Paths.get(datasetPath, secondDataset);
+        Dataset ds1= datasetQueryService.loadDataset(path1);
+        Dataset ds2= datasetQueryService.loadDataset(path2);
+        var triplets1= datasetQueryService.getDistinctElementsFromTriplets(ds1);
+        var triplets2= datasetQueryService.getDistinctElementsFromTriplets(ds2);
+
+        var stringMatcherS= TripletsMatcher.stringMatching(triplets1.get(0), triplets2.get(0),3);
+        var stringMatcherP= TripletsMatcher.stringMatching(triplets1.get(1), triplets2.get(1),3);
+        var stringMatcherO= TripletsMatcher.stringMatching(triplets1.get(2), triplets2.get(2),3);
+
+        var dbpediaMatcherS= datasetQueryService.findEquivalentPropertiesDBpedia(triplets1.get(0), triplets2.get(0));
+        var dbpediaMatcherP= datasetQueryService.findEquivalentPropertiesDBpedia(triplets1.get(1), triplets2.get(1));
+        var dbpediaMatcherO= datasetQueryService.findEquivalentPropertiesDBpedia(triplets1.get(2), triplets2.get(2));
+
+        var wikidataMatcherS= datasetQueryService.findEquivalentPropertiesWikidata(triplets1.get(0), triplets2.get(0));
+        var wikidataMatcherP= datasetQueryService.findEquivalentPropertiesWikidata(triplets1.get(1), triplets2.get(1));
+        var wikidataMatcherO= datasetQueryService.findEquivalentPropertiesWikidata(triplets1.get(2), triplets2.get(2));
+
+        model.addAttribute("stringMatcherS", stringMatcherS);
+        model.addAttribute("stringMatcherP", stringMatcherP);
+        model.addAttribute("stringMatcherO", stringMatcherO);
+
+        model.addAttribute("dbpediaMatcherS", dbpediaMatcherS);
+        model.addAttribute("dbpediaMatcherP", dbpediaMatcherP);
+        model.addAttribute("dbpediaMatcherO", dbpediaMatcherO);
+
+        model.addAttribute("wikidataMatcherS", wikidataMatcherS);
+        model.addAttribute("wikidataMatcherP", wikidataMatcherP);
+        model.addAttribute("wikidataMatcherO", wikidataMatcherO);
+
+        return CompletableFuture.completedFuture("/content/compare-dataset");
+    }
 
 }
