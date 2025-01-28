@@ -1,0 +1,43 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<div class="d-flex justify-content-around align-self-start flex-wrap" id="matches">
+    <div class="row">
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'String Matches Subject'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${stringMatcherS})}"></th:block>
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'String Matches Predicate'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${stringMatcherP})}"></th:block>
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'String Matches Object'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${stringMatcherO})}"></th:block>
+
+    </div>
+    <div class="row">
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'DBpedia Matches'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${dbpediaMatcherS})}"></th:block>
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'DBpedia Matches'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${dbpediaMatcherP})}"></th:block>
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'DBpedia Matches'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${dbpediaMatcherO})}"></th:block>
+    </div>
+    <div class="row">
+        <th:block th:replace="~{fragments/match-table :: table(header=${'String Matches'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${wikidataMatcherS})}"></th:block>
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'String Matches'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${wikidataMatcherP})}"></th:block>
+
+        <th:block th:replace="~{fragments/match-table :: table(header=${'String Matches'}, headerColOne=${firstDataset},
+ headerColTwo=${secondDataset}, list=${wikidataMatcherO})}"></th:block>
+    </div>
+
+</div>
+
+
+
+
+</html>

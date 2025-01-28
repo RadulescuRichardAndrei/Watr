@@ -2,6 +2,8 @@ package com.web.watr.controllers;
 
 import com.web.watr.utils.FileUploadException;
 import com.web.watr.utils.FileUtils;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,6 +34,8 @@ public class DatasetController {
     @Value("${accepted.file.extensions}")
     private String allowedExtensions;
     private static final int pageSize = 10;
+    @Operation(summary = "Upload Dataset Form", description = "Returns asynchronous the template containing a form for selecting a dataset to upload.")
+    @ApiResponse(responseCode = "200", description = "Upload Dataset Form returned successfully")
     @GetMapping("/upload")
     @Async
     public CompletableFuture<String> uploadDatasetPage(Model model){
@@ -126,35 +130,26 @@ public class DatasetController {
     @GetMapping("/download-file")
     public ResponseEntity<byte[]> downloadDatasetFile(@RequestParam("fileName") String fileName) {
         try {
-            //System.out.println("Request received for file: " + fileName);  // Debugging
-
-            // Verificăm dacă extensia fișierului este validă
             String fileExtension = FileUtils.getFileExtension(fileName);
             if (!FileUtils.isValidFileType(fileExtension)) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                         .body(("Invalid file type. Only files with extensions: " + allowedExtensions).getBytes());
             }
 
-            // Calea completă către fișier
             Path filePath = Paths.get(datasetPath, fileName);
 
-            // Verificăm dacă fișierul există
             if (!Files.exists(filePath)) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
 
-            // Citim conținutul fișierului
             byte[] fileContent = Files.readAllBytes(filePath);
 
-            // Returnăm fișierul ca răspuns HTTP
             return ResponseEntity.ok()
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
                     .body(fileContent);
 
         } catch (IOException e) {
-            // Gestionăm erorile de citire a fișierului
-            //System.err.println("Error during file download: " + e.getMessage());  // Debugging
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }

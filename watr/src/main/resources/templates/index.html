@@ -58,7 +58,7 @@
                         </div>
 
 
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" hx-get="/visualize-compare-page" hx-target="#content">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Compare Schemas
                         </a>
@@ -69,7 +69,9 @@
 
                     </div>
                 </div>
+                <th:block th:replace="~{fragments/footer :: footer}"/>
             </nav>
+
         </div>
         <div id="layoutSidenav_content">
             <main>
@@ -80,6 +82,7 @@
 
 
                 </div>
+
             </main>
 
         </div>
@@ -87,8 +90,8 @@
             ></div>
     </div>
 
-    <!-- Integrarea footer-ului -->
-    <th:block th:replace="~{fragments/footer :: footer}"/>
+
+
 <style>
     .htmx-indicator{
         opacity:0;

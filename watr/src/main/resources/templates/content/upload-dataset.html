@@ -6,13 +6,17 @@
       hx-encoding='multipart/form-data'
       hx-target="#upload-result"
       hx-target-error="#toast-container"
-      hx-swap="innerHTML">
+      hx-swap="innerHTML" hx-indicator="spinner-upload">
     <div class="mb-3">
         <label for="file" class="form-label">Choose file to upload:</label>
         <input type="file" name="file" id="file" class="form-control" required
                th:accept="${allowedExtensions}">
     </div>
     <button type="submit" class="btn btn-primary">Upload</button>
+    <div id="spinner-upload" class="htmx-indicator text-center text-primary" role="status">
+        <div class="spinner-border text-primary ml-2" role="status"></div>
+        <span class="sr-only">Loading...</span>
+    </div>
 </form>
 
 </html>

@@ -4,6 +4,7 @@ import com.web.watr.beans.FilterBean;
 import com.web.watr.services.TripletsMatcher;
 import com.web.watr.services.query.DatasetQueryService;
 import com.web.watr.services.query.StatisticQueryService;
+import com.web.watr.utils.FileUtils;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.query.Dataset;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.AbstractMap;
@@ -333,8 +335,9 @@ public class DatasetVisualizeController {
         Path path1 = Paths.get(datasetPath, firstDataset);
         Path path2 = Paths.get(datasetPath, secondDataset);
         Dataset ds1= datasetQueryService.loadDataset(path1);
-        Dataset ds2= datasetQueryService.loadDataset(path2);
         var triplets1= datasetQueryService.getDistinctElementsFromTriplets(ds1);
+
+        Dataset ds2= datasetQueryService.loadDataset(path2);
         var triplets2= datasetQueryService.getDistinctElementsFromTriplets(ds2);
 
         var stringMatcherS= TripletsMatcher.stringMatching(triplets1.get(0), triplets2.get(0),3);
@@ -361,7 +364,28 @@ public class DatasetVisualizeController {
         model.addAttribute("wikidataMatcherP", wikidataMatcherP);
         model.addAttribute("wikidataMatcherO", wikidataMatcherO);
 
-        return CompletableFuture.completedFuture("/content/compare-dataset");
+        model.addAttribute("firstDataset", firstDataset);
+        model.addAttribute("secondDataset", secondDataset);
+        return CompletableFuture.supplyAsync(()-> {return "/fragments/matches";});
     }
-
+    @GetMapping("/visualize-compare-page")
+    @Async
+    public CompletableFuture<String> getComparePage(Model model){
+        File datasetDirectory = new File(datasetPath);
+        File[] files = datasetDirectory.listFiles();
+        if (files != null) {
+            List<String> validFileNames = new ArrayList<>();
+            for (File file : files) {
+                String fileName = file.getName();
+                if (FileUtils.isValidFileType(FileUtils.getFileExtension(fileName))) {
+                    validFileNames.add(fileName);
+                }
+            }
+            model.addAttribute("datasets", validFileNames);
+        }
+        else {
+            model.addAttribute("datasets", new ArrayList<>());
+        }
+        return CompletableFuture.completedFuture( "/content/compare-dataset");
+    }
 }

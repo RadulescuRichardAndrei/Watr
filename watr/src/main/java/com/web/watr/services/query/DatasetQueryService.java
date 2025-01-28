@@ -427,19 +427,18 @@ public class DatasetQueryService extends GenericQueryService {
 
     public List<List<String>> getDistinctElementsFromTriplets(Dataset dataset) {
         var resultLists = new ArrayList<List<String>>();
-        List<String> subjects = new ArrayList<>();
-        List<String> predicates = new ArrayList<>();
-        List<String> objects = new ArrayList<>();
+        var subjects = new HashSet<String>();
+        var predicates = new HashSet<String>();
+        var objects = new HashSet<String>();
 
         var queryString = new ParameterizedSparqlString();
 
         queryString.setCommandText(
-                "SELECT DISTINCT ?subject ?predicate ?object " +
+                "SELECT DISTINCT ?s ?p ?o " +
                         "WHERE { " +
-                        "  { ?subject ?predicate ?object } " +
+                        "  { ?s ?p ?o } " +
                         "  UNION " +
-                        "  { GRAPH ?g { ?subject ?predicate ?object } } " +
-                        "  FILTER(isIRI(?subject) && isIRI(?object)) " +
+                        "  { GRAPH ?g { ?s ?p ?o } } " +
                         "}"
         );
 
@@ -450,17 +449,20 @@ public class DatasetQueryService extends GenericQueryService {
 
             while (resultSet.hasNext()) {
                 QuerySolution sol = resultSet.next();
+                var sub= sol.get("?s");
+                var pred= sol.get("?p");
+                var obj= sol.get("?o");
 
-                if (sol.contains("subject")) {
-                    subjects.add(sol.getResource("subject").getURI());
+                if (sub.isResource() && !sub.isAnon() && !subjects.contains(getShortenUri(sub.asResource().getURI())) ) {
+                    subjects.add(getShortenUri(sub.asResource().getURI()));
                 }
 
-                if (sol.contains("predicate")) {
-                    predicates.add(sol.getResource("predicate").getURI());
+                if (pred.isResource() && !predicates.contains(getShortenUri(pred.asResource().getURI())) ) {
+                    predicates.add(getShortenUri(pred.asResource().getURI()));
                 }
 
-                if (sol.contains("object")) {
-                    objects.add(sol.getResource("object").getURI());
+                if (obj.isResource() && !obj.isAnon() && !objects.contains(getShortenUri(obj.asResource().getURI())) ) {
+                    objects.add(getShortenUri(obj.asResource().getURI()));
                 }
             }
         } catch (Exception e) {
@@ -468,9 +470,9 @@ public class DatasetQueryService extends GenericQueryService {
         }
 
 
-        resultLists.add(subjects);
-        resultLists.add(predicates);
-        resultLists.add(objects);
+        resultLists.add(new ArrayList<>(subjects));
+        resultLists.add(new ArrayList<>(predicates));
+        resultLists.add(new ArrayList<>(objects));
 
         return resultLists;
     }
@@ -478,8 +480,8 @@ public class DatasetQueryService extends GenericQueryService {
     public List<AbstractMap.SimpleEntry<String, String>> findEquivalentPropertiesDBpedia(List<String> firstList, List<String> secondList) {
         var matches = new ArrayList<AbstractMap.SimpleEntry<String,String>>();
 
-        var firstString= firstList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
-        var secondString= secondList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
+        var firstString= firstList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(" "));
+        var secondString= secondList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(" "));
 
         String queryString = "PREFIX owl: <http://www.w3.org/2002/07/owl#> " +
                 "SELECT DISTINCT ?prop1 ?prop2 " +
@@ -494,7 +496,8 @@ public class DatasetQueryService extends GenericQueryService {
                 "}";
 
         Query query= QueryFactory.create(queryString);
-        try (QueryExecution qexec = QueryExecutionFactory.create(query)) {
+        Model model= ModelFactory.createDefaultModel();
+        try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
             ResultSet results = qexec.execSelect();
             while (results.hasNext()) {
                 QuerySolution sol = results.next();
@@ -505,6 +508,7 @@ public class DatasetQueryService extends GenericQueryService {
         }catch (Exception e){
             return null;
         }
+
         return matches;
     }
 
@@ -512,8 +516,8 @@ public class DatasetQueryService extends GenericQueryService {
         var matches = new ArrayList<AbstractMap.SimpleEntry<String, String>>();
 
         // Convert lists into SPARQL-friendly format
-        var firstString = firstList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
-        var secondString = secondList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(", "));
+        var firstString = firstList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(" "));
+        var secondString = secondList.stream().map(this::getLongUri).map(uri -> "<" + uri + ">").collect(Collectors.joining(" "));
 
         // SPARQL query with SERVICE and rdf prefix
         String queryString = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> " +
@@ -529,8 +533,8 @@ public class DatasetQueryService extends GenericQueryService {
                 "}";
 
         Query query = QueryFactory.create(queryString);
-
-        try (QueryExecution qexec = QueryExecutionFactory.create(query)) {
+        Model model= ModelFactory.createDefaultModel();
+        try (QueryExecution qexec = QueryExecutionFactory.create(query,model)) {
             ResultSet results = qexec.execSelect();
             while (results.hasNext()) {
                 QuerySolution sol = results.next();

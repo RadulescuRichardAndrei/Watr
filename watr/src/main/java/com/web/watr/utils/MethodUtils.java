@@ -48,4 +48,17 @@ public class MethodUtils {
         }
     }
 
+    public static String extractLast(String input) {
+        int lastColonIndex = input.lastIndexOf(':');
+        int lastSlashIndex = input.lastIndexOf('/');
+
+        // Find the last occurrence of ':' or '/' and extract substring after it
+        int lastIndex = Math.max(lastColonIndex, lastSlashIndex);
+        if (lastIndex == -1) {
+            return input; // No ':' or '/' found, return the whole string
+        }
+
+        return input.substring(lastIndex + 1); // Return substring after ':' or '/'
+    }
+
 }

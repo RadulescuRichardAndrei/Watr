@@ -1,0 +1,30 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="table(header, headerColOne, headerColTwo, list)">
+    <div>
+    <h3 th:text="${header}"></h3>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th th:text="${headerColOne}"></th>
+            <th th:text="${headerColTwo}"></th>
+        </tr>
+        </thead>
+        <tbody th:if="${list!=null and !list.isEmpty()}">
+        <tr th:each="entry : ${list}">
+            <td th:text="${entry.getKey()}"></td>
+            <td th:text="${entry.getValue()}"></td>
+        </tr>
+        </tbody>
+        <tbody th:if="${list==null or list.isEmpty()}">
+            <tr>
+               <td colspan="2"> No Matches Found</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</th:block>
+
+
+</html>
