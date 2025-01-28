@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<footer class="bg-dark text-white py-4">
+    <div class="container" style="max-width: 1050px">
+        <div class="row">
+            <!-- Secțiunea pentru denumirea proiectului -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
+                <div>
+                    <h5 itemprop="name" th:text="'Web Data Commons Analyzer'">Web Data Commons Analyzer</h5>
+                    <p itemprop="description" th:text="'A system for processing RDFa and HTML5 microdata.'">
+                        A system for processing RDFa and HTML5 microdata.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Secțiunea pentru numele studenților -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
+                <div>
+                    <h6>Implemented by:</h6>
+                    <ul class="list-unstyled">
+                        <!-- Student 1 -->
+                        <li itemscope itemtype="http://schema.org/Person">
+                            <span itemprop="name" th:text="'Rădulescu Richard - Andrei'">Rădulescu Richard - Andrei</span>
+                        </li>
+                        <!-- Student 2 -->
+                        <li itemscope itemtype="http://schema.org/Person">
+                            <span itemprop="name" th:text="'Buimestru Alexandru'">Buimestru Alexandru</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-3">
+            <p>&copy; 2025 Web Application Development</p>
+        </div>
+
+    </div>
+</footer>
+
+</html>
