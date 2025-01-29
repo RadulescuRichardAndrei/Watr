@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-    <div th:fragment="statistic-subject(statisticCount, outDegree, dataset)"
+    <div th:fragment="statistic-subject(statisticCount, outDegree, dataset, predicatesAvg)"
          typeof="qb:DataSet" th:about="${dataset}"
          th:unless="${statisticCount == null or statisticCount.size() == 0}"
     >
@@ -26,6 +26,17 @@
                 <!-- Count Value -->
                 <div property="qb:measure" th:content="${outDegree}">
                     <span th:text="${outDegree}"></span>
+                </div>
+            </div>
+            <div class="badge bg-success me-2 mb-2" typeof="qb:Observation">
+                <!-- Predicate -->
+                <div rel="qb:dimension" resource="#predicatesAverage">
+                    <span th:text="'Predicates Average per subject count:'"></span>
+                </div>
+
+                <!-- Count Value -->
+                <div property="qb:measure" th:content="${predicatesAvg}">
+                    <span th:text="${predicatesAvg}"></span>
                 </div>
             </div>
         </div>

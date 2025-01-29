@@ -251,6 +251,7 @@ public class DatasetVisualizeController {
         );
         var outDegree= statisticQueryService.getOutDegreeSubject(ds2, name);
         var statisticCount= statisticQueryService.getPredicateObjectCountsForSubject(ds2, name);
+        var predicatesAvg= statisticQueryService.getPredicatesAverageCountPerSubject(ds2);
 
         model.addAttribute("relationDetails", null);
         model.addAttribute("statisticType","subject");
@@ -258,6 +259,7 @@ public class DatasetVisualizeController {
         model.addAttribute("statisticCount", statisticCount);
         model.addAttribute("vocabDetails", vcContent);
         model.addAttribute("dataset",dataset);
+        model.addAttribute("predicatesAvg", predicatesAvg);
         return CompletableFuture.completedFuture("fragments/graph-details");
     }
 

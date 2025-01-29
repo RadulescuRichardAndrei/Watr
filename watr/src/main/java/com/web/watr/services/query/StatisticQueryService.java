@@ -474,6 +474,37 @@ public class StatisticQueryService extends GenericQueryService{
         return new MethodUtils.CategorizedObjects(numericalLiterals, otherObjects);
     }
 
+    public Double getPredicatesAverageCountPerSubject(Dataset dataset) {
+        double predicatesAverage = 0.0;
+
+        var queryString = new ParameterizedSparqlString();
+
+        queryString.setCommandText(
+                "SELECT (AVG(?predicateCount) AS ?averagePredicates) " +
+                        "WHERE { " +
+                        "    { SELECT ?subject (COUNT(?predicate) AS ?predicateCount) " +
+                        "      WHERE { ?subject ?predicate ?object . } " +
+                        "      GROUP BY ?subject " +
+                        "    } " +
+                        "}"
+        );
+
+        Query query = queryString.asQuery();
+
+        try (QueryExecution qe = QueryExecutionFactory.create(query, dataset)) {
+            ResultSet result = qe.execSelect();
+
+            if (result.hasNext()) {
+                QuerySolution sol = result.next();
+                predicatesAverage = sol.getLiteral("averagePredicates").getDouble();
+            }
+        } catch (Exception e) {
+            return null;
+        }
+
+        return Math.round(predicatesAverage * 100.0) / 100.0;
+    }
+
 
 
 }
