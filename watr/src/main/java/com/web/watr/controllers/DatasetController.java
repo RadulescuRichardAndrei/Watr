@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +55,15 @@ public class DatasetController {
         return CompletableFuture.completedFuture("/content/save-dataset");
     }
 
+    @Operation(summary = "Delete Dataset Form", description = "Returns asynchronously the template for deleting a dataset.")
+    @ApiResponse(responseCode = "200", description = "Delete Dataset Form returned successfully")
+    @GetMapping("/delete")
+    @Async
+    public CompletableFuture<String> deleteDatasetPage(Model model){
+
+        return CompletableFuture.completedFuture("/content/delete-dataset");
+    }
+
     @Operation(summary = "Upload Dataset File", description = "Handles file upload and saves it to the dataset path.")
     @ApiResponse(responseCode = "201", description = "File uploaded successfully")
     @ApiResponse(responseCode = "400", description = "Invalid file type or empty file")
@@ -88,15 +98,15 @@ public class DatasetController {
     public CompletableFuture<String> getFileNames(
             @Parameter(description = "Page number for pagination") @RequestParam(defaultValue = "0") int page,
             @Parameter(description = "Optional name filter") @RequestParam(required = false) String name,
-            @Parameter(description = "Action type: 'item' for listing or 'save' for downloading") @RequestParam(defaultValue = "item", required = false) String action,
+            @Parameter(description = "Action type: 'item' for listing, 'save' for downloading or 'delete' for deleting") @RequestParam(defaultValue = "item", required = false) String action,
             @Parameter(description = "Action URL for dataset interaction") @RequestParam() String actionUrl,
             @Parameter(description = "Target for dataset display") @RequestParam() String target,
                                Model model){
         File datasetDirectory = new File(datasetPath);
         File[] files = datasetDirectory.listFiles();
 
-        //action can be item for show items, or save for download files
-        if(!action.equals("save")) {
+        //action can be item for show items, or save for download files, or delete for delete files
+        if(!action.equals("save") && !action.equals("delete")) {
             action = "item";
         }
 
@@ -170,6 +180,33 @@ public class DatasetController {
 
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
+
+    @Operation(summary = "Delete Dataset File", description = "Deletes a dataset file from Fuseki.")
+    @ApiResponse(responseCode = "200", description = "File deleted successfully")
+    @ApiResponse(responseCode = "404", description = "File not found")
+    @ApiResponse(responseCode = "500", description = "Server error while deleting file")
+    @DeleteMapping("/delete-file")
+    public ResponseEntity<String> deleteDatasetFile(
+            @Parameter(description = "Name of the file to delete") @RequestParam("fileName") String fileName) {
+        try {
+            // Construim calea către fișier
+            Path filePath = Paths.get(datasetPath, fileName);
+
+            // Verificăm dacă fișierul există
+            if (!Files.exists(filePath)) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("File not found: " + fileName);
+            }
+
+            // Ștergem fișierul
+            Files.delete(filePath);
+
+            return ResponseEntity.ok("File deleted successfully: " + fileName);
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error deleting file: " + e.getMessage());
         }
     }
 
