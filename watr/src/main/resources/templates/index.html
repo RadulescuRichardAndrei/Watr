@@ -21,7 +21,9 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3"  hx-get="/" hx-target="body">WATR</a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">Toggle</button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+            <img th:src="@{/svg/toggle.svg}" alt="Toggle" width="20" height="20">
+        </button>
         <!-- Navbar Search-->
 
         <!-- Navbar-->
@@ -33,37 +35,69 @@
                     <div class="nav">
 
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayoutsDatasets" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon">
+                                <img th:src="@{/svg/folder-data.svg}" alt="" width="20" height="20">
+                            </div>
                             Datasets
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <div class="sb-sidenav-collapse-arrow">
+                                <img th:src="@{/svg/arrow-down.svg}" alt="" width="20" height="20">
+                            </div>
                         </a>
                         <div class="collapse" id="collapseLayoutsDatasets" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" hx-get="/upload" hx-target="#content">Upload</a>
-                                <a class="nav-link" hx-get="/save" hx-target="#content">Save</a>
+                                <a class="nav-link" href="#" hx-get="/upload" hx-target="#content">
+                                    <div class="sb-nav-link-icon">
+                                        <img th:src="@{/svg/upload.svg}" alt="" width="20" height="20">
+                                    </div>
+                                    Upload
+                                </a>
+                                <a class="nav-link" href="#" hx-get="/save" hx-target="#content">
+                                    <div class="sb-nav-link-icon">
+                                        <img th:src="@{/svg/download.svg}" alt="" width="20" height="20">
+                                    </div>
+                                    Save
+                                </a>
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Operations</div>
 
-                        <a class="nav-link collapsed" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon">
+                                <img th:src="@{/svg/image.svg}" alt="" width="20" height="20">
+                            </div>
                             Visualize
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <div class="sb-sidenav-collapse-arrow">
+                                <img th:src="@{/svg/arrow-down.svg}" alt="" width="20" height="20">
+                            </div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" hx-get="/visualize-table-page" hx-target="#content">Table</a>
-                                <a class="nav-link" hx-get="/visualize-rdf-graph-page" hx-target="#content">RDF Graph</a>
+                                <a class="nav-link" href="#" hx-get="/visualize-table-page" hx-target="#content">
+                                    <div class="sb-nav-link-icon">
+                                        <img th:src="@{/svg/table.svg}" alt="" width="20" height="20">
+                                    </div>
+                                    Table
+                                </a>
+                                <a class="nav-link" href="#" hx-get="/visualize-rdf-graph-page" hx-target="#content">
+                                    <div class="sb-nav-link-icon">
+                                        <img th:src="@{/svg/graph.svg}" alt="" width="20" height="20">
+                                    </div>
+                                    RDF Graph
+                                </a>
                             </nav>
                         </div>
 
 
-                        <a class="nav-link" hx-get="/visualize-compare-page" hx-target="#content">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        <a class="nav-link" href="#" hx-get="/visualize-compare-page" hx-target="#content">
+                            <div class="sb-nav-link-icon">
+                                <img th:src="@{/svg/compare.svg}" alt="" width="20" height="20">
+                            </div>
                             Compare Schemas
                         </a>
-                        <a class="nav-link" hx-get="/visualize-statistic-page" hx-target="#content">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                        <a class="nav-link" href="#" hx-get="/visualize-statistic-page" hx-target="#content">
+                            <div class="sb-nav-link-icon">
+                                <img th:src="@{/svg/chart.svg}" alt="" width="20" height="20">
+                            </div>
                             Statistics
                         </a>
 
