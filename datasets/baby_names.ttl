@@ -1,0 +1,5003 @@
+@prefix ns0: <http://www.socrata.com/rdf/terms#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <https://data.cityofnewyork.us/resource/_25th-nujf/> .
+
+<https://data.cityofnewyork.us/resource/_25th-nujf/row-v4f5%7Exz3v-vr86>
+  ns0:rowID "row-v4f5%7Exz3v-vr86" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "GERALDINE" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-gdep%7Emr7x-dj3u
+  ns0:rowID "row-gdep%7Emr7x-dj3u" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "GIA" ;
+  ns1:cnt "21" ;
+  ns1:rnk "67" .
+
+ns1:row-4f22%7Exggt-ah4b
+  ns0:rowID "row-4f22%7Exggt-ah4b" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "GIANNA" ;
+  ns1:cnt "49" ;
+  ns1:rnk "42" .
+
+ns1:row-rtrn%7Eadrh.v7rc
+  ns0:rowID "row-rtrn%7Eadrh.v7rc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "GISELLE" ;
+  ns1:cnt "38" ;
+  ns1:rnk "51" .
+
+ns1:row-ncyh_z5tn%7Evyt2
+  ns0:rowID "row-ncyh_z5tn%7Evyt2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "GRACE" ;
+  ns1:cnt "36" ;
+  ns1:rnk "53" .
+
+ns1:row-a4hw_8uic%7E4yg9
+  ns0:rowID "row-a4hw_8uic%7E4yg9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "GUADALUPE" ;
+  ns1:cnt "26" ;
+  ns1:rnk "62" .
+
+ns1:row-udhd_mkva_t8sv
+  ns0:rowID "row-udhd_mkva_t8sv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HAILEY" ;
+  ns1:cnt "126" ;
+  ns1:rnk "8" .
+
+ns1:row-p6z5-9gbz%7E59v6
+  ns0:rowID "row-p6z5-9gbz%7E59v6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HALEY" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-6wj9-5fha.hz2c
+  ns0:rowID "row-6wj9-5fha.hz2c" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HANNAH" ;
+  ns1:cnt "17" ;
+  ns1:rnk "71" .
+
+ns1:row-a7h5%7Exgqy-t6ez
+  ns0:rowID "row-a7h5%7Exgqy-t6ez" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HAYLEE" ;
+  ns1:cnt "17" ;
+  ns1:rnk "71" .
+
+ns1:row-dcdp-pqm7.2hib
+  ns0:rowID "row-dcdp-pqm7.2hib" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HAYLEY" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-i2ij.3r36.vu3w
+  ns0:rowID "row-i2ij.3r36.vu3w" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HAZEL" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-s2hx%7Ezbm3_ivaf
+  ns0:rowID "row-s2hx%7Ezbm3_ivaf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HEAVEN" ;
+  ns1:cnt "15" ;
+  ns1:rnk "73" .
+
+ns1:row-jk4d%7Ewycj.ud4f
+  ns0:rowID "row-jk4d%7Ewycj.ud4f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HEIDI" ;
+  ns1:cnt "15" ;
+  ns1:rnk "73" .
+
+ns1:row-k55u%7Ek2cj_ywtf
+  ns0:rowID "row-k55u%7Ek2cj_ywtf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HEIDY" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-djkb_u9ub%7Ezuh2
+  ns0:rowID "row-djkb_u9ub%7Ezuh2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "HELEN" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-kxxx%7Esqf8-6hfj
+  ns0:rowID "row-kxxx%7Esqf8-6hfj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "IMANI" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-agfu%7Eqyqp%7Ejek9
+  ns0:rowID "row-agfu%7Eqyqp%7Ejek9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "INGRID" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-wkin-x5a6%7Ej39u
+  ns0:rowID "row-wkin-x5a6%7Ej39u" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "IRENE" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-bu8j_tdae_xext
+  ns0:rowID "row-bu8j_tdae_xext" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "IRIS" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-shfr.ysxp%7E89te
+  ns0:rowID "row-shfr.ysxp%7E89te" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ISABEL" ;
+  ns1:cnt "28" ;
+  ns1:rnk "60" .
+
+ns1:row-xxxj%7Eungn-v9i8
+  ns0:rowID "row-xxxj%7Eungn-v9i8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ISABELA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-54ix-2ywb_kjc5
+  ns0:rowID "row-54ix-2ywb_kjc5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ISABELLA" ;
+  ns1:cnt "331" ;
+  ns1:rnk "1" .
+
+ns1:row-ezs4-j76s%7Epecc
+  ns0:rowID "row-ezs4-j76s%7Epecc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ISABELLE" ;
+  ns1:cnt "18" ;
+  ns1:rnk "70" .
+
+ns1:row-k9qw_x8eu.mapr
+  ns0:rowID "row-k9qw_x8eu.mapr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ISIS" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-qd5f-3zts.eve9
+  ns0:rowID "row-qd5f-3zts.eve9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ITZEL" ;
+  ns1:cnt "27" ;
+  ns1:rnk "61" .
+
+ns1:row-uupz%7Ehh3b_2qkg
+  ns0:rowID "row-uupz%7Ehh3b_2qkg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "IZABELLA" ;
+  ns1:cnt "23" ;
+  ns1:rnk "65" .
+
+ns1:row-r5x4.yxch-38ca
+  ns0:rowID "row-r5x4.yxch-38ca" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JACQUELINE" ;
+  ns1:cnt "30" ;
+  ns1:rnk "58" .
+
+ns1:row-e3ki%7Efmnz.twrt
+  ns0:rowID "row-e3ki%7Efmnz.twrt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JADA" ;
+  ns1:cnt "21" ;
+  ns1:rnk "67" .
+
+ns1:row-8xcd-wxaa%7E7kpj
+  ns0:rowID "row-8xcd-wxaa%7E7kpj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JADE" ;
+  ns1:cnt "50" ;
+  ns1:rnk "41" .
+
+ns1:row-wxjn%7Ekqie%7Eieag
+  ns0:rowID "row-wxjn%7Ekqie%7Eieag" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAELYNN" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-s297.5mja-m7mn
+  ns0:rowID "row-s297.5mja-m7mn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAMIE" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-gitz-ktqp_gnuh
+  ns0:rowID "row-gitz-ktqp_gnuh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JANELLE" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-f8hh_tvyc%7Exkti
+  ns0:rowID "row-f8hh_tvyc%7Exkti" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JASLENE" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-bp55-2f2w-28wc
+  ns0:rowID "row-bp55-2f2w-28wc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JASMIN" ;
+  ns1:cnt "20" ;
+  ns1:rnk "68" .
+
+ns1:row-vps4-7b5p.cz9v
+  ns0:rowID "row-vps4-7b5p.cz9v" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JASMINE" ;
+  ns1:cnt "41" ;
+  ns1:rnk "48" .
+
+ns1:row-p62g%7Eh652.n3dz
+  ns0:rowID "row-p62g%7Eh652.n3dz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAYDA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-ig7h.p3qg-2dik
+  ns0:rowID "row-ig7h.p3qg-2dik" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAYLA" ;
+  ns1:cnt "33" ;
+  ns1:rnk "55" .
+
+ns1:row-2t9w%7Ec65g_y8g9
+  ns0:rowID "row-2t9w%7Ec65g_y8g9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAYLAH" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-77xb%7Ef97e-prrh
+  ns0:rowID "row-77xb%7Ef97e-prrh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAYLEEN" ;
+  ns1:cnt "51" ;
+  ns1:rnk "40" .
+
+ns1:row-bdjz%7E23j2-fxnf
+  ns0:rowID "row-bdjz%7E23j2-fxnf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAYLENE" ;
+  ns1:cnt "22" ;
+  ns1:rnk "66" .
+
+ns1:row-qs8x-qk36%7E9udf
+  ns0:rowID "row-qs8x-qk36%7E9udf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAYLIN" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-bmkg%7Empfz%7Efha8
+  ns0:rowID "row-bmkg%7Empfz%7Efha8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAYLYN" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-dswm.8qvi%7Ejhjq
+  ns0:rowID "row-dswm.8qvi%7Ejhjq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAZLYN" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-y2h4.k8bb_96fe
+  ns0:rowID "row-y2h4.k8bb_96fe" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAZMIN" ;
+  ns1:cnt "24" ;
+  ns1:rnk "64" .
+
+ns1:row-27r8%7Ea7wg%7E5yqk
+  ns0:rowID "row-27r8%7Ea7wg%7E5yqk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JAZMINE" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-g8hz%7Ehqyu-q8q3
+  ns0:rowID "row-g8hz%7Ehqyu-q8q3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JENNIFER" ;
+  ns1:cnt "59" ;
+  ns1:rnk "34" .
+
+ns1:row-i8rg_5df7.hj6y
+  ns0:rowID "row-i8rg_5df7.hj6y" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JESSICA" ;
+  ns1:cnt "46" ;
+  ns1:rnk "44" .
+
+ns1:row-eydz-5yuf%7Ey7c2
+  ns0:rowID "row-eydz-5yuf%7Ey7c2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JIMENA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-4pkz-fwf5_vhta
+  ns0:rowID "row-4pkz-fwf5_vhta" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JOCELYN" ;
+  ns1:cnt "46" ;
+  ns1:rnk "44" .
+
+ns1:row-74i3.xzpk-p48i
+  ns0:rowID "row-74i3.xzpk-p48i" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JOHANNA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-7a55.jkdk_hrgx
+  ns0:rowID "row-7a55.jkdk_hrgx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JOSELYN" ;
+  ns1:cnt "30" ;
+  ns1:rnk "58" .
+
+ns1:row-nt4b-wa6f_c6z2
+  ns0:rowID "row-nt4b-wa6f_c6z2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JULIA" ;
+  ns1:cnt "22" ;
+  ns1:rnk "66" .
+
+ns1:row-93xx.ggsh.djgv
+  ns0:rowID "row-93xx.ggsh.djgv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JULIANA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-j6qb_qjd7_bdxh
+  ns0:rowID "row-j6qb_qjd7_bdxh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JULIANNA" ;
+  ns1:cnt "21" ;
+  ns1:rnk "67" .
+
+ns1:row-r4am.5kgc_aceu
+  ns0:rowID "row-r4am.5kgc_aceu" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JULIET" ;
+  ns1:cnt "20" ;
+  ns1:rnk "68" .
+
+ns1:row-nwkb%7Ewx38%7Eeicm
+  ns0:rowID "row-nwkb%7Ewx38%7Eeicm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JULIETTE" ;
+  ns1:cnt "15" ;
+  ns1:rnk "73" .
+
+ns1:row-y9qw-azg9_gbfs
+  ns0:rowID "row-y9qw-azg9_gbfs" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "JULISSA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-huk5_7t23-xxqp
+  ns0:rowID "row-huk5_7t23-xxqp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAELYN" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-3pvy%7Ebh4c%7E4jgy
+  ns0:rowID "row-3pvy%7Ebh4c%7E4jgy" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAILEY" ;
+  ns1:cnt "20" ;
+  ns1:rnk "68" .
+
+ns1:row-9i43%7E2ich_t3zr
+  ns0:rowID "row-9i43%7E2ich_t3zr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAILYN" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-meza-g58e.fn8e
+  ns0:rowID "row-meza-g58e.fn8e" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAITLYN" ;
+  ns1:cnt "31" ;
+  ns1:rnk "57" .
+
+ns1:row-2nw8%7Ebiwn%7E9v3p
+  ns0:rowID "row-2nw8%7Ebiwn%7E9v3p" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAMILA" ;
+  ns1:cnt "36" ;
+  ns1:rnk "53" .
+
+ns1:row-bkrj.atft_v755
+  ns0:rowID "row-bkrj.atft_v755" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAREN" ;
+  ns1:cnt "41" ;
+  ns1:rnk "48" .
+
+ns1:row-53tf.z2t5.3k4q
+  ns0:rowID "row-53tf.z2t5.3k4q" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KARLA" ;
+  ns1:cnt "25" ;
+  ns1:rnk "63" .
+
+ns1:row-f4tr%7Eayzn-qu84
+  ns0:rowID "row-f4tr%7Eayzn-qu84" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KATE" ;
+  ns1:cnt "27" ;
+  ns1:rnk "61" .
+
+ns1:row-64ny%7Ejz45-8s3t
+  ns0:rowID "row-64ny%7Ejz45-8s3t" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KATELYN" ;
+  ns1:cnt "23" ;
+  ns1:rnk "65" .
+
+ns1:row-nch2-qkg7%7E9hwd
+  ns0:rowID "row-nch2-qkg7%7E9hwd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KATELYNN" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-gmbp-xs6b-c45f
+  ns0:rowID "row-gmbp-xs6b-c45f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KATHERINE" ;
+  ns1:cnt "60" ;
+  ns1:rnk "33" .
+
+ns1:row-378c-9f66%7Esswu
+  ns0:rowID "row-378c-9f66%7Esswu" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KATIE" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-yp4n-y298.5454
+  ns0:rowID "row-yp4n-y298.5454" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAYLA" ;
+  ns1:cnt "62" ;
+  ns1:rnk "31" .
+
+ns1:row-ebs3.vz8e.5q6c
+  ns0:rowID "row-ebs3.vz8e.5q6c" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAYLEE" ;
+  ns1:cnt "83" ;
+  ns1:rnk "20" .
+
+ns1:row-wrje.biuj%7Eaeqq
+  ns0:rowID "row-wrje.biuj%7Eaeqq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAYLEEN" ;
+  ns1:cnt "19" ;
+  ns1:rnk "69" .
+
+ns1:row-fckh.6spz%7Eayhh
+  ns0:rowID "row-fckh.6spz%7Eayhh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAYLEIGH" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-bssa%7Ehfxs.4cx5
+  ns0:rowID "row-bssa%7Ehfxs.4cx5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAYLIE" ;
+  ns1:cnt "15" ;
+  ns1:rnk "73" .
+
+ns1:row-bujz.ecre-f7ds
+  ns0:rowID "row-bujz.ecre-f7ds" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KAYLIN" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-p39x.bkye.mt5u
+  ns0:rowID "row-p39x.bkye.mt5u" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KEILY" ;
+  ns1:cnt "17" ;
+  ns1:rnk "71" .
+
+ns1:row-inqf-7zt5_bxcy
+  ns0:rowID "row-inqf-7zt5_bxcy" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KELLY" ;
+  ns1:cnt "41" ;
+  ns1:rnk "48" .
+
+ns1:row-3iyh_bem8-xgzu
+  ns0:rowID "row-3iyh_bem8-xgzu" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KEYLA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-4h8v-6xvu_pc38
+  ns0:rowID "row-4h8v-6xvu_pc38" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KHLOE" ;
+  ns1:cnt "57" ;
+  ns1:rnk "35" .
+
+ns1:row-c6tv_vr8p%7E2exp
+  ns0:rowID "row-c6tv_vr8p%7E2exp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KIARA" ;
+  ns1:cnt "36" ;
+  ns1:rnk "53" .
+
+ns1:row-upwu%7Eygsn_5y3b
+  ns0:rowID "row-upwu%7Eygsn_5y3b" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KIMBERLY" ;
+  ns1:cnt "103" ;
+  ns1:rnk "13" .
+
+ns1:row-kbi8%7Ejdgq-44dq
+  ns0:rowID "row-kbi8%7Ejdgq-44dq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KRYSTAL" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-7vpm%7Eh2hc%7Ejdcz
+  ns0:rowID "row-7vpm%7Eh2hc%7Ejdcz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KYLEE" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-gghh%7Es5hh-caet
+  ns0:rowID "row-gghh%7Es5hh-caet" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "KYLIE" ;
+  ns1:cnt "37" ;
+  ns1:rnk "52" .
+
+ns1:row-4n9v_zfg9-2fmi
+  ns0:rowID "row-4n9v_zfg9-2fmi" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LAILA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "59" .
+
+ns1:row-rbkx-2u8c.4ucz
+  ns0:rowID "row-rbkx-2u8c.4ucz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LAURA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-2e6x%7E73e6_dw7n
+  ns0:rowID "row-2e6x%7E73e6_dw7n" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LAUREN" ;
+  ns1:cnt "21" ;
+  ns1:rnk "67" .
+
+ns1:row-avv5_qe3q-4r8v
+  ns0:rowID "row-avv5_qe3q-4r8v" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LAYLA" ;
+  ns1:cnt "52" ;
+  ns1:rnk "39" .
+
+ns1:row-kdac_fxfy.rvdh
+  ns0:rowID "row-kdac_fxfy.rvdh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LEA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-38d9-qzyh_webt
+  ns0:rowID "row-38d9-qzyh_webt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LEAH" ;
+  ns1:cnt "123" ;
+  ns1:rnk "9" .
+
+ns1:row-x5yx%7Epvpe-5be5
+  ns0:rowID "row-x5yx%7Epvpe-5be5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LEILA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "68" .
+
+ns1:row-urds-jw8w.jugp
+  ns0:rowID "row-urds-jw8w.jugp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LEILANI" ;
+  ns1:cnt "33" ;
+  ns1:rnk "55" .
+
+ns1:row-nubg%7Ev9w6_iauw
+  ns0:rowID "row-nubg%7Ev9w6_iauw" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LESLEY" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-7ry3-j4kc.y5za
+  ns0:rowID "row-7ry3-j4kc.y5za" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LESLIE" ;
+  ns1:cnt "66" ;
+  ns1:rnk "27" .
+
+ns1:row-3xgx%7E89v6_x9fa
+  ns0:rowID "row-3xgx%7E89v6_x9fa" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LESLY" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-34y6_k2ah_xwhh
+  ns0:rowID "row-34y6_k2ah_xwhh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LEYLA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-4ik2_mkqu_bbnd
+  ns0:rowID "row-4ik2_mkqu_bbnd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LIA" ;
+  ns1:cnt "26" ;
+  ns1:rnk "62" .
+
+ns1:row-d93f%7Ezst4_t3kz
+  ns0:rowID "row-d93f%7Ezst4_t3kz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LIANA" ;
+  ns1:cnt "18" ;
+  ns1:rnk "70" .
+
+ns1:row-df78.emyx-by5t
+  ns0:rowID "row-df78.emyx-by5t" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LILIANA" ;
+  ns1:cnt "28" ;
+  ns1:rnk "60" .
+
+ns1:row-nxh6-ds5m_7ee4
+  ns0:rowID "row-nxh6-ds5m_7ee4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LILY" ;
+  ns1:cnt "21" ;
+  ns1:rnk "67" .
+
+ns1:row-jr9k%7E37gd%7Ecjsk
+  ns0:rowID "row-jr9k%7E37gd%7Ecjsk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LINDSAY" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-9jzn%7Es5k2.p8n6
+  ns0:rowID "row-9jzn%7Es5k2.p8n6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LIZBETH" ;
+  ns1:cnt "30" ;
+  ns1:rnk "58" .
+
+ns1:row-93dp_ah5p-njcx
+  ns0:rowID "row-93dp_ah5p-njcx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LONDON" ;
+  ns1:cnt "27" ;
+  ns1:rnk "61" .
+
+ns1:row-hh4j_q9hz-vtji
+  ns0:rowID "row-hh4j_q9hz-vtji" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LUCIA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "68" .
+
+ns1:row-gemf%7Eapgx%7Emxk8
+  ns0:rowID "row-gemf%7Eapgx%7Emxk8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LUNA" ;
+  ns1:cnt "24" ;
+  ns1:rnk "64" .
+
+ns1:row-ad47.xwjy_vnwr
+  ns0:rowID "row-ad47.xwjy_vnwr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "LUZ" ;
+  ns1:cnt "25" ;
+  ns1:rnk "63" .
+
+ns1:row-3xfc_9ud7_57sm
+  ns0:rowID "row-3xfc_9ud7_57sm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MADELINE" ;
+  ns1:cnt "15" ;
+  ns1:rnk "73" .
+
+ns1:row-aitt.xgjx_6j8i
+  ns0:rowID "row-aitt.xgjx_6j8i" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MADELYN" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-9p6d%7Ehivb_q5c9
+  ns0:rowID "row-9p6d%7Ehivb_q5c9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MADISON" ;
+  ns1:cnt "122" ;
+  ns1:rnk "10" .
+
+ns1:row-kge8.fqpj%7Eug4j
+  ns0:rowID "row-kge8.fqpj%7Eug4j" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MAKAYLA" ;
+  ns1:cnt "32" ;
+  ns1:rnk "56" .
+
+ns1:row-4p5z-bucd.wmik
+  ns0:rowID "row-4p5z-bucd.wmik" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MARIA" ;
+  ns1:cnt "59" ;
+  ns1:rnk "34" .
+
+ns1:row-giuh_msie_akgk
+  ns0:rowID "row-giuh_msie_akgk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MARIAH" ;
+  ns1:cnt "33" ;
+  ns1:rnk "55" .
+
+ns1:row-ibr6%7E8657%7Ee29d
+  ns0:rowID "row-ibr6%7E8657%7Ee29d" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MARIANA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-kbwm-zxkj_nqyn
+  ns0:rowID "row-kbwm-zxkj_nqyn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MARILYN" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-2dfe-237d.xu4m
+  ns0:rowID "row-2dfe-237d.xu4m" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MARISOL" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-avn6.b7sm-ebsn
+  ns0:rowID "row-avn6.b7sm-ebsn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MAYA" ;
+  ns1:cnt "49" ;
+  ns1:rnk "42" .
+
+ns1:row-e3s9_zd6i_zrtf
+  ns0:rowID "row-e3s9_zd6i_zrtf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MEGAN" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-qd3f.8p8w-td84
+  ns0:rowID "row-qd3f.8p8w-td84" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MELANIE" ;
+  ns1:cnt "109" ;
+  ns1:rnk "12" .
+
+ns1:row-94fq.vjp3_rggg
+  ns0:rowID "row-94fq.vjp3_rggg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MELANY" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-f55e-wdd5%7Ehg93
+  ns0:rowID "row-f55e-wdd5%7Ehg93" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MELISSA" ;
+  ns1:cnt "50" ;
+  ns1:rnk "41" .
+
+ns1:row-7j8u-up8w%7E9f8y
+  ns0:rowID "row-7j8u-up8w%7E9f8y" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MELODY" ;
+  ns1:cnt "23" ;
+  ns1:rnk "65" .
+
+ns1:row-npev_zd7u-mu98
+  ns0:rowID "row-npev_zd7u-mu98" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MIA" ;
+  ns1:cnt "229" ;
+  ns1:rnk "2" .
+
+ns1:row-ghff-fwxi-vv6f
+  ns0:rowID "row-ghff-fwxi-vv6f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MIAH" ;
+  ns1:cnt "17" ;
+  ns1:rnk "71" .
+
+ns1:row-e37q%7Edcu8.idep
+  ns0:rowID "row-e37q%7Edcu8.idep" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MICHELLE" ;
+  ns1:cnt "51" ;
+  ns1:rnk "40" .
+
+ns1:row-9uhc-uhd8.5sqr
+  ns0:rowID "row-9uhc-uhd8.5sqr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MIKAELA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-tjyt.2937.f8j6
+  ns0:rowID "row-tjyt.2937.f8j6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MIKAYLA" ;
+  ns1:cnt "26" ;
+  ns1:rnk "62" .
+
+ns1:row-5btt_bti8%7Eb7ds
+  ns0:rowID "row-5btt_bti8%7Eb7ds" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MILA" ;
+  ns1:cnt "19" ;
+  ns1:rnk "69" .
+
+ns1:row-5g24.qrc8_j4f2
+  ns0:rowID "row-5g24.qrc8_j4f2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MILEY" ;
+  ns1:cnt "17" ;
+  ns1:rnk "71" .
+
+ns1:row-gtys%7E96hd.jxma
+  ns0:rowID "row-gtys%7E96hd.jxma" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MIRANDA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-uj74%7E29n6%7E759c
+  ns0:rowID "row-uj74%7E29n6%7E759c" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MIRIAM" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-qzac%7Egpwm.fmae
+  ns0:rowID "row-qzac%7Egpwm.fmae" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "MYA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "59" .
+
+ns1:row-8buv.gkbj%7Ejbkd
+  ns0:rowID "row-8buv.gkbj%7Ejbkd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NADIA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-dbyq_cqe2_p42u
+  ns0:rowID "row-dbyq_cqe2_p42u" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NANCY" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-etcc.kk58_he92
+  ns0:rowID "row-etcc.kk58_he92" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NAOMI" ;
+  ns1:cnt "22" ;
+  ns1:rnk "66" .
+
+ns1:row-sv82.nnuy_akxk
+  ns0:rowID "row-sv82.nnuy_akxk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NATALIA" ;
+  ns1:cnt "50" ;
+  ns1:rnk "41" .
+
+ns1:row-ugff.k7qk-fzq4
+  ns0:rowID "row-ugff.k7qk-fzq4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NATALIE" ;
+  ns1:cnt "46" ;
+  ns1:rnk "44" .
+
+ns1:row-2xr7%7Eip78.9hw7
+  ns0:rowID "row-2xr7%7Eip78.9hw7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NATALY" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-x6a4_gpaf.pbe3
+  ns0:rowID "row-x6a4_gpaf.pbe3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NATASHA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-c5q5_pjrf-iy82
+  ns0:rowID "row-c5q5_pjrf-iy82" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NATHALIA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-tdpx-asca_3ht8
+  ns0:rowID "row-tdpx-asca_3ht8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NATHALIE" ;
+  ns1:cnt "26" ;
+  ns1:rnk "62" .
+
+ns1:row-tdn6_825v.wq23
+  ns0:rowID "row-tdn6_825v.wq23" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NATHALY" ;
+  ns1:cnt "20" ;
+  ns1:rnk "68" .
+
+ns1:row-tgmf_yqnb%7Eha8n
+  ns0:rowID "row-tgmf_yqnb%7Eha8n" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NAYELI" ;
+  ns1:cnt "17" ;
+  ns1:rnk "71" .
+
+ns1:row-nsz8.85xr.tg5f
+  ns0:rowID "row-nsz8.85xr.tg5f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NEVAEH" ;
+  ns1:cnt "32" ;
+  ns1:rnk "56" .
+
+ns1:row-ne7i.4pu9-jawh
+  ns0:rowID "row-ne7i.4pu9-jawh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NICOLE" ;
+  ns1:cnt "71" ;
+  ns1:rnk "25" .
+
+ns1:row-fasq-e6mw_bbd5
+  ns0:rowID "row-fasq-e6mw_bbd5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NINA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-ae55.jg7f-j8t5
+  ns0:rowID "row-ae55.jg7f-j8t5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NOEMI" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-4c84-4xtf%7Efzvm
+  ns0:rowID "row-4c84-4xtf%7Efzvm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "NYLA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-8exw%7E36iu.z6n2
+  ns0:rowID "row-8exw%7E36iu.z6n2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "OLIVIA" ;
+  ns1:cnt "86" ;
+  ns1:rnk "18" .
+
+ns1:row-avps%7Ey2f7_xuzc
+  ns0:rowID "row-avps%7Ey2f7_xuzc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "PAOLA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-vzg7-iwpy_hssm
+  ns0:rowID "row-vzg7-iwpy_hssm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "PENELOPE" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-ynix-4myz%7E96eh
+  ns0:rowID "row-ynix-4myz%7E96eh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "PERLA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-zbzi%7Ejz4a.ft98
+  ns0:rowID "row-zbzi%7Ejz4a.ft98" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "RACHEL" ;
+  ns1:cnt "25" ;
+  ns1:rnk "63" .
+
+ns1:row-jvsm%7E9uas%7Ec5i3
+  ns0:rowID "row-jvsm%7E9uas%7Ec5i3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "RAQUEL" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-hnsp%7Eckpy_9mq6
+  ns0:rowID "row-hnsp%7Eckpy_9mq6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "REBECCA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-izm7-mj94_eyd5
+  ns0:rowID "row-izm7-mj94_eyd5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "RIHANNA" ;
+  ns1:cnt "21" ;
+  ns1:rnk "67" .
+
+ns1:row-zj95.r3h9.fpnt
+  ns0:rowID "row-zj95.r3h9.fpnt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "RILEY" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-gu8d%7Ex4wg%7Ebgeq
+  ns0:rowID "row-gu8d%7Ex4wg%7Ebgeq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ROSA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-fce3-u7u6-ftwt
+  ns0:rowID "row-fce3-u7u6-ftwt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ROSE" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-qii7_qdgm-fxmq
+  ns0:rowID "row-qii7_qdgm-fxmq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ROSELYN" ;
+  ns1:cnt "16" ;
+  ns1:rnk "72" .
+
+ns1:row-5zyk-4swa_2qan
+  ns0:rowID "row-5zyk-4swa_2qan" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "RUBY" ;
+  ns1:cnt "20" ;
+  ns1:rnk "68" .
+
+ns1:row-ng4g%7Ey8rb_zmwc
+  ns0:rowID "row-ng4g%7Ey8rb_zmwc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SABRINA" ;
+  ns1:cnt "25" ;
+  ns1:rnk "63" .
+
+ns1:row-h56f-i6g9_34rx
+  ns0:rowID "row-h56f-i6g9_34rx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SADIE" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-f3c6%7E3534%7Ei9bn
+  ns0:rowID "row-f3c6%7E3534%7Ei9bn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SAMANTHA" ;
+  ns1:cnt "100" ;
+  ns1:rnk "14" .
+
+ns1:row-qxc7%7Ei3q8.upwf
+  ns0:rowID "row-qxc7%7Ei3q8.upwf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SAMARA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-y9ur.b4dx.ysgs
+  ns0:rowID "row-y9ur.b4dx.ysgs" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SARA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "59" .
+
+ns1:row-6efv_f8qb%7Ekjbv
+  ns0:rowID "row-6efv_f8qb%7Ekjbv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SARAH" ;
+  ns1:cnt "53" ;
+  ns1:rnk "38" .
+
+ns1:row-dfc7.gueu%7E6iz5
+  ns0:rowID "row-dfc7.gueu%7E6iz5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SARAI" ;
+  ns1:cnt "24" ;
+  ns1:rnk "64" .
+
+ns1:row-5ww5_m3aq_zfxg
+  ns0:rowID "row-5ww5_m3aq_zfxg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SARIAH" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-dh3f_iziu.e84q
+  ns0:rowID "row-dh3f_iziu.e84q" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SASHA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-vptg%7E2m84.u94n
+  ns0:rowID "row-vptg%7E2m84.u94n" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SAVANNA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-4bh7%7Epvc4.t9ie
+  ns0:rowID "row-4bh7%7Epvc4.t9ie" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SAVANNAH" ;
+  ns1:cnt "38" ;
+  ns1:rnk "51" .
+
+ns1:row-egcz_6bwt-8et2
+  ns0:rowID "row-egcz_6bwt-8et2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SCARLET" ;
+  ns1:cnt "29" ;
+  ns1:rnk "59" .
+
+ns1:row-e8sz%7E3vbv.cvte
+  ns0:rowID "row-e8sz%7E3vbv.cvte" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SCARLETT" ;
+  ns1:cnt "65" ;
+  ns1:rnk "28" .
+
+ns1:row-8wz2_s3jy-can6
+  ns0:rowID "row-8wz2_s3jy-can6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SELENA" ;
+  ns1:cnt "15" ;
+  ns1:rnk "73" .
+
+ns1:row-zvdx%7Egtee%7Eausn
+  ns0:rowID "row-zvdx%7Egtee%7Eausn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SERENITY" ;
+  ns1:cnt "37" ;
+  ns1:rnk "52" .
+
+ns1:row-mcwm.uhxp.nujb
+  ns0:rowID "row-mcwm.uhxp.nujb" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SHERLYN" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-fu3m.wzd6_axtp
+  ns0:rowID "row-fu3m.wzd6_axtp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SHIRLEY" ;
+  ns1:cnt "15" ;
+  ns1:rnk "73" .
+
+ns1:row-urf5_nqx3%7Epyhs
+  ns0:rowID "row-urf5_nqx3%7Epyhs" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SIENNA" ;
+  ns1:cnt "17" ;
+  ns1:rnk "71" .
+
+ns1:row-yk55.cviy_5s5y
+  ns0:rowID "row-yk55.cviy_5s5y" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SKYLA" ;
+  ns1:cnt "21" ;
+  ns1:rnk "67" .
+
+ns1:row-6f5d%7Ex4ty_n582
+  ns0:rowID "row-6f5d%7Ex4ty_n582" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SKYLAR" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-xuad.8fiu_s3eg
+  ns0:rowID "row-xuad.8fiu_s3eg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SOFIA" ;
+  ns1:cnt "165" ;
+  ns1:rnk "6" .
+
+ns1:row-tpnw.ju6a%7Eevci
+  ns0:rowID "row-tpnw.ju6a%7Eevci" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SOPHIA" ;
+  ns1:cnt "223" ;
+  ns1:rnk "3" .
+
+ns1:row-wyuj_6x2s-qswm
+  ns0:rowID "row-wyuj_6x2s-qswm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "SOPHIE" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-39i8%7E9wy4_gwz2
+  ns0:rowID "row-39i8%7E9wy4_gwz2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "STACY" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-jxn8.2272.qk5j
+  ns0:rowID "row-jxn8.2272.qk5j" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "STELLA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-6u9p_g4t9%7Eqg7k
+  ns0:rowID "row-6u9p_g4t9%7Eqg7k" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "STEPHANIE" ;
+  ns1:cnt "50" ;
+  ns1:rnk "41" .
+
+ns1:row-ck2g-vrwe-hpep
+  ns0:rowID "row-ck2g-vrwe-hpep" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "STEPHANY" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-uaug_fvuw.ztsv
+  ns0:rowID "row-uaug_fvuw.ztsv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "TATIANA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-nx7t.s78q-ah8a
+  ns0:rowID "row-nx7t.s78q-ah8a" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "TAYLOR" ;
+  ns1:cnt "13" ;
+  ns1:rnk "75" .
+
+ns1:row-7q7c%7Ehmjp.gr45
+  ns0:rowID "row-7q7c%7Ehmjp.gr45" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "TIANA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-v87d%7Eu9pa_iizi
+  ns0:rowID "row-v87d%7Eu9pa_iizi" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "TIFFANY" ;
+  ns1:cnt "24" ;
+  ns1:rnk "64" .
+
+ns1:row-w85e.6uu6.iuez
+  ns0:rowID "row-w85e.6uu6.iuez" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VALENTINA" ;
+  ns1:cnt "85" ;
+  ns1:rnk "19" .
+
+ns1:row-ght5%7Eyfbz-2pmh
+  ns0:rowID "row-ght5%7Eyfbz-2pmh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VALERIA" ;
+  ns1:cnt "45" ;
+  ns1:rnk "45" .
+
+ns1:row-grvw-rqa7%7Eqs2n
+  ns0:rowID "row-grvw-rqa7%7Eqs2n" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VALERIE" ;
+  ns1:cnt "53" ;
+  ns1:rnk "38" .
+
+ns1:row-9n8i%7Ej5x4_8tcg
+  ns0:rowID "row-9n8i%7Ej5x4_8tcg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VANESSA" ;
+  ns1:cnt "42" ;
+  ns1:rnk "47" .
+
+ns1:row-syq2_z4vq-k7m2
+  ns0:rowID "row-syq2_z4vq-k7m2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VERONICA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "78" .
+
+ns1:row-r7fx%7Eu5a9_c83s
+  ns0:rowID "row-r7fx%7Eu5a9_c83s" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VICTORIA" ;
+  ns1:cnt "114" ;
+  ns1:rnk "11" .
+
+ns1:row-5esi_ftg5%7Eqxne
+  ns0:rowID "row-5esi_ftg5%7Eqxne" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VIOLET" ;
+  ns1:cnt "14" ;
+  ns1:rnk "74" .
+
+ns1:row-npws.itxk_57bs
+  ns0:rowID "row-npws.itxk_57bs" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "VIVIANA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-qcj7-nhvr%7Eaxxa
+  ns0:rowID "row-qcj7-nhvr%7Eaxxa" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "WENDY" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-4d2m%7E9xuy-ap97
+  ns0:rowID "row-4d2m%7E9xuy-ap97" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "XIMENA" ;
+  ns1:cnt "18" ;
+  ns1:rnk "70" .
+
+ns1:row-x4zu_pqwa.nskk
+  ns0:rowID "row-x4zu_pqwa.nskk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "YAMILET" ;
+  ns1:cnt "11" ;
+  ns1:rnk "77" .
+
+ns1:row-zag4-2c42-9gi6
+  ns0:rowID "row-zag4-2c42-9gi6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "YARETZI" ;
+  ns1:cnt "22" ;
+  ns1:rnk "66" .
+
+ns1:row-f2iv.vxer.rm26
+  ns0:rowID "row-f2iv.vxer.rm26" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ZOE" ;
+  ns1:cnt "65" ;
+  ns1:rnk "28" .
+
+ns1:row-svpp-dpyp_bsyn
+  ns0:rowID "row-svpp-dpyp_bsyn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ZOEY" ;
+  ns1:cnt "27" ;
+  ns1:rnk "61" .
+
+ns1:row-cka9%7En9jf%7E7bnj
+  ns0:rowID "row-cka9%7En9jf%7E7bnj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ABIGAIL" ;
+  ns1:cnt "103" ;
+  ns1:rnk "19" .
+
+ns1:row-rhcb%7E8nk8%7Ez7cw
+  ns0:rowID "row-rhcb%7E8nk8%7Ez7cw" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ADDISON" ;
+  ns1:cnt "19" ;
+  ns1:rnk "72" .
+
+ns1:row-8g4f-s2dx%7Ewdfx
+  ns0:rowID "row-8g4f-s2dx%7Ewdfx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ADELE" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-big9_2bwq.wcy5
+  ns0:rowID "row-big9_2bwq.wcy5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ADELINE" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-kkgg%7Eba5v.da44
+  ns0:rowID "row-kkgg%7Eba5v.da44" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ADINA" ;
+  ns1:cnt "19" ;
+  ns1:rnk "72" .
+
+ns1:row-tnrt_8tw5.e6zq
+  ns0:rowID "row-tnrt_8tw5.e6zq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ADRIANA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "62" .
+
+ns1:row-qqap%7E5jch%7E7x4j
+  ns0:rowID "row-qqap%7E5jch%7E7x4j" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ADRIANNA" ;
+  ns1:cnt "18" ;
+  ns1:rnk "73" .
+
+ns1:row-iux7-4p88-b2cf
+  ns0:rowID "row-iux7-4p88-b2cf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AHUVA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-vbyd%7Euksi_acxe
+  ns0:rowID "row-vbyd%7Euksi_acxe" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALESSANDRA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-czbc-ivhi_6spz
+  ns0:rowID "row-czbc-ivhi_6spz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALESSIA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-7mt5_9qj9.j2tm
+  ns0:rowID "row-7mt5_9qj9.j2tm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALEXA" ;
+  ns1:cnt "54" ;
+  ns1:rnk "40" .
+
+ns1:row-t598%7Emnqn.6nm6
+  ns0:rowID "row-t598%7Emnqn.6nm6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALEXANDRA" ;
+  ns1:cnt "109" ;
+  ns1:rnk "17" .
+
+ns1:row-tvpx_j5va-ckiu
+  ns0:rowID "row-tvpx_j5va-ckiu" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALEXIS" ;
+  ns1:cnt "27" ;
+  ns1:rnk "64" .
+
+ns1:row-k3gm_qfja.i2hf
+  ns0:rowID "row-k3gm_qfja.i2hf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALICE" ;
+  ns1:cnt "50" ;
+  ns1:rnk "43" .
+
+ns1:row-uu9d%7E5pnp%7Ejz2r
+  ns0:rowID "row-uu9d%7E5pnp%7Ejz2r" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALICIA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-kmkk-tut7%7E4tea
+  ns0:rowID "row-kmkk-tut7%7E4tea" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALINA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-wkfx.nwqf-hugf
+  ns0:rowID "row-wkfx.nwqf-hugf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALISA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-vcx3-z3kr%7Ezaw6
+  ns0:rowID "row-vcx3-z3kr%7Ezaw6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALIZA" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-kq8v%7Eqe8h%7Egxpt
+  ns0:rowID "row-kq8v%7Eqe8h%7Egxpt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALLISON" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-znzp%7Eg2kj.vcbc
+  ns0:rowID "row-znzp%7Eg2kj.vcbc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ALYSSA" ;
+  ns1:cnt "28" ;
+  ns1:rnk "63" .
+
+ns1:row-9mbx_ec9z_2kxm
+  ns0:rowID "row-9mbx_ec9z_2kxm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AMANDA" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-2k2g_q293_6dqj
+  ns0:rowID "row-2k2g_q293_6dqj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AMELIA" ;
+  ns1:cnt "62" ;
+  ns1:rnk "37" .
+
+ns1:row-xruy.vakx.jeaf
+  ns0:rowID "row-xruy.vakx.jeaf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AMELIE" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-5s7a-v5z8%7Exjhc
+  ns0:rowID "row-5s7a-v5z8%7Exjhc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AMINA" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-b7s5%7Ed65j-kpbp
+  ns0:rowID "row-b7s5%7Ed65j-kpbp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AMIRA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-e7mz_cive-nu4q
+  ns0:rowID "row-e7mz_cive-nu4q" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AMY" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-gu7a.mxv5_pmri
+  ns0:rowID "row-gu7a.mxv5_pmri" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ANASTASIA" ;
+  ns1:cnt "19" ;
+  ns1:rnk "72" .
+
+ns1:row-6qkr_8xhr.5ue9
+  ns0:rowID "row-6qkr_8xhr.5ue9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ANGELICA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-95d9-h3cx_kau3
+  ns0:rowID "row-95d9-h3cx_kau3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ANGELINA" ;
+  ns1:cnt "50" ;
+  ns1:rnk "43" .
+
+ns1:row-4v2e_9xzv_md6e
+  ns0:rowID "row-4v2e_9xzv_md6e" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ANNA" ;
+  ns1:cnt "85" ;
+  ns1:rnk "25" .
+
+ns1:row-i9g6.sci6.kdjm
+  ns0:rowID "row-i9g6.sci6.kdjm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ANNABEL" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-7nzn%7Exugz%7Ejv24
+  ns0:rowID "row-7nzn%7Exugz%7Ejv24" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ANNABELLE" ;
+  ns1:cnt "27" ;
+  ns1:rnk "64" .
+
+ns1:row-m5q3-tyqr%7Ejxfx
+  ns0:rowID "row-m5q3-tyqr%7Ejxfx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ARIANA" ;
+  ns1:cnt "27" ;
+  ns1:rnk "64" .
+
+ns1:row-mawk_kc5x.c8m3
+  ns0:rowID "row-mawk_kc5x.c8m3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ARIANNA" ;
+  ns1:cnt "28" ;
+  ns1:rnk "63" .
+
+ns1:row-apv5.wxfx.p74c
+  ns0:rowID "row-apv5.wxfx.p74c" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ARIEL" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-2vk3.2gtd-xg3w
+  ns0:rowID "row-2vk3.2gtd-xg3w" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ARIELA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-5ivb.yc9k-ft4r
+  ns0:rowID "row-5ivb.yc9k-ft4r" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ARIELLA" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-x9x5%7Ehdtw%7Efcbc
+  ns0:rowID "row-x9x5%7Ehdtw%7Efcbc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ASHLEY" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-3g2q_xsi7.vrwp
+  ns0:rowID "row-3g2q_xsi7.vrwp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ATARA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-6p9f_46yn_e632
+  ns0:rowID "row-6p9f_46yn_e632" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AUBREY" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-k4qe%7Ey6kq_fc6a
+  ns0:rowID "row-k4qe%7Ey6kq_fc6a" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AUDREY" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-886w%7E2ieh-cxf3
+  ns0:rowID "row-886w%7E2ieh-cxf3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AUTUMN" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-cc4s-xn7d.wqib
+  ns0:rowID "row-cc4s-xn7d.wqib" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AVA" ;
+  ns1:cnt "162" ;
+  ns1:rnk "8" .
+
+ns1:row-v2yj%7Exm6m-nr3c
+  ns0:rowID "row-v2yj%7Exm6m-nr3c" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AVERY" ;
+  ns1:cnt "52" ;
+  ns1:rnk "41" .
+
+ns1:row-xk46%7E8x4i.vkxs
+  ns0:rowID "row-xk46%7E8x4i.vkxs" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AVIGAIL" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-2nba_avzq_mkj3
+  ns0:rowID "row-2nba_avzq_mkj3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AVIVA" ;
+  ns1:cnt "18" ;
+  ns1:rnk "73" .
+
+ns1:row-jtsr_4hvh-jak2
+  ns0:rowID "row-jtsr_4hvh-jak2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "AYLA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-47r6-kdz8-xse8
+  ns0:rowID "row-47r6-kdz8-xse8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BAILA" ;
+  ns1:cnt "40" ;
+  ns1:rnk "51" .
+
+ns1:row-fc2n%7Ei7t8-xwc7
+  ns0:rowID "row-fc2n%7Ei7t8-xwc7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BARBARA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-r3bf%7Eucpt.5rpi
+  ns0:rowID "row-r3bf%7Eucpt.5rpi" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BATSHEVA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-cabq%7Evpv9.vgfc
+  ns0:rowID "row-cabq%7Evpv9.vgfc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BATYA" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-2a6u_ni4b.ewqn
+  ns0:rowID "row-2a6u_ni4b.ewqn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BEATRICE" ;
+  ns1:cnt "33" ;
+  ns1:rnk "58" .
+
+ns1:row-2vza.r2fm_76p3
+  ns0:rowID "row-2vza.r2fm_76p3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BELLA" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-da5f_f4tn%7E39pe
+  ns0:rowID "row-da5f_f4tn%7E39pe" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BIANCA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-44wm-dbez-8h3u
+  ns0:rowID "row-44wm-dbez-8h3u" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BLAKE" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-4y3m_nbdx_ms4v
+  ns0:rowID "row-4y3m_nbdx_ms4v" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BLIMA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-h7c4_8t5d.rn9f
+  ns0:rowID "row-h7c4_8t5d.rn9f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BLIMY" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-jq2a-aaev-jviq
+  ns0:rowID "row-jq2a-aaev-jviq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BRACHA" ;
+  ns1:cnt "24" ;
+  ns1:rnk "67" .
+
+ns1:row-97zt%7Eifpe_7np7
+  ns0:rowID "row-97zt%7Eifpe_7np7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BREINDY" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-tg3m%7Ecuea_4xhr
+  ns0:rowID "row-tg3m%7Ecuea_4xhr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BRIANNA" ;
+  ns1:cnt "32" ;
+  ns1:rnk "59" .
+
+ns1:row-389u.xp7g-y6ek
+  ns0:rowID "row-389u.xp7g-y6ek" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BRIDGET" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-2gyc-e59a%7E7xhh
+  ns0:rowID "row-2gyc-e59a%7E7xhh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BROOKE" ;
+  ns1:cnt "33" ;
+  ns1:rnk "58" .
+
+ns1:row-4if7_5uxh.2jw2
+  ns0:rowID "row-4if7_5uxh.2jw2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BROOKLYN" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-ef56.ci8x%7Eesw7
+  ns0:rowID "row-ef56.ci8x%7Eesw7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BRUCHA" ;
+  ns1:cnt "19" ;
+  ns1:rnk "72" .
+
+ns1:row-fx87-pja8.9gx5
+  ns0:rowID "row-fx87-pja8.9gx5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BRUCHY" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-hhxv%7E5cjd.4unb
+  ns0:rowID "row-hhxv%7E5cjd.4unb" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "BRYNN" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-a5n7%7Eqpbp-tfku
+  ns0:rowID "row-a5n7%7Eqpbp-tfku" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CAITLIN" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-eti9%7Eizh7%7Eft5s
+  ns0:rowID "row-eti9%7Eizh7%7Eft5s" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CAMERON" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-7dkm%7Ekum9.rwmz
+  ns0:rowID "row-7dkm%7Ekum9.rwmz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CAROLINE" ;
+  ns1:cnt "52" ;
+  ns1:rnk "41" .
+
+ns1:row-43yk_btm8-y2qe
+  ns0:rowID "row-43yk_btm8-y2qe" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CASEY" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-8nuk.uvdr%7Ezy9g
+  ns0:rowID "row-8nuk.uvdr%7Ezy9g" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CATHERINE" ;
+  ns1:cnt "33" ;
+  ns1:rnk "58" .
+
+ns1:row-bpiv.rhym.y9n4
+  ns0:rowID "row-bpiv.rhym.y9n4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CECILIA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-u4xs.gtgz-cyh2
+  ns0:rowID "row-u4xs.gtgz-cyh2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CELIA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-659q%7E8wds.rqu4
+  ns0:rowID "row-659q%7E8wds.rqu4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHANA" ;
+  ns1:cnt "132" ;
+  ns1:rnk "10" .
+
+ns1:row-2s7w_nmmd-fgtj
+  ns0:rowID "row-2s7w_nmmd-fgtj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHANY" ;
+  ns1:cnt "38" ;
+  ns1:rnk "53" .
+
+ns1:row-5m9i-zysa-z8db
+  ns0:rowID "row-5m9i-zysa-z8db" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHARLIE" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-s4v2-5ukm-2jmy
+  ns0:rowID "row-s4v2-5ukm-2jmy" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHARLOTTE" ;
+  ns1:cnt "127" ;
+  ns1:rnk "12" .
+
+ns1:row-5sps_7dmr.q9jj
+  ns0:rowID "row-5sps_7dmr.q9jj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHAVA" ;
+  ns1:cnt "46" ;
+  ns1:rnk "46" .
+
+ns1:row-2bk3_auyc.b7cn
+  ns0:rowID "row-2bk3_auyc.b7cn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHAVY" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-rday%7Ezz3c.5h9j
+  ns0:rowID "row-rday%7Ezz3c.5h9j" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHAYA" ;
+  ns1:cnt "178" ;
+  ns1:rnk "5" .
+
+ns1:row-kfmm%7E7rq3-t6yg
+  ns0:rowID "row-kfmm%7E7rq3-t6yg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHLOE" ;
+  ns1:cnt "95" ;
+  ns1:rnk "22" .
+
+ns1:row-tjz6%7E2fw8_ru6h
+  ns0:rowID "row-tjz6%7E2fw8_ru6h" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CHRISTINA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-fz6v-9jss_vksm
+  ns0:rowID "row-fz6v-9jss_vksm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CLAIRE" ;
+  ns1:cnt "35" ;
+  ns1:rnk "56" .
+
+ns1:row-8ai2.89tg%7Ehe9v
+  ns0:rowID "row-8ai2.89tg%7Ehe9v" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CLARA" ;
+  ns1:cnt "28" ;
+  ns1:rnk "63" .
+
+ns1:row-k5e5.yyxz-zg8k
+  ns0:rowID "row-k5e5.yyxz-zg8k" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "COLETTE" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-iafv_mr3q_4zm9
+  ns0:rowID "row-iafv_mr3q_4zm9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "CORA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-f2yf%7Eg9zd_4ntr
+  ns0:rowID "row-f2yf%7Eg9zd_4ntr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DAHLIA" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-kmdu-94ui-xr2c
+  ns0:rowID "row-kmdu-94ui-xr2c" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DAISY" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-bc55.wbbk_eptt
+  ns0:rowID "row-bc55.wbbk_eptt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DALIA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-q3vu_ss46_q84f
+  ns0:rowID "row-q3vu_ss46_q84f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DANIELA" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-gqnq.dqb3.ydmg
+  ns0:rowID "row-gqnq.dqb3.ydmg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DANIELLA" ;
+  ns1:cnt "41" ;
+  ns1:rnk "50" .
+
+ns1:row-6uct_gks6_28pc
+  ns0:rowID "row-6uct_gks6_28pc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DANIELLE" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-d3uw_qvyx%7Ebsbr
+  ns0:rowID "row-d3uw_qvyx%7Ebsbr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DEVORA" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-4pfi_yqyz-78k7
+  ns0:rowID "row-4pfi_yqyz-78k7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DEVORAH" ;
+  ns1:cnt "44" ;
+  ns1:rnk "48" .
+
+ns1:row-3e78%7Enpx3.2sg9
+  ns0:rowID "row-3e78%7Enpx3.2sg9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DIANA" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-99gd-ri3q_v3vx
+  ns0:rowID "row-99gd-ri3q_v3vx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DINA" ;
+  ns1:cnt "41" ;
+  ns1:rnk "50" .
+
+ns1:row-xkhe_ichu-ayum
+  ns0:rowID "row-xkhe_ichu-ayum" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "DYLAN" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-b6vq.j8ms_kex5
+  ns0:rowID "row-b6vq.j8ms_kex5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EDEN" ;
+  ns1:cnt "24" ;
+  ns1:rnk "67" .
+
+ns1:row-x2hx.w75k-jk86
+  ns0:rowID "row-x2hx.w75k-jk86" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELEANOR" ;
+  ns1:cnt "39" ;
+  ns1:rnk "52" .
+
+ns1:row-43i2_yybr.73bb
+  ns0:rowID "row-43i2_yybr.73bb" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELENA" ;
+  ns1:cnt "19" ;
+  ns1:rnk "72" .
+
+ns1:row-kh54.tjnv%7E5v45
+  ns0:rowID "row-kh54.tjnv%7E5v45" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELIANA" ;
+  ns1:cnt "36" ;
+  ns1:rnk "55" .
+
+ns1:row-4vw7.hhkq_p9ut
+  ns0:rowID "row-4vw7.hhkq_p9ut" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELISE" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-eczp-5zb7%7E3q8x
+  ns0:rowID "row-eczp-5zb7%7E3q8x" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELISHEVA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-uwh4.hivc-5ei6
+  ns0:rowID "row-uwh4.hivc-5ei6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELIZA" ;
+  ns1:cnt "25" ;
+  ns1:rnk "66" .
+
+ns1:row-zi88_xer8.duef
+  ns0:rowID "row-zi88_xer8.duef" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELIZABETH" ;
+  ns1:cnt "100" ;
+  ns1:rnk "21" .
+
+ns1:row-zerc.kurg.saai
+  ns0:rowID "row-zerc.kurg.saai" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELLA" ;
+  ns1:cnt "127" ;
+  ns1:rnk "12" .
+
+ns1:row-8etz_qvip_szw4
+  ns0:rowID "row-8etz_qvip_szw4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELLE" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-vbp5_dsmp.26pf
+  ns0:rowID "row-vbp5_dsmp.26pf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELLIANA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-c253%7Eufk4_zfas
+  ns0:rowID "row-c253%7Eufk4_zfas" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELLIE" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-vhgu_yrx3%7Ekcwp
+  ns0:rowID "row-vhgu_yrx3%7Ekcwp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ELOISE" ;
+  ns1:cnt "24" ;
+  ns1:rnk "67" .
+
+ns1:row-2skg-i69p.gudk
+  ns0:rowID "row-2skg-i69p.gudk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EMERSON" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-cqvg.gm72-4kbi
+  ns0:rowID "row-cqvg.gm72-4kbi" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EMILIA" ;
+  ns1:cnt "33" ;
+  ns1:rnk "58" .
+
+ns1:row-uw6u_njrn%7E3g67
+  ns0:rowID "row-uw6u_njrn%7E3g67" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EMILY" ;
+  ns1:cnt "119" ;
+  ns1:rnk "14" .
+
+ns1:row-svxa_hn78%7Ev9uy
+  ns0:rowID "row-svxa_hn78%7Ev9uy" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EMMA" ;
+  ns1:cnt "213" ;
+  ns1:rnk "2" .
+
+ns1:row-5s8r_eesj%7Eyggu
+  ns0:rowID "row-5s8r_eesj%7Eyggu" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ERIN" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-wsme_yima-s34s
+  ns0:rowID "row-wsme_yima-s34s" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ESTER" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-btj5%7Ey5t3%7Efqzy
+  ns0:rowID "row-btj5%7Ey5t3%7Efqzy" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ESTHER" ;
+  ns1:cnt "224" ;
+  ns1:rnk "1" .
+
+ns1:row-gxwm_pafj.3h78
+  ns0:rowID "row-gxwm_pafj.3h78" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ESTY" ;
+  ns1:cnt "18" ;
+  ns1:rnk "73" .
+
+ns1:row-344p%7Eyyu5.rc7y
+  ns0:rowID "row-344p%7Eyyu5.rc7y" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ETTY" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-9jnf_vgj9_7zrt
+  ns0:rowID "row-9jnf_vgj9_7zrt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EVA" ;
+  ns1:cnt "64" ;
+  ns1:rnk "35" .
+
+ns1:row-wacx.kdp9.78rt
+  ns0:rowID "row-wacx.kdp9.78rt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EVE" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-6ubk%7E7wpf.5tgn
+  ns0:rowID "row-6ubk%7E7wpf.5tgn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "EVELYN" ;
+  ns1:cnt "39" ;
+  ns1:rnk "52" .
+
+ns1:row-nzg2%7Ewxf7_t7x4
+  ns0:rowID "row-nzg2%7Ewxf7_t7x4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FAIGA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-2vsb-9ker%7Easm7
+  ns0:rowID "row-2vsb-9ker%7Easm7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FAIGY" ;
+  ns1:cnt "72" ;
+  ns1:rnk "30" .
+
+ns1:row-fwt8.dy6k%7Ew542
+  ns0:rowID "row-fwt8.dy6k%7Ew542" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FINLEY" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-pkpj-a7w3%7Erjum
+  ns0:rowID "row-pkpj-a7w3%7Erjum" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FIONA" ;
+  ns1:cnt "30" ;
+  ns1:rnk "61" .
+
+ns1:row-39e8_m9uj-vbny
+  ns0:rowID "row-39e8_m9uj-vbny" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FRADEL" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-93zm%7Exy7v.y6h7
+  ns0:rowID "row-93zm%7Exy7v.y6h7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FRAIDY" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-r4hh.nh4c.g9be
+  ns0:rowID "row-r4hh.nh4c.g9be" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FRANCESCA" ;
+  ns1:cnt "33" ;
+  ns1:rnk "58" .
+
+ns1:row-4f8h.etiq%7Exr6r
+  ns0:rowID "row-4f8h.etiq%7Exr6r" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "FRIMET" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-6cr6_grth%7Ekdys
+  ns0:rowID "row-6cr6_grth%7Ekdys" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GABRIELA" ;
+  ns1:cnt "19" ;
+  ns1:rnk "72" .
+
+ns1:row-jcvi_73ak.9eyp
+  ns0:rowID "row-jcvi_73ak.9eyp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GABRIELLA" ;
+  ns1:cnt "102" ;
+  ns1:rnk "20" .
+
+ns1:row-xjwc.miuz-pb5q
+  ns0:rowID "row-xjwc.miuz-pb5q" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GABRIELLE" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-kcfi%7Etjuc.8xic
+  ns0:rowID "row-kcfi%7Etjuc.8xic" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GEMMA" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-htza.eix4-aeda
+  ns0:rowID "row-htza.eix4-aeda" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GENEVIEVE" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-vf8p_xgu7.242j
+  ns0:rowID "row-vf8p_xgu7.242j" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GEORGIA" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-bhes_ti47%7Eg6b9
+  ns0:rowID "row-bhes_ti47%7Eg6b9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GIA" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-evi6.m384_5g8q
+  ns0:rowID "row-evi6.m384_5g8q" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GIANNA" ;
+  ns1:cnt "68" ;
+  ns1:rnk "33" .
+
+ns1:row-6yqa-jyef%7Ejqsk
+  ns0:rowID "row-6yqa-jyef%7Ejqsk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GIOVANNA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-v6cy_cm8k-zau8
+  ns0:rowID "row-v6cy_cm8k-zau8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GITTEL" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-pxn4-gtey-5fk3
+  ns0:rowID "row-pxn4-gtey-5fk3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GITTY" ;
+  ns1:cnt "82" ;
+  ns1:rnk "27" .
+
+ns1:row-n39j-bvd9_vn63
+  ns0:rowID "row-n39j-bvd9_vn63" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GIULIANA" ;
+  ns1:cnt "41" ;
+  ns1:rnk "50" .
+
+ns1:row-qm6y.i5b6_ygst
+  ns0:rowID "row-qm6y.i5b6_ygst" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GOLDA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-n4z7%7Etahb_5c89
+  ns0:rowID "row-n4z7%7Etahb_5c89" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GOLDY" ;
+  ns1:cnt "33" ;
+  ns1:rnk "58" .
+
+ns1:row-5isk.q3p7-7dmd
+  ns0:rowID "row-5isk.q3p7-7dmd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GRACE" ;
+  ns1:cnt "93" ;
+  ns1:rnk "24" .
+
+ns1:row-v8mn%7Eypy3_6k7p
+  ns0:rowID "row-v8mn%7Eypy3_6k7p" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "GRETA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-nd37%7Ei2ss_75gr
+  ns0:rowID "row-nd37%7Ei2ss_75gr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HADASSA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-swhw_sitb_b4gk
+  ns0:rowID "row-swhw_sitb_b4gk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HADASSAH" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-umgq_upfw_dd4e
+  ns0:rowID "row-umgq_upfw_dd4e" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HAILEY" ;
+  ns1:cnt "34" ;
+  ns1:rnk "57" .
+
+ns1:row-xtds.3ku6.2qhb
+  ns0:rowID "row-xtds.3ku6.2qhb" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HANNA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-tm2p-qpwc-5qq3
+  ns0:rowID "row-tm2p-qpwc-5qq3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HANNAH" ;
+  ns1:cnt "71" ;
+  ns1:rnk "31" .
+
+ns1:row-67qb-3979_d82p
+  ns0:rowID "row-67qb-3979_d82p" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HARPER" ;
+  ns1:cnt "30" ;
+  ns1:rnk "61" .
+
+ns1:row-s27w_ez8z.983b
+  ns0:rowID "row-s27w_ez8z.983b" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HAZEL" ;
+  ns1:cnt "18" ;
+  ns1:rnk "73" .
+
+ns1:row-s5d5%7E5kgg-y2yp
+  ns0:rowID "row-s5d5%7E5kgg-y2yp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HENNY" ;
+  ns1:cnt "18" ;
+  ns1:rnk "73" .
+
+ns1:row-58tv-gq9a%7Eth2b
+  ns0:rowID "row-58tv-gq9a%7Eth2b" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "HINDY" ;
+  ns1:cnt "37" ;
+  ns1:rnk "54" .
+
+ns1:row-3jsu_aajf_gz65
+  ns0:rowID "row-3jsu_aajf_gz65" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "IDY" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-4pkm_ddz7_f5si
+  ns0:rowID "row-4pkm_ddz7_f5si" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ILANA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-aa6g%7Exi27%7Ei7a6
+  ns0:rowID "row-aa6g%7Exi27%7Ei7a6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2013" ;
+  ns1:gndr "MALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "Jared" ;
+  ns1:cnt "25" ;
+  ns1:rnk "80" .
+
+ns1:row-wwdz-xpdx_2nsm
+  ns0:rowID "row-wwdz-xpdx_2nsm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ISABEL" ;
+  ns1:cnt "34" ;
+  ns1:rnk "57" .
+
+ns1:row-hact_i2uy_7mnr
+  ns0:rowID "row-hact_i2uy_7mnr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ISABELLA" ;
+  ns1:cnt "160" ;
+  ns1:rnk "9" .
+
+ns1:row-b4k9-ehxk-ime8
+  ns0:rowID "row-b4k9-ehxk-ime8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ISABELLE" ;
+  ns1:cnt "25" ;
+  ns1:rnk "66" .
+
+ns1:row-mrip-ix8i.xkih
+  ns0:rowID "row-mrip-ix8i.xkih" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ISLA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-rpme.dapa.mbqg
+  ns0:rowID "row-rpme.dapa.mbqg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "IVY" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-qtg4%7Euzbz_7db6
+  ns0:rowID "row-qtg4%7Euzbz_7db6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "IZABELLA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-x4rp.2i8h%7Ee68z
+  ns0:rowID "row-x4rp.2i8h%7Ee68z" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JACQUELINE" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-pisk.t8ir_9tpm
+  ns0:rowID "row-pisk.t8ir_9tpm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JANE" ;
+  ns1:cnt "27" ;
+  ns1:rnk "64" .
+
+ns1:row-7zjt%7Etwfn%7Egwqj
+  ns0:rowID "row-7zjt%7Etwfn%7Egwqj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JASMINE" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-fwu6_tcmx_xt2s
+  ns0:rowID "row-fwu6_tcmx_xt2s" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JENNA" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-4t73-pzqz-puax
+  ns0:rowID "row-4t73-pzqz-puax" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JESSICA" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-na8j_7icq.wwgp
+  ns0:rowID "row-na8j_7icq.wwgp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JORDYN" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-5rgk%7Ecaty.k959
+  ns0:rowID "row-5rgk%7Ecaty.k959" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JOSEPHINE" ;
+  ns1:cnt "33" ;
+  ns1:rnk "58" .
+
+ns1:row-gmaq-cdck%7Etnkk
+  ns0:rowID "row-gmaq-cdck%7Etnkk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JOYCE" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-7ubf%7Ecypw%7Enqnt
+  ns0:rowID "row-7ubf%7Ecypw%7Enqnt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JULIA" ;
+  ns1:cnt "116" ;
+  ns1:rnk "15" .
+
+ns1:row-y8h8.kgbv.d9un
+  ns0:rowID "row-y8h8.kgbv.d9un" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JULIANA" ;
+  ns1:cnt "38" ;
+  ns1:rnk "53" .
+
+ns1:row-sts8-7afd_cwrt
+  ns0:rowID "row-sts8-7afd_cwrt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JULIANNA" ;
+  ns1:cnt "28" ;
+  ns1:rnk "63" .
+
+ns1:row-tz5p%7E7nyi.g3dx
+  ns0:rowID "row-tz5p%7E7nyi.g3dx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JULIE" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-663b%7Ex3rd.irae
+  ns0:rowID "row-663b%7Ex3rd.irae" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JULIET" ;
+  ns1:cnt "36" ;
+  ns1:rnk "55" .
+
+ns1:row-qfj9-c3d2.bsbq
+  ns0:rowID "row-qfj9-c3d2.bsbq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "JULIETTE" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-7scp_exht%7Enrpd
+  ns0:rowID "row-7scp_exht%7Enrpd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KAITLYN" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-c5da.r9ur.4h45
+  ns0:rowID "row-c5da.r9ur.4h45" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "ARELY" ;
+  ns1:cnt "12" ;
+  ns1:rnk "76" .
+
+ns1:row-3fiz_8s7j%7E99yi
+  ns0:rowID "row-3fiz_8s7j%7E99yi" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KATE" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-273r_u3h4.jxsd
+  ns0:rowID "row-273r_u3h4.jxsd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KATHERINE" ;
+  ns1:cnt "44" ;
+  ns1:rnk "48" .
+
+ns1:row-3q43.8s2j.wk4n
+  ns0:rowID "row-3q43.8s2j.wk4n" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KATHRYN" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-s84q%7Ezj39%7Eakef
+  ns0:rowID "row-s84q%7Ezj39%7Eakef" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KAYLA" ;
+  ns1:cnt "45" ;
+  ns1:rnk "47" .
+
+ns1:row-xj5t.7x42-eqd4
+  ns0:rowID "row-xj5t.7x42-eqd4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KAYLEE" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-88d8.gikg_qrpz
+  ns0:rowID "row-88d8.gikg_qrpz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KIRA" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-4i3k_d4cv_eatd
+  ns0:rowID "row-4i3k_d4cv_eatd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "KYLIE" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-fttj.x6q4.bnwy
+  ns0:rowID "row-fttj.x6q4.bnwy" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LAILA" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-nkpw-it4u.uq6b
+  ns0:rowID "row-nkpw-it4u.uq6b" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LARA" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-guk4%7Ezxyb-t5vq
+  ns0:rowID "row-guk4%7Ezxyb-t5vq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LAURA" ;
+  ns1:cnt "18" ;
+  ns1:rnk "73" .
+
+ns1:row-dsu6-xw82-5rim
+  ns0:rowID "row-dsu6-xw82-5rim" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LAUREN" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-k3fh-4uap-836g
+  ns0:rowID "row-k3fh-4uap-836g" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LAYLA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "62" .
+
+ns1:row-fnvv.fxbz-s3m3
+  ns0:rowID "row-fnvv.fxbz-s3m3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LEA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "62" .
+
+ns1:row-8xiw.927n%7Emjmk
+  ns0:rowID "row-8xiw.927n%7Emjmk" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LEAH" ;
+  ns1:cnt "183" ;
+  ns1:rnk "3" .
+
+ns1:row-hutn_z9hc_ypid
+  ns0:rowID "row-hutn_z9hc_ypid" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LEILA" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-ckca%7Emvsr%7Erkic
+  ns0:rowID "row-ckca%7Emvsr%7Erkic" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LENA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "62" .
+
+ns1:row-2cpm_f67j_v2ds
+  ns0:rowID "row-2cpm_f67j_v2ds" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LEORA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-m5gi%7E5cds.kzpx
+  ns0:rowID "row-m5gi%7E5cds.kzpx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LIA" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-cfgm_geqa_7fsq
+  ns0:rowID "row-cfgm_geqa_7fsq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LIANA" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-q5gn_fcsq-bxxg
+  ns0:rowID "row-q5gn_fcsq-bxxg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LIBA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-r8jg%7Esw98_zt5i
+  ns0:rowID "row-r8jg%7Esw98_zt5i" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LIBBY" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-tsq5-xw4b-7qfi
+  ns0:rowID "row-tsq5-xw4b-7qfi" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LILA" ;
+  ns1:cnt "34" ;
+  ns1:rnk "57" .
+
+ns1:row-2hcs_p5pc%7Em7e4
+  ns0:rowID "row-2hcs_p5pc%7Em7e4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LILAH" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-jbp4%7Evgd4.2dtx
+  ns0:rowID "row-jbp4%7Evgd4.2dtx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LILIANA" ;
+  ns1:cnt "29" ;
+  ns1:rnk "62" .
+
+ns1:row-xxdq%7Eavma-p2mm
+  ns0:rowID "row-xxdq%7Eavma-p2mm" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LILLIAN" ;
+  ns1:cnt "47" ;
+  ns1:rnk "45" .
+
+ns1:row-ag6j_ctfb-pyy9
+  ns0:rowID "row-ag6j_ctfb-pyy9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LILLY" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-cewp%7E9ime.63v7
+  ns0:rowID "row-cewp%7E9ime.63v7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LILY" ;
+  ns1:cnt "81" ;
+  ns1:rnk "28" .
+
+ns1:row-5bvs-r6mx_wv8j
+  ns0:rowID "row-5bvs-r6mx_wv8j" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LINA" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-tkrg_t8cz.65j3
+  ns0:rowID "row-tkrg_t8cz.65j3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LOLA" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-9cf2-k6w5%7Esamv
+  ns0:rowID "row-9cf2-k6w5%7Esamv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LONDON" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-tghh-5vbx.jg8f
+  ns0:rowID "row-tghh-5vbx.jg8f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2013" ;
+  ns1:gndr "MALE" ;
+  ns1:ethcty "HISPANIC" ;
+  ns1:nm "Jariel" ;
+  ns1:cnt "25" ;
+  ns1:rnk "80" .
+
+ns1:row-kasj%7E3835-b5zd
+  ns0:rowID "row-kasj%7E3835-b5zd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LUCY" ;
+  ns1:cnt "47" ;
+  ns1:rnk "45" .
+
+ns1:row-yagh%7Eevds%7E95yb
+  ns0:rowID "row-yagh%7Eevds%7E95yb" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "LYLA" ;
+  ns1:cnt "21" ;
+  ns1:rnk "70" .
+
+ns1:row-9bbt_xspn%7Ecb6g
+  ns0:rowID "row-9bbt_xspn%7Ecb6g" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MACKENZIE" ;
+  ns1:cnt "18" ;
+  ns1:rnk "73" .
+
+ns1:row-y53j.zukf.av7v
+  ns0:rowID "row-y53j.zukf.av7v" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MADELEINE" ;
+  ns1:cnt "24" ;
+  ns1:rnk "67" .
+
+ns1:row-euy8.er5e.zf7s
+  ns0:rowID "row-euy8.er5e.zf7s" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MADELINE" ;
+  ns1:cnt "39" ;
+  ns1:rnk "52" .
+
+ns1:row-um4a-eyck%7Emu76
+  ns0:rowID "row-um4a-eyck%7Emu76" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MADELYN" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-cuew-nsi9_w5k4
+  ns0:rowID "row-cuew-nsi9_w5k4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MADISON" ;
+  ns1:cnt "57" ;
+  ns1:rnk "39" .
+
+ns1:row-qwmv.j8er-mth3
+  ns0:rowID "row-qwmv.j8er-mth3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MAEVE" ;
+  ns1:cnt "21" ;
+  ns1:rnk "70" .
+
+ns1:row-rz5c-mqa5-6ps7
+  ns0:rowID "row-rz5c-mqa5-6ps7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MAKAYLA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-uz5f.mghy-5668
+  ns0:rowID "row-uz5f.mghy-5668" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MALAK" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-f3jr%7Ergif.rcir
+  ns0:rowID "row-f3jr%7Ergif.rcir" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MALKA" ;
+  ns1:cnt "63" ;
+  ns1:rnk "36" .
+
+ns1:row-rhau%7Erxah-8dfd
+  ns0:rowID "row-rhau%7Erxah-8dfd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MALKY" ;
+  ns1:cnt "59" ;
+  ns1:rnk "38" .
+
+ns1:row-2mj4_8ams.vmnx
+  ns0:rowID "row-2mj4_8ams.vmnx" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MARGARET" ;
+  ns1:cnt "25" ;
+  ns1:rnk "66" .
+
+ns1:row-nnfi.cq8b_9cmd
+  ns0:rowID "row-nnfi.cq8b_9cmd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MARIA" ;
+  ns1:cnt "39" ;
+  ns1:rnk "52" .
+
+ns1:row-4sgs_3y2y_a2v4
+  ns0:rowID "row-4sgs_3y2y_a2v4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MARIAM" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-4wmz.dnb3%7Ebn4a
+  ns0:rowID "row-4wmz.dnb3%7Ebn4a" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MARY" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-j5fm-twew%7Ehf3x
+  ns0:rowID "row-j5fm-twew%7Ehf3x" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MATILDA" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-sjbf_qims.wcgd
+  ns0:rowID "row-sjbf_qims.wcgd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MAYA" ;
+  ns1:cnt "94" ;
+  ns1:rnk "23" .
+
+ns1:row-r3qp_c7vr-gv7i
+  ns0:rowID "row-r3qp_c7vr-gv7i" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MELANIE" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-6v78_6qir-gpkw
+  ns0:rowID "row-6v78_6qir-gpkw" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MIA" ;
+  ns1:cnt "116" ;
+  ns1:rnk "15" .
+
+ns1:row-5qc9_mdin_3fgj
+  ns0:rowID "row-5qc9_mdin_3fgj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MICHAELA" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-ufdu%7Ea8b7_t7tt
+  ns0:rowID "row-ufdu%7Ea8b7_t7tt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MICHAL" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-7cay.3p29%7Exb5d
+  ns0:rowID "row-7cay.3p29%7Exb5d" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MICHELLE" ;
+  ns1:cnt "35" ;
+  ns1:rnk "56" .
+
+ns1:row-myfd_ujzb-kf7j
+  ns0:rowID "row-myfd_ujzb-kf7j" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MIKAYLA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-j5sy_f6rm_r47h
+  ns0:rowID "row-j5sy_f6rm_r47h" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MILA" ;
+  ns1:cnt "31" ;
+  ns1:rnk "60" .
+
+ns1:row-2hxw_4vde_v4hq
+  ns0:rowID "row-2hxw_4vde_v4hq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MILENA" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-n9wc%7Eh2fc.bszv
+  ns0:rowID "row-n9wc%7Eh2fc.bszv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MINDY" ;
+  ns1:cnt "24" ;
+  ns1:rnk "67" .
+
+ns1:row-gjrn-h8zp%7E6vem
+  ns0:rowID "row-gjrn-h8zp%7E6vem" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MIRI" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-gxpk-ihug-yyc3
+  ns0:rowID "row-gxpk-ihug-yyc3" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MIRIAM" ;
+  ns1:cnt "131" ;
+  ns1:rnk "11" .
+
+ns1:row-6jwb_bdgp-7xnq
+  ns0:rowID "row-6jwb_bdgp-7xnq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MOLLY" ;
+  ns1:cnt "36" ;
+  ns1:rnk "55" .
+
+ns1:row-y6es.4t5s-y7bd
+  ns0:rowID "row-y6es.4t5s-y7bd" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "MORGAN" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-49tm-aw5s-2z5a
+  ns0:rowID "row-49tm-aw5s-2z5a" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NAOMI" ;
+  ns1:cnt "46" ;
+  ns1:rnk "46" .
+
+ns1:row-3skw_2z9e-gf4b
+  ns0:rowID "row-3skw_2z9e-gf4b" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NATALIA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-bci8.wxjx.vcs9
+  ns0:rowID "row-bci8.wxjx.vcs9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NATALIE" ;
+  ns1:cnt "40" ;
+  ns1:rnk "51" .
+
+ns1:row-6gft-za9p-pgfr
+  ns0:rowID "row-6gft-za9p-pgfr" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NECHAMA" ;
+  ns1:cnt "25" ;
+  ns1:rnk "66" .
+
+ns1:row-jt7s_fxc9-v4zh
+  ns0:rowID "row-jt7s_fxc9-v4zh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NICOLE" ;
+  ns1:cnt "45" ;
+  ns1:rnk "47" .
+
+ns1:row-f2z6%7Eembu%7E4dzc
+  ns0:rowID "row-f2z6%7Eembu%7E4dzc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NICOLETTE" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-ueve%7Eyqrg_u2h8
+  ns0:rowID "row-ueve%7Eyqrg_u2h8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NINA" ;
+  ns1:cnt "39" ;
+  ns1:rnk "52" .
+
+ns1:row-iqja%7E84gp%7Em8i6
+  ns0:rowID "row-iqja%7E84gp%7Em8i6" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NOA" ;
+  ns1:cnt "34" ;
+  ns1:rnk "57" .
+
+ns1:row-w633_7776_357h
+  ns0:rowID "row-w633_7776_357h" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "NORA" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-47jy-yvw7-dzru
+  ns0:rowID "row-47jy-yvw7-dzru" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "OLIVIA" ;
+  ns1:cnt "213" ;
+  ns1:rnk "2" .
+
+ns1:row-wrym_r78j-ravv
+  ns0:rowID "row-wrym_r78j-ravv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PAIGE" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-9kmf.urhh-2jcb
+  ns0:rowID "row-9kmf.urhh-2jcb" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PARKER" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-xphx%7Eb8tc.666f
+  ns0:rowID "row-xphx%7Eb8tc.666f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PEARL" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-smt3-9zwj%7E3wu9
+  ns0:rowID "row-smt3-9zwj%7E3wu9" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PENELOPE" ;
+  ns1:cnt "38" ;
+  ns1:rnk "53" .
+
+ns1:row-pp62.qnba_kq2c
+  ns0:rowID "row-pp62.qnba_kq2c" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PEREL" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-qde5%7Eigiy_yb7u
+  ns0:rowID "row-qde5%7Eigiy_yb7u" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PESSY" ;
+  ns1:cnt "26" ;
+  ns1:rnk "65" .
+
+ns1:row-ru6m%7Edse5-gjf4
+  ns0:rowID "row-ru6m%7Edse5-gjf4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PHOEBE" ;
+  ns1:cnt "23" ;
+  ns1:rnk "68" .
+
+ns1:row-4gnm_xscb_wmmu
+  ns0:rowID "row-4gnm_xscb_wmmu" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "PIPER" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-e26v-9qbk.8zp4
+  ns0:rowID "row-e26v-9qbk.8zp4" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "QUINN" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-set9.ytnx-947n
+  ns0:rowID "row-set9.ytnx-947n" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RACHEL" ;
+  ns1:cnt "171" ;
+  ns1:rnk "7" .
+
+ns1:row-t73v_3mz6-7gbg
+  ns0:rowID "row-t73v_3mz6-7gbg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RAIZEL" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-zijc%7Enic6-3uc7
+  ns0:rowID "row-zijc%7Enic6-3uc7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RAIZY" ;
+  ns1:cnt "51" ;
+  ns1:rnk "42" .
+
+ns1:row-jqss-4zs9.z3zu
+  ns0:rowID "row-jqss-4zs9.z3zu" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "REBECCA" ;
+  ns1:cnt "54" ;
+  ns1:rnk "40" .
+
+ns1:row-vp9y%7Eymg7-r2a7
+  ns0:rowID "row-vp9y%7Eymg7-r2a7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "REESE" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-cnr5-tkah%7Ezpae
+  ns0:rowID "row-cnr5-tkah%7Ezpae" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RIFKA" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-i55q_bzjc_29pp
+  ns0:rowID "row-i55q_bzjc_29pp" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RIFKY" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-mjnc_g5z2%7E4fgh
+  ns0:rowID "row-mjnc_g5z2%7E4fgh" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RILEY" ;
+  ns1:cnt "28" ;
+  ns1:rnk "63" .
+
+ns1:row-fzvy-irwp%7Ej7jw
+  ns0:rowID "row-fzvy-irwp%7Ej7jw" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RIVKA" ;
+  ns1:cnt "113" ;
+  ns1:rnk "16" .
+
+ns1:row-3urh%7E9h6m%7Evwnc
+  ns0:rowID "row-3urh%7E9h6m%7Evwnc" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RIVKY" ;
+  ns1:cnt "43" ;
+  ns1:rnk "49" .
+
+ns1:row-9747.kmu4_mym5
+  ns0:rowID "row-9747.kmu4_mym5" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ROCHEL" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .
+
+ns1:row-mbr4%7Ekiwh%7Ebtff
+  ns0:rowID "row-mbr4%7Ekiwh%7Ebtff" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ROIZY" ;
+  ns1:cnt "13" ;
+  ns1:rnk "78" .
+
+ns1:row-9nip_qi3d%7Ef83w
+  ns0:rowID "row-9nip_qi3d%7Ef83w" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "ROSE" ;
+  ns1:cnt "35" ;
+  ns1:rnk "56" .
+
+ns1:row-yywb.g28k-ni9f
+  ns0:rowID "row-yywb.g28k-ni9f" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RUBY" ;
+  ns1:cnt "28" ;
+  ns1:rnk "63" .
+
+ns1:row-5jub.7289_e5hz
+  ns0:rowID "row-5jub.7289_e5hz" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RUCHY" ;
+  ns1:cnt "12" ;
+  ns1:rnk "79" .
+
+ns1:row-jzu9_3tn2.akgg
+  ns0:rowID "row-jzu9_3tn2.akgg" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RUTH" ;
+  ns1:cnt "11" ;
+  ns1:rnk "80" .
+
+ns1:row-ivrr%7E5hvw_rqim
+  ns0:rowID "row-ivrr%7E5hvw_rqim" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "RYAN" ;
+  ns1:cnt "14" ;
+  ns1:rnk "77" .
+
+ns1:row-vf6i_3kj9-rp2t
+  ns0:rowID "row-vf6i_3kj9-rp2t" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SABRINA" ;
+  ns1:cnt "34" ;
+  ns1:rnk "57" .
+
+ns1:row-hy6c_n7xp.jnt2
+  ns0:rowID "row-hy6c_n7xp.jnt2" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SADIE" ;
+  ns1:cnt "32" ;
+  ns1:rnk "59" .
+
+ns1:row-b8dq%7Evsw5_sgvb
+  ns0:rowID "row-b8dq%7Evsw5_sgvb" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SALMA" ;
+  ns1:cnt "17" ;
+  ns1:rnk "74" .
+
+ns1:row-88ik.rj2t%7E7ibq
+  ns0:rowID "row-88ik.rj2t%7E7ibq" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SAMANTHA" ;
+  ns1:cnt "74" ;
+  ns1:rnk "29" .
+
+ns1:row-iapi_g4k2%7Eqvxv
+  ns0:rowID "row-iapi_g4k2%7Eqvxv" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SARA" ;
+  ns1:cnt "107" ;
+  ns1:rnk "18" .
+
+ns1:row-yqcd_7w3h-mu4i
+  ns0:rowID "row-yqcd_7w3h-mu4i" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SARAH" ;
+  ns1:cnt "177" ;
+  ns1:rnk "6" .
+
+ns1:row-ir7s_ehda_7xbt
+  ns0:rowID "row-ir7s_ehda_7xbt" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SASHA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-wwp8-9ms2.myme
+  ns0:rowID "row-wwp8-9ms2.myme" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SAVANNAH" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-2v8h.wxfw%7Ewigj
+  ns0:rowID "row-2v8h.wxfw%7Ewigj" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SCARLETT" ;
+  ns1:cnt "31" ;
+  ns1:rnk "60" .
+
+ns1:row-fk8u%7E2bur_dbne
+  ns0:rowID "row-fk8u%7E2bur_dbne" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SERENA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-ug4j_6n7h%7Em58w
+  ns0:rowID "row-ug4j_6n7h%7Em58w" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SHAINA" ;
+  ns1:cnt "16" ;
+  ns1:rnk "75" .
+
+ns1:row-sknj_m6kd_fmcn
+  ns0:rowID "row-sknj_m6kd_fmcn" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SHAINDEL" ;
+  ns1:cnt "15" ;
+  ns1:rnk "76" .
+
+ns1:row-9dqw-qi9h.znv7
+  ns0:rowID "row-9dqw-qi9h.znv7" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SHAINDY" ;
+  ns1:cnt "48" ;
+  ns1:rnk "44" .
+
+ns1:row-sups_2b8t-xxz8
+  ns0:rowID "row-sups_2b8t-xxz8" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SHEVY" ;
+  ns1:cnt "10" ;
+  ns1:rnk "81" .
+
+ns1:row-mcck.dk2m_5cxw
+  ns0:rowID "row-mcck.dk2m_5cxw" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SHIFRA" ;
+  ns1:cnt "20" ;
+  ns1:rnk "71" .
+
+ns1:row-ebfi_mdg7.4wqf
+  ns0:rowID "row-ebfi_mdg7.4wqf" ;
+  rdfs:member <https://data.cityofnewyork.us/resource/_25th-nujf> ;
+  ns1:brth_yr "2011" ;
+  ns1:gndr "FEMALE" ;
+  ns1:ethcty "WHITE NON HISPANIC" ;
+  ns1:nm "SHIRA" ;
+  ns1:cnt "22" ;
+  ns1:rnk "69" .

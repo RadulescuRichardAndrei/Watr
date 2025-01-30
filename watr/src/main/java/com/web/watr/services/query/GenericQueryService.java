@@ -36,8 +36,17 @@ public class GenericQueryService {
             Map.entry("http://dbpedia.org/property/", "dbpedia"),
             Map.entry("http://www.wikidata.org/entity/", "wikidata"),
             Map.entry("http://dbpedia.org/ontology/", "dbpedia_ontology"),
+            Map.entry("http://dbpedia.org/resource/", "dbpedia_resource"),
             Map.entry("http://www.openlinksw.com/schemas/virtrdf#", "virtrdf"),
-            Map.entry("http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#", "dul")
+            Map.entry("http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#", "dul"),
+            Map.entry("http://www.socrata.com/rdf/terms#", "socrata"),
+            Map.entry("http://www.w3.org/ns/dcat#", "dcat"),
+            Map.entry("http://open-data-standards.github.com/2012/01/open-data-standards#", "ods"),
+            Map.entry("http://www.w3.org/2003/01/geo/wgs84_pos#", "geo_wgs"),
+            Map.entry("https://data.cityofnewyork.us/resource/", "dsbase_nyc"),
+            Map.entry("https://data.cityofnewyork.us/resource/_25th-nujf/", "ds_nyc"),
+            Map.entry("https://data.montgomerycountymd.gov/resource/", "dsbase_mont"),
+            Map.entry("https://data.montgomerycountymd.gov/resource/_48wg-fkab/", "ds_mont")
 
     ));
 

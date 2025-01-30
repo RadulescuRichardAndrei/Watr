@@ -1,0 +1,162 @@
+<http://dbpedia.org/resource/CaMia_Hopson> <http://dbpedia.org/ontology/birthDate> "1969-06-19"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cab_Calloway> <http://dbpedia.org/ontology/birthDate> "1907-12-25"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cab_Kaye> <http://dbpedia.org/ontology/birthDate> "1921-09-03"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabbrini_Foncette> <http://dbpedia.org/ontology/birthDate> "1989-07-19"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabell_Breckinridge> <http://dbpedia.org/ontology/birthDate> "1788-07-14"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabell_Tennis> <http://dbpedia.org/ontology/birthDate> "1932-10-24"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabeção_(footballer)> <http://dbpedia.org/ontology/birthDate> "1930-08-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabinho_(footballer)> <http://dbpedia.org/ontology/birthDate> "1949-04-28"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabiria_Andreian_Cazacu> <http://dbpedia.org/ontology/birthDate> "1928-02-19"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabo_Almi> <http://dbpedia.org/ontology/birthDate> "1962-12-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabo_Anselmo> <http://dbpedia.org/ontology/birthDate> "1942-02-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabo_Daciolo> <http://dbpedia.org/ontology/birthDate> "1976-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabo_Junio_Amaral> <http://dbpedia.org/ontology/birthDate> "1987-06-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabore> <http://dbpedia.org/ontology/birthDate> "1980-02-19"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabot_Bigham> <http://dbpedia.org/ontology/birthDate> "1996-10-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabral_(footballer)> <http://dbpedia.org/ontology/birthDate> "1988-10-22"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabral_Ibacka> <http://dbpedia.org/ontology/birthDate> "1977-10-04"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabralzinho_(footballer)> <http://dbpedia.org/ontology/birthDate> "1945-01-02"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabum> <http://dbpedia.org/ontology/birthDate> "1985-06-15"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cabwey_Kivutuka> <http://dbpedia.org/ontology/birthDate> "1998-02-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://dbpedia.org/resource/Cab_Calloway> <http://dbpedia.org/ontology/wikiPageExternalLink> <http://www.cabcallowayschool.org/> .
+<http://dbpedia.org/resource/Cab_Calloway> <http://dbpedia.org/ontology/wikiPageExternalLink> <https://www.nyra.com/saratoga/racing/stakes-schedule/nyss-cab-calloway-division/> .
+<http://dbpedia.org/resource/Cab_Calloway> <http://dbpedia.org/ontology/wikiPageExternalLink> <https://www.fonoteca.ch/fond/74929.011%7Ctype=102> .
+<http://dbpedia.org/resource/Cab_Calloway> <http://dbpedia.org/ontology/wikiPageExternalLink> <http://www.namm.org/library/oral-history/cab-calloway> .
+<http://dbpedia.org/resource/Cab_Kaye> <http://dbpedia.org/ontology/wikiPageExternalLink> <http://www.jazzhouse.org/gone/lastpost2.php3%3Fedit=954322242> .
+<http://dbpedia.org/resource/Cab_Kaye> <http://dbpedia.org/ontology/wikiPageExternalLink> <https://books.google.com/books%3Fid=fuu36Cq2ZTwC&pg=PA198> .
+<http://dbpedia.org/resource/Cab_Kaye> <http://dbpedia.org/ontology/wikiPageExternalLink> <https://web.archive.org/web/20080327012441/http:/www.xmission.com/pub/lists/exotica/archive/v02.n666> .
+<http://dbpedia.org/resource/Cab_Kaye> <http://dbpedia.org/ontology/wikiPageExternalLink> <https://web.archive.org/web/20080331182945/http:/vzone.virgin.net/davidh.taylor/mandrake.htm> .
+<http://dbpedia.org/resource/Cab_Kaye>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.theguardian.com/news/2000/mar/21/guardianobituaries2> .
+<http://dbpedia.org/resource/Cabal_of_Naples>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.visual-arts-cork.com/history-of-art/painting-in-naples.htm> .
+<http://dbpedia.org/resource/Cabal_of_Naples>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://babel.hathitrust.org/cgi/pt%3Fid=mdp.39015062795698;view=1up;seq=1> .
+<http://dbpedia.org/resource/Cabal_of_Naples>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://archive.org/details/epochsofpainting00wornuoft> .
+<http://dbpedia.org/resource/Cabbrini_Foncette>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20110707023444/http:/www.norceca.org/2011%20Events/X%20Pan%20American%20Women%E2%80%99s%20Volleyball%20Cup/2011%20Calendar%20X%20Pan%20American%20Women%C2%B4s%20Cup.htm> .
+<http://dbpedia.org/resource/Cabbrini_Foncette>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://norceca.org/2011%20Events/X%20Pan%20American%20Women%E2%80%99s%20Volleyball%20Cup/2011%20Calendar%20X%20Pan%20American%20Women%C2%B4s%20Cup.htm> .
+<http://dbpedia.org/resource/Cabbrini_Foncette>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.guardian.co.tt/sport/2011/02/05/technocrats-eye-volleyball-sweep> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://apps.sos.ky.gov/secdesk/sosinfo/default.aspx%3Fid=13> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.kyenc.org/entry/b/BRECK04.html> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://connect1.ajaxdocumentviewer.com/getdocumentajax.php%3FMLpqkM28omPqS3/Lu3a0JMoD/aLGmN0Nh4QAshN7LtxI7cRFv+L19/QMzY8yXNQJOd8+cEi+0a8ShtMw791vSEnrUif9eCU8FL6F3Ydx8hLTqsnzC/rZsgwBVO+L6ti0PuJSVkP9QUCyuzO7fhIndSkmbkI0mAlb4cj9wq3cyKSoqtp/at6Htpd4flTfVKmW4wJPbnnfu99/VPB4TTM6PlNDextHoZTWNEzQF6IoUX0vuR/Cxe+QbLihmKcsClFyLEU6JDbo6A9tOZTW90pgtx3Pgu4kxeMGIIbgCVD9E5WTKU6pdiJ4pXBfqreKgLN6Kl9U99RSHNvw8YaXOahnVbbHI7HOXgaCVRD+cXft4mQfkn/va8+leUkrVj1gVyE7SVA2M1BieLElQaJ3AoYFw4j3t21hq2Ij/eLvE+S7bkIsY00xJVkt8XaSs4QiFIv+G5+0Rgm8TJhZKE23VHl+3CQeomojQFF7AAHhOlSDq5+wNg6Ep4s4lyIom+vltSLGzARiSjApSty2OOk3zFiR4GBhSliDMjnAHaMexKqpGcfFjriqUAtGwJ3pOS0HmIQDEjWH57ftABz1jMiuyELpUH9P3e8boSxq8N9iau6L43brJtB/LKOzHv++ETIKFB/+OQLIn3BahZyj+0wcqPxv3QMxD5knaD5rmDh5If6OXs8ADEPTOL> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://connect1.ajaxdocumentviewer.com/getdocumentajax.php%3FMLpqkM28omPqS3/Lu3a0JMoD/aLGmN0Nh4QAshN7LtxI7cRFv+L19/QMzY8yXNQJOd8+cEi+0a8ShtMw791vSEnrUif9eCU8FL6F3Ydx8hLTqsnzC/rZsgwBVO+L6ti0yNXTDcztteeVlal9lSmg1ah4CUuupLdBOaThzEnc4CrEvPYGgzMnG4P7yud6h1aMOcxZFk6R+aXBQLG7n8OXgN90ZF4LrP0m4LechcMH8RfDNk5NtyqDKKguyEVhrzYJo964E+6g5X9CMRHgJWwZ9xExCHsQAcHZOBAGwx7ow8LUuKFwVWwhuvV/sZUjVKT+Sw3s+x6TwFZqTweiSfszN2aihsP/ieZs1+n1fhKBIoXvpiRADAC+xoHJzGD0Ftojl6HnD3902WqZ1DA3ezwMoz2SnnDM9qINSEJhGUzycF26UBZvBuYlshGHpsvI87i9FLDm/CP4IHfzJqpSq2E4kxhk3K5Ny1jde7GD8oDpU9mE2VN4dqHHRrNnP2jrD3YNFe2bXfz+bCOg/ouXfXoXgr2J/UIT7xL1BuDNXI4Fg3ttFwNIkGXzw8tcKEdn0LtPl36Rl0daaFWMWoNepjwjgN19a6efnDXKUiCV5PgP+3/O31UNMd+W2U4rz3pGd1tdVBBpMXbIRpP+v/JUld1CYD5B1/Jl559nQq/XjruRzMcADEPTOL> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://archive.org/details/breckinridge00davi> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=VZKhxqplgf0C> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=gZFQAQAAIAAJ> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=ocntHzMfOu0C> .
+<http://dbpedia.org/resource/Cabeção_(footballer)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20090705015601/http:/terceirotempo.ig.com.br/quefimlevou_interna.php%3Fid=105&sessao=f> .
+<http://dbpedia.org/resource/Cabinet_of_Léon_Faucher>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=ZydTAAAAcAAJ&pg=PA880%7Caccess-date=2014-01-16%7Cyear=1852> .
+<http://dbpedia.org/resource/Cabinet_of_Léon_Faucher>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=j-gBq38oRmYC&pg=PA72%7Caccess-date=2014-01-16%7Cpublisher=Mon> .
+<http://dbpedia.org/resource/Cabinet_of_Léon_Faucher>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=FUciu4VLs6oC&pg=PA139%7Caccess-date=2014-01-16> .
+<http://dbpedia.org/resource/Cabinho_(footballer)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://people.ufpr.br/~mmsabino/sstatistics/cabinho.html> .
+<http://dbpedia.org/resource/Cabinho_(footballer)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20060624031548/http:/pumasgol.com/jugadores_destacados.php> .
+<http://dbpedia.org/resource/Cabinho_(footballer)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://futpedia.globo.com/jogadores/cabinho> .
+<http://dbpedia.org/resource/Cabinho_(footballer)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.bdfa.com.ar/jugadores-EVANIVALDO-CASTRO-SILVA-CABINHO-42013.html> .
+<http://dbpedia.org/resource/Cablemás>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://detectordefallos.mx/problemas/cablemas/isla-mujeres> .
+<http://dbpedia.org/resource/Cablemás>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.cablemas.com> .
+<http://dbpedia.org/resource/Cablemás>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20110303081804/http:/www.cablemas.com/investorRelation/pressRelease.jsp> .
+<http://dbpedia.org/resource/Cablemás>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20110309194609/http:/www.cablemas.com/investorRelation/annualfinancial.jsp> .
+<http://dbpedia.org/resource/Cabore>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.sports2.co.kr/people/people_view.asp%3FAID=178687> .
+<http://dbpedia.org/resource/Cabore>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.qsl.com.qa/Users/Players/PlayersDetails.aspx%3Fpregno=16659&clubid=54&p=13&s=-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,12,-1,14,> .
+<http://dbpedia.org/resource/Cabot_family>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://library.albany.edu/preservation/brittle_bks/Crawford_Familiesv1/Chpt9.pdf> .
+<http://dbpedia.org/resource/Cabot_family>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://nrs.harvard.edu/urn-3:RAD.SCHL:sch00131> .
+<http://dbpedia.org/resource/Cabot_family>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20190408100500/https:/library.albany.edu/preservation/brittle_bks/Crawford_Familiesv1/Chpt9.pdf> .
+<http://dbpedia.org/resource/Cabous_Eloff>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.itsrugby.co.uk/player_42980.html> .
+<http://dbpedia.org/resource/Cabous_Eloff>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.rugby.com.au/players/cabous-eloff> .
+<http://dbpedia.org/resource/Cabral_Ibacka>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.cabral.ro/> .
+<http://dbpedia.org/resource/Cabral_Ibacka>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.cabral.ro> .
+<http://dbpedia.org/resource/Cabum>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://grabghana.com/portal/site/news/detail/27927> .
+<http://dbpedia.org/resource/Cabum>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://pulse.com.gh/music/new-music-aj-nelson-innuendo-prod-by-cabum-id6339904.html> .
+<http://dbpedia.org/resource/Cabum>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://pulse.com.gh/music/revealed-i-can-see-reggie-rockstone-just-want-attention-cabum-id4198645.html> .
+<http://dbpedia.org/resource/Cabum>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20171001031644/http:/showbiz.citifmonline.com/2015/09/09/cabum-professes-his-love-for-yvonne-nelson/> .
+<http://dbpedia.org/resource/Cabum>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.ghanaweb.com/GhanaHomePage/entertainment/Cabum-disses-Sarkodie-And-M-anifest-453258> .
+<http://dbpedia.org/resource/Cabum>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.ghanaweb.com/GhanaHomePage/entertainment/Watch-Koo-Ntakra-Cabum-and-Eno-s-performance-at-Bar-3-Concert-496718> .
+<http://dbpedia.org/resource/Caca_Handika>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.bagaikan.net/2014/02/profil-biodata-caca-handika-penyanyi.html> .
+<http://dbpedia.org/resource/Caca_Handika>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20140325071609/http:/www.bagaikan.net/2014/02/profil-biodata-caca-handika-penyanyi.html> .
+<http://dbpedia.org/resource/Caca_Handika>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20140325101727/http:/www.artisdangdutindonesia.com/profile-artis/19%3Fview=dangdutprofilartis> .
+<http://dbpedia.org/resource/Cacau>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.cacau.de/> .
+<http://dbpedia.org/resource/Cacau>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20120624054153/http:/www.fussball-gott.com/cacau.php> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://doi.org/10.1093/gmo/9781561592630.article.A2092907> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://rateyourmusic.com/artist/cachao> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.discogs.com/artist/139655-Cachao> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.sfgate.com/cgi-bin/article.cgi%3Ff=/chronicle/a/2004/10/24/PKGMU9AQQG1.DTL> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20030412191501/http:/www.blogcritics.org/archives/2003/03/16/181012.php> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20080705083145/http:/docfilm.sfsu.edu/cachao/film/> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20120418105441/http:/www.israelcachaolopez.com/%7Cwww.israelcachaolopez.com> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20200503032825/https:/www.britannica.com/biography/Cachao> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.britannica.com/biography/Cachao> .
+<http://dbpedia.org/resource/Cachao>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.keepmedia.com/pubs/MiamiHerald/2003/05/25/13573%3FextID=10037&oliID=229> .
+<http://dbpedia.org/resource/Caco_Barcellos>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://memoriaglobo.globo.com/perfis/talentos/caco-barcellos.htm> .
+<http://dbpedia.org/resource/Cactus>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.ru.ac.za/centreforbiologicalcontrol/programmes/cactaceaeprogramme/> .
+<http://dbpedia.org/resource/Cactus>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.inaturalist.org/observations%3Fplace_id=any&subview=map&taxon_id=47217> .
+<http://dbpedia.org/resource/Cacá_(footballer,_born_1979)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20100124171943/http:/www.cbf.com.br/php/registro.php%3Fi=143029> .
+<http://dbpedia.org/resource/Cacá_(footballer,_born_1982)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20070310150156/http:/resol.dr.dk/sportservice_person.aspx%3Fpersonid=134808> .
+<http://dbpedia.org/resource/Cacá_(footballer,_born_1982)>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.danskfodbold.com/spiller.php%3Fligaid=2001&spillerid=10841> .
+<http://dbpedia.org/resource/Cacá_Bueno>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://josuelange.blogspot.com/2007/11/cac-bueno-bi-campeo-stock-car.html> .
+<http://dbpedia.org/resource/Cacá_Bueno>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.cacabueno.globolog.com.br/> .
+<http://dbpedia.org/resource/Cadarian_Raines>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://basketball.eurobasket.com/player/Cadarian-Raines/Cyprus/BC-Apollon-Limassol/188636> .
+<http://dbpedia.org/resource/Cadarian_Raines>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.sports-reference.com/cbb/players/cadarian-raines-1.html> .
+<http://dbpedia.org/resource/Cadarian_Raines>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://basketball.realgm.com/player/Cadarian-Raines/Summary/3716> .
+<http://dbpedia.org/resource/Cadaveria>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.youtube.com/user/CADAVERIAofficial> .
+<http://dbpedia.org/resource/Cadbury_Dream_Factory>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.tv3.co.nz/Shows/CadburyDreamFactory.aspx> .
+<http://dbpedia.org/resource/Cade_Cavalli>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://soonersports.com/sports/baseball/roster/cade-cavalli/13839> .
+<http://dbpedia.org/resource/Cade_Courtley>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20170503051440/http:/www.sealsurvival.com/> .
+<http://dbpedia.org/resource/Cade_Courtley>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.amazon.ca/s%3F_encoding=UTF8&field-author=Cade%20Courtley&search-alias=books-ca> .
+<http://dbpedia.org/resource/Cade_Cowell>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.sjearthquakes.com/players/cade-cowell> .
+<http://dbpedia.org/resource/Cade_Cunningham>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://mvasports.com/roster.aspx%3Frp_id=598> .
+<http://dbpedia.org/resource/Cade_Cunningham>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.usab.com/basketball/players/mens/c/cunningham-cade.aspx> .
+<http://dbpedia.org/resource/Cade_Cunningham>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://okstate.com/sports/mens-basketball/roster/cade-cunningham/9123> .
+<http://dbpedia.org/resource/Cade_Cust>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.seaeagles.com.au/teams/telstra-premiership/manly-warringah-sea-eagles/cade-cust/> .
+<http://dbpedia.org/resource/Cade_Davis>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://basketball.realgm.com/player/Cade-Davis/Summary/4244> .
+<http://dbpedia.org/resource/Cade_Davis>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.eurocupbasketball.com/eurocup/competition/players/showplayer%3Fpcode=004912&> .
+<http://dbpedia.org/resource/Cade_Davis>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.soonersports.com/ViewArticle.dbml%3FDB_OEM_ID=31000&ATCLID=208793225> .
+<http://dbpedia.org/resource/Cade_Doughty>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://lsusports.net/sports/bsb/roster/player/cade-doughty/> .
+<http://dbpedia.org/resource/Cade_Foster>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.rolltide.com/sports/m-footbl/mtt/foster_cade00.html> .
+<http://dbpedia.org/resource/Cade_Horton>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://soonersports.com/sports/baseball/roster/cade-horton/15056> .
+<http://dbpedia.org/resource/Cade_Johnson>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://gojacks.com/sports/football/roster/cade-johnson/8569> .
+<http://dbpedia.org/resource/Cade_Klubnik>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://clemsontigers.com/sports/football/roster/cade-klubnik/> .
+<http://dbpedia.org/resource/Cade_Mays>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://utsports.com/sports/football/roster/cade-mays/13355> .
+<http://dbpedia.org/resource/Cade_Mays>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.panthers.com/team/players-roster/cade-mays/> .
+<http://dbpedia.org/resource/Cade_Mays>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://georgiadogs.com/sports/football/roster/cade-mays/3158> .
+<http://dbpedia.org/resource/Cade_McNamara>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://mgoblue.com/sports/football/roster/cade-mcnamara/21354> .
+<http://dbpedia.org/resource/Cade_McNown>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/19991011231907/http:/www.fansonly.com/schools/ucla/sports/m-footbl/spec-rel/mcnown.html> .
+<http://dbpedia.org/resource/Cade_McNown>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20030411111304/http:/49ers.com/team/playerinfo.asp%3FTeamRosterID=187> .
+<http://dbpedia.org/resource/Cade_Otton>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://gohuskies.com/sports/football/roster/cade-otton/13408> .
+<http://dbpedia.org/resource/Cade_Otton>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.buccaneers.com/team/players-roster/cade-otton/> .
+<http://dbpedia.org/resource/Cade_York>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://lsusports.net/sports/fb/roster/player/cade-york/> .
+<http://dbpedia.org/resource/Cade_York>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.clevelandbrowns.com/team/players-roster/cade-york/> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=zMaEySEKtEgC> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.cadelevans.com.au/> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://archive.today/20121128191658/http:/www.cycling.org.au/default.asp%3Fid=8819> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=BddgkgEACAAJ> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=Zg5kbwAACAAJ> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://books.google.com/books%3Fid=eTczSwAACAAJ> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://web.archive.org/web/20060719044823/http:/www.letour.fr/2006/TDF/RIDERS/us/coureurs/61.html> .
+<http://dbpedia.org/resource/Cadel_Evans>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://www.cycling.org.au/default.asp%3Fid=8819> .
+<http://dbpedia.org/resource/Caden_Clark>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<https://www.newyorkredbulls.com/players/caden-clark> .
+<http://dbpedia.org/resource/Caden_Stafford>	<http://dbpedia.org/ontology/wikiPageExternalLink>	<http://phil.ussoccerda.com/sam/teams/index.php%3Fteam=12080240&player=869700678> .
+<http://dbpedia.org/resource/Cabell_Breckinridge>	<http://dbpedia.org/ontology/birthName>	
+"Joseph Cabell Breckinridge"@en .
+<http://dbpedia.org/resource/Cabo_Almi>	<http://dbpedia.org/ontology/birthName>
+"José Almi Pereira Moura"@en .
+<http://dbpedia.org/resource/Cabo_Anselmo>	<http://dbpedia.org/ontology/birthName>
+"José Anselmo dos Santos"@en .
+<http://dbpedia.org/resource/Cabo_Daciolo>	<http://dbpedia.org/ontology/birthName>
+"Benevenuto Daciolo Fonseca dos Santos"@en .
+<http://dbpedia.org/resource/Cabo_Junio_Amaral>	<http://dbpedia.org/ontology/birthName>
+"Geraldo Junio do Amaral"@en .
+<http://dbpedia.org/resource/Cabral_Ibacka>	<http://dbpedia.org/ontology/birthName>
+"Cabral Neculai Ibacka"@en .
+<http://dbpedia.org/resource/Caca_Handika>	<http://dbpedia.org/ontology/birthName>
+"Caca Hermanto"@en .
+<http://dbpedia.org/resource/Cacau_Protásio>	<http://dbpedia.org/ontology/birthName>
+"Anna Cláudia Protásio Monteiro"@en .
+<http://dbpedia.org/resource/Cacho_Castaña>	<http://dbpedia.org/ontology/birthName>
+"Humberto Vicente Castagna"@en .
+<http://dbpedia.org/resource/Cacho_Fontana>	<http://dbpedia.org/ontology/birthName>
+"Norberto Palese Filgueiras"@en .
+<http://dbpedia.org/resource/Cachupoy>	<http://dbpedia.org/ontology/birthName>
+"Salvador Garcia Tampac"@en .
+<http://dbpedia.org/resource/Cacilda_Becker>	<http://dbpedia.org/ontology/birthName>
+"Cacilda Becker Iaconis"@en .
+<http://dbpedia.org/resource/Caco_Ciocler>	<http://dbpedia.org/ontology/birthName>
+"Carlos Alberto Ciocler"@en .
+<http://dbpedia.org/resource/Cade_Courtley>	<http://dbpedia.org/ontology/birthName>
+"Christopher Courtley"@en .
