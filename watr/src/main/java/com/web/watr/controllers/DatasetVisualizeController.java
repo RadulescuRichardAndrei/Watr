@@ -5,6 +5,9 @@ import com.web.watr.services.TripletsMatcher;
 import com.web.watr.services.query.DatasetQueryService;
 import com.web.watr.services.query.StatisticQueryService;
 import com.web.watr.utils.FileUtils;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.annotation.PostConstruct;
 import org.apache.jena.query.Dataset;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,23 +52,29 @@ public class DatasetVisualizeController {
         statisticQueryService= new StatisticQueryService();
     }
 
+    @Operation(summary = "Get Visualize Table Page", description = "Returns the template for visualizing dataset in a table.")
+    @ApiResponse(responseCode = "200", description = "Visualize dataset table page returned successfully")
     @GetMapping("/visualize-table-page")
     @Async
     public CompletableFuture<String> getVisualizePage(){
         return CompletableFuture.completedFuture("/content/visualize-dataset-table");
     }
 
-
+    @Operation(summary = "Get Visualize RDF Graph Page", description = "Returns the template for visualizing dataset as an RDF graph.")
+    @ApiResponse(responseCode = "200", description = "Visualize RDF graph page returned successfully")
     @GetMapping("/visualize-rdf-graph-page")
     @Async
     public CompletableFuture<String> getVisualizeRDFPage(){
         return CompletableFuture.completedFuture("/content/visualize-dataset-rdf");
     }
 
+    @Operation(summary = "Get Table Data", description = "Retrieves paginated table data from a dataset.")
+    @ApiResponse(responseCode = "200", description = "Table data retrieved successfully")
     @GetMapping("/visualize-table-data")
     @Async
-    public  CompletableFuture<String> getTableData(@RequestParam(defaultValue = "0") int page,
-                                @RequestParam() String dataset,
+    public  CompletableFuture<String> getTableData(
+            @Parameter(description = "Page number for pagination") @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "Dataset filename") @RequestParam() String dataset,
                                 Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -85,20 +94,27 @@ public class DatasetVisualizeController {
     return CompletableFuture.completedFuture("/table/rdftable");
     }
 
+    @Operation(summary = "Get RDF Data", description = "Retrieves RDF data for visualization.")
+    @ApiResponse(responseCode = "200", description = "RDF data retrieved successfully")
     @GetMapping("/visualize-rdf-data")
     @Async
-    public CompletableFuture<String> getRDFData(@RequestParam() String dataset, Model model) {
+    public CompletableFuture<String> getRDFData(
+            @Parameter(description = "Dataset filename") @RequestParam() String dataset,
+            Model model) {
         filters.resetFilter();
         model.addAttribute("selectedDataset", dataset);
         return CompletableFuture.completedFuture("/search/dropdown-search");
     }
 
+    @Operation(summary = "Filter RDF Subjects", description = "Filters RDF subjects in the dataset based on search criteria.")
+    @ApiResponse(responseCode = "200", description = "Filtered RDF subjects retrieved successfully")
     @GetMapping("/filter-subjects")
     @Async
-    public CompletableFuture<String> getRDFDataSubjects(@RequestParam String dataset,
-                                     @RequestParam(defaultValue = "0") int page,
-                                     @RequestParam(required = false) String search,
-                                     @RequestParam(name = "first-request", required = false) Boolean firstRequest,
+    public CompletableFuture<String> getRDFDataSubjects(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            @Parameter(description = "Page number for pagination") @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "Search filter") @RequestParam(required = false) String search,
+            @Parameter(description = "Indicates if this is the first request") @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                              Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -121,12 +137,15 @@ public class DatasetVisualizeController {
                 : CompletableFuture.completedFuture("/fragments/filters/filter-dropdown-list");
     }
 
+    @Operation(summary = "Filter RDF Predicates", description = "Filters RDF predicates in the dataset based on search criteria.")
+    @ApiResponse(responseCode = "200", description = "Filtered RDF predicates retrieved successfully")
     @GetMapping("/filter-predicates")
     @Async
-    public CompletableFuture<String> getRDFDataPredicates(@RequestParam String dataset,
-                                       @RequestParam(defaultValue = "0") int page,
-                                       @RequestParam(required = false) String search,
-                                       @RequestParam(name = "first-request", required = false) Boolean firstRequest,
+    public CompletableFuture<String> getRDFDataPredicates(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            @Parameter(description = "Page number for pagination") @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "Search filter") @RequestParam(required = false) String search,
+            @Parameter(description = "Indicates if this is the first request") @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                                        Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -149,12 +168,15 @@ public class DatasetVisualizeController {
                 : CompletableFuture.completedFuture("/fragments/filters/filter-dropdown-list") ;
     }
 
+    @Operation(summary = "Select RDF Predicates", description = "Retrieves a paginated list of predicates for selection in the dataset.")
+    @ApiResponse(responseCode = "200", description = "RDF predicates retrieved successfully")
     @GetMapping("/select-predicate")
     @Async
-    public CompletableFuture<String> getRDFDataPredicates2(@RequestParam String dataset,
-                                       @RequestParam(defaultValue = "0") int page,
-                                       @RequestParam(required = false) String search,
-                                       @RequestParam(name = "first-request", required = false) Boolean firstRequest,
+    public CompletableFuture<String> getRDFDataPredicates2(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            @Parameter(description = "Page number for pagination") @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "Search filter") @RequestParam(required = false) String search,
+            @Parameter(description = "Indicates if this is the first request") @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                                        Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -175,12 +197,15 @@ public class DatasetVisualizeController {
                 : CompletableFuture.completedFuture("/fragments/filters/select-dropdown-list") ;
     }
 
+    @Operation(summary = "Filter RDF Objects", description = "Filters RDF objects in the dataset based on search criteria.")
+    @ApiResponse(responseCode = "200", description = "Filtered RDF objects retrieved successfully")
     @GetMapping("/filter-objects")
     @Async
-    public CompletableFuture<String> getRDFDataObjects(@RequestParam String dataset,
-                                       @RequestParam(defaultValue = "0") int page,
-                                       @RequestParam(required = false) String search,
-                                    @RequestParam(name = "first-request", required = false) Boolean firstRequest,
+    public CompletableFuture<String> getRDFDataObjects(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            @Parameter(description = "Page number for pagination") @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "Search filter") @RequestParam(required = false) String search,
+            @Parameter(description = "Indicates if this is the first request") @RequestParam(name = "first-request", required = false) Boolean firstRequest,
                                        Model model){
 
         Path path = Paths.get(datasetPath, dataset);
@@ -204,9 +229,13 @@ public class DatasetVisualizeController {
                 : CompletableFuture.completedFuture("/fragments/filters/filter-dropdown-list");
     }
 
+    @Operation(summary = "Generate Graph Representation", description = "Generates a visual representation of the dataset as a graph.")
+    @ApiResponse(responseCode = "200", description = "Graph representation generated successfully")
     @GetMapping("/generate-graph")
     @Async
-    public CompletableFuture<String> getGraphRepresentation(@RequestParam String dataset, Model model){
+    public CompletableFuture<String> getGraphRepresentation(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            Model model){
 
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -218,8 +247,13 @@ public class DatasetVisualizeController {
         return CompletableFuture.completedFuture("/fragments/graph-container");
     }
 
+    @Operation(summary = "Generate JSON-LD Representation", description = "Generates and downloads a JSON-LD representation of the dataset.")
+    @ApiResponse(responseCode = "200", description = "JSON-LD generated successfully")
+    @ApiResponse(responseCode = "500", description = "Error in processing the data")
     @GetMapping("/generate-jsonld")
-    public ResponseEntity<Object> getJsonLDRepresentation(@RequestParam String dataset, Model model){
+    public ResponseEntity<Object> getJsonLDRepresentation(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            Model model){
 
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds= datasetQueryService.loadDataset(path);
@@ -235,10 +269,14 @@ public class DatasetVisualizeController {
 
     }
 
+    @Operation(summary = "Get Subject Node Details", description = "Retrieves details about a subject node.")
+    @ApiResponse(responseCode = "200", description = "Subject node details retrieved successfully")
     @GetMapping("/details-subject")
     @Async
-    public CompletableFuture<String> getSubjectNodeDetails(@RequestParam String dataset,
-                                                           @RequestParam String name, Model model){
+    public CompletableFuture<String> getSubjectNodeDetails(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            @Parameter(description = "Subject name") @RequestParam String name,
+            Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds1= datasetQueryService.loadDataset(path);
         Dataset ds2= statisticQueryService.loadDataset(path);
@@ -263,10 +301,14 @@ public class DatasetVisualizeController {
         return CompletableFuture.completedFuture("fragments/graph-details");
     }
 
+    @Operation(summary = "Get Object Node Details", description = "Retrieves details about an object node.")
+    @ApiResponse(responseCode = "200", description = "Object node details retrieved successfully")
     @GetMapping("/details-object")
     @Async
-    public CompletableFuture<String> getObjectNodeDetails(@RequestParam String dataset, @RequestParam String name,
-                                       @RequestParam(name = "object-type") String objectType,
+    public CompletableFuture<String> getObjectNodeDetails(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            @Parameter(description = "Object name") @RequestParam String name,
+            @Parameter(description = "Type of the object (resource or literal)") @RequestParam(name = "object-type") String objectType,
                                        Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds1= datasetQueryService.loadDataset(path);
@@ -300,9 +342,14 @@ public class DatasetVisualizeController {
         return CompletableFuture.completedFuture("fragments/graph-details");
     }
 
+    @Operation(summary = "Get Edge Details", description = "Retrieves details about an edge (predicate) in the dataset graph.")
+    @ApiResponse(responseCode = "200", description = "Edge details retrieved successfully")
     @GetMapping("/details-edge")
     @Async
-    public CompletableFuture<String> getEdgeDetails(@RequestParam String dataset, @RequestParam String name, Model model){
+    public CompletableFuture<String> getEdgeDetails(
+            @Parameter(description = "Dataset filename") @RequestParam String dataset,
+            @Parameter(description = "Predicate name") @RequestParam String name,
+            Model model){
         Path path = Paths.get(datasetPath, dataset);
         Dataset ds1= datasetQueryService.loadDataset(path);
         Dataset ds2= statisticQueryService.loadDataset(path);
@@ -328,10 +375,13 @@ public class DatasetVisualizeController {
         return CompletableFuture.completedFuture("fragments/graph-details");
     }
 
+    @Operation(summary = "Compare Two Datasets", description = "Performs a comparison between two datasets.")
+    @ApiResponse(responseCode = "200", description = "Comparison completed successfully")
     @GetMapping("/dataset-matcher")
     @Async
-    public CompletableFuture<String> getMatches(@RequestParam(name= "first-dataset") String firstDataset,
-                             @RequestParam(name="second-dataset") String secondDataset,
+    public CompletableFuture<String> getMatches(
+            @Parameter(description = "First dataset filename") @RequestParam(name= "first-dataset") String firstDataset,
+            @Parameter(description = "Second dataset filename") @RequestParam(name="second-dataset") String secondDataset,
                              Model model){
 
         Path path1 = Paths.get(datasetPath, firstDataset);
@@ -370,6 +420,9 @@ public class DatasetVisualizeController {
         model.addAttribute("secondDataset", secondDataset);
         return CompletableFuture.supplyAsync(()-> {return "/fragments/matches";});
     }
+
+    @Operation(summary = "Get Dataset Comparison Page", description = "Returns the template for comparing two datasets.")
+    @ApiResponse(responseCode = "200", description = "Comparison page returned successfully")
     @GetMapping("/visualize-compare-page")
     @Async
     public CompletableFuture<String> getComparePage(Model model){

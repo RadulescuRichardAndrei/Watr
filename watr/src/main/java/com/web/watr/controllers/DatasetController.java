@@ -3,6 +3,7 @@ package com.web.watr.controllers;
 import com.web.watr.utils.FileUploadException;
 import com.web.watr.utils.FileUtils;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -34,6 +35,7 @@ public class DatasetController {
     @Value("${accepted.file.extensions}")
     private String allowedExtensions;
     private static final int pageSize = 10;
+
     @Operation(summary = "Upload Dataset Form", description = "Returns asynchronous the template containing a form for selecting a dataset to upload.")
     @ApiResponse(responseCode = "200", description = "Upload Dataset Form returned successfully")
     @GetMapping("/upload")
@@ -42,6 +44,9 @@ public class DatasetController {
         model.addAttribute("allowedExtensions",allowedExtensions);
         return CompletableFuture.completedFuture("/content/upload-dataset");
     }
+
+    @Operation(summary = "Save Dataset Form", description = "Returns asynchronously the template for saving a dataset.")
+    @ApiResponse(responseCode = "200", description = "Save Dataset Form returned successfully")
     @GetMapping("/save")
     @Async
     public CompletableFuture<String> saveDatasetPage(Model model){
@@ -49,8 +54,13 @@ public class DatasetController {
         return CompletableFuture.completedFuture("/content/save-dataset");
     }
 
+    @Operation(summary = "Upload Dataset File", description = "Handles file upload and saves it to the dataset path.")
+    @ApiResponse(responseCode = "201", description = "File uploaded successfully")
+    @ApiResponse(responseCode = "400", description = "Invalid file type or empty file")
+    @ApiResponse(responseCode = "500", description = "Server error while uploading file")
     @PostMapping(value = "upload-dataset", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-    public ResponseEntity<String> uploadDatasetFile(@RequestParam("file")MultipartFile file) {
+    public ResponseEntity<String> uploadDatasetFile(
+            @Parameter(description = "File to be uploaded") @RequestParam("file")MultipartFile file) {
         try{
 
             if (file.isEmpty()) {
@@ -71,13 +81,16 @@ public class DatasetController {
         }
     }
 
+    @Operation(summary = "Get Dataset Names", description = "Returns a paginated list of dataset names available in the system.")
+    @ApiResponse(responseCode = "200", description = "Dataset names retrieved successfully")
     @GetMapping("/dataset-names")
     @Async
-    public CompletableFuture<String> getFileNames(@RequestParam(defaultValue = "0") int page,
-                               @RequestParam(required = false) String name,
-                               @RequestParam(defaultValue = "item", required = false) String action,
-                               @RequestParam() String actionUrl,
-                               @RequestParam() String target,
+    public CompletableFuture<String> getFileNames(
+            @Parameter(description = "Page number for pagination") @RequestParam(defaultValue = "0") int page,
+            @Parameter(description = "Optional name filter") @RequestParam(required = false) String name,
+            @Parameter(description = "Action type: 'item' for listing or 'save' for downloading") @RequestParam(defaultValue = "item", required = false) String action,
+            @Parameter(description = "Action URL for dataset interaction") @RequestParam() String actionUrl,
+            @Parameter(description = "Target for dataset display") @RequestParam() String target,
                                Model model){
         File datasetDirectory = new File(datasetPath);
         File[] files = datasetDirectory.listFiles();
@@ -127,8 +140,14 @@ public class DatasetController {
         }
     }
 
+    @Operation(summary = "Download Dataset File", description = "Downloads a dataset file by its name.")
+    @ApiResponse(responseCode = "200", description = "File downloaded successfully")
+    @ApiResponse(responseCode = "400", description = "Invalid file type")
+    @ApiResponse(responseCode = "404", description = "File not found")
+    @ApiResponse(responseCode = "500", description = "Server error while downloading file")
     @GetMapping("/download-file")
-    public ResponseEntity<byte[]> downloadDatasetFile(@RequestParam("fileName") String fileName) {
+    public ResponseEntity<byte[]> downloadDatasetFile(
+            @Parameter(description = "Name of the file to download") @RequestParam("fileName") String fileName) {
         try {
             String fileExtension = FileUtils.getFileExtension(fileName);
             if (!FileUtils.isValidFileType(fileExtension)) {
