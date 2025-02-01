@@ -19,7 +19,7 @@
 <body class="sb-nav-fixed" hx-boost="true"  hx-ext="response-targets">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3"  hx-get="/" hx-target="body">WATR</a>
+        <a class="navbar-brand ps-3" href="#"  hx-get="/" hx-target="body">WATR</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
             <img th:src="@{/svg/toggle.svg}" alt="Toggle" width="20" height="20">
@@ -45,19 +45,19 @@
                         </a>
                         <div class="collapse" id="collapseLayoutsDatasets" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#" hx-get="/upload" hx-target="#content">
+                                <a class="nav-link" href="#" hx-get="/upload" hx-target="#content" id="uploadBtn" data-target="upload">
                                     <div class="sb-nav-link-icon">
                                         <img th:src="@{/svg/upload.svg}" alt="" width="20" height="20">
                                     </div>
                                     Upload
                                 </a>
-                                <a class="nav-link" href="#" hx-get="/save" hx-target="#content">
+                                <a class="nav-link" href="#" hx-get="/save" hx-target="#content" data-target="save">
                                     <div class="sb-nav-link-icon">
                                         <img th:src="@{/svg/download.svg}" alt="" width="20" height="20">
                                     </div>
                                     Save
                                 </a>
-                                <a class="nav-link" href="#" hx-get="/delete" hx-target="#content">
+                                <a class="nav-link" href="#" hx-get="/delete" hx-target="#content" data-target="delete">
                                     <div class="sb-nav-link-icon">
                                         <img th:src="@{/svg/delete-file.svg}" alt="" width="20" height="20">
                                     </div>
@@ -78,13 +78,13 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#" hx-get="/visualize-table-page" hx-target="#content">
+                                <a class="nav-link" href="#" hx-get="/visualize-table-page" hx-target="#content" data-target="table">
                                     <div class="sb-nav-link-icon">
                                         <img th:src="@{/svg/table.svg}" alt="" width="20" height="20">
                                     </div>
                                     Table
                                 </a>
-                                <a class="nav-link" href="#" hx-get="/visualize-rdf-graph-page" hx-target="#content">
+                                <a class="nav-link" href="#" hx-get="/visualize-rdf-graph-page" hx-target="#content" id="viewGraphBtn" data-target="graph">
                                     <div class="sb-nav-link-icon">
                                         <img th:src="@{/svg/graph.svg}" alt="" width="20" height="20">
                                     </div>
@@ -94,13 +94,13 @@
                         </div>
 
 
-                        <a class="nav-link" href="#" hx-get="/visualize-compare-page" hx-target="#content">
+                        <a class="nav-link" href="#" hx-get="/visualize-compare-page" hx-target="#content" id="compareBtn" data-target="compare">
                             <div class="sb-nav-link-icon">
                                 <img th:src="@{/svg/compare.svg}" alt="" width="20" height="20">
                             </div>
                             Compare Schemas
                         </a>
-                        <a class="nav-link" href="#" hx-get="/visualize-statistic-page" hx-target="#content">
+                        <a class="nav-link" href="#" hx-get="/visualize-statistic-page" hx-target="#content" data-target="stats">
                             <div class="sb-nav-link-icon">
                                 <img th:src="@{/svg/chart.svg}" alt="" width="20" height="20">
                             </div>
@@ -116,8 +116,62 @@
         <div id="layoutSidenav_content">
             <main>
                 <div id="content" class="container-fluid px-4 " style="height: 100vh;">
-                    <h1 class="mt-4">Dashboard</h1>
+                    <div class="container text-center my-5">
+                        <h1 class="mt-4">Welcome to Web Data Commons Analyzer</h1>
+                        <p class="lead">
+                            Your tool for extracting, analyzing, and visualizing structured data from the web.
+                        </p>
 
+                        <h2 class="mt-4">Start Your Analysis</h2>
+                        <p>
+                            Upload datasets, visualize RDF graphs, compare schemas, and generate statistical insights.
+                            Discover patterns in structured data from RDFa and HTML5 microdata.
+                        </p>
+
+                        <div class="row mt-5">
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Upload & Manage Data</h5>
+                                        <p class="card-text">
+                                            Upload new datasets, manage existing ones, and prepare your data for analysis.
+                                        </p>
+                                        <a href="#" class="btn btn-primary" onclick="document.getElementById('uploadBtn').click();">
+                                            Upload Data
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Visualize & Explore</h5>
+                                        <p class="card-text">
+                                            View RDF graphs and tables, explore relationships, and uncover hidden structures.
+                                        </p>
+                                        <a href="#" class="btn btn-primary" onclick="document.getElementById('viewGraphBtn').click();">
+                                            View RDF Graph
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Compare & Analyze</h5>
+                                        <p class="card-text">
+                                            Compare schema structures and analyze key statistics to gain deeper insights.
+                                        </p>
+                                        <a href="#" class="btn btn-primary" onclick="document.getElementById('compareBtn').click();">
+                                            Compare Schemas
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
