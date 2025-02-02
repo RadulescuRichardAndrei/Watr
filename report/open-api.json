@@ -1,0 +1,1595 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/upload-dataset": {
+      "post": {
+        "tags": [
+          "dataset-controller"
+        ],
+        "summary": "Upload Dataset File",
+        "description": "Handles file upload and saves it to the dataset path.",
+        "operationId": "uploadDatasetFile",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "File to be uploaded"
+                  }
+                },
+                "required": [
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "File uploaded successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error while uploading file",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid file type or empty file",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/toggle-subject": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Toggle Subject in Filters",
+        "description": "Toggles a subject in the filters (add or remove).",
+        "operationId": "toggleSubject",
+        "parameters": [
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "Subject name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subject toggled successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/toggle-predicate": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Toggle Predicate in Filters",
+        "description": "Toggles a predicate in the filters (add or remove).",
+        "operationId": "togglePredicate",
+        "parameters": [
+          {
+            "name": "predicate",
+            "in": "query",
+            "description": "Predicate name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Predicate toggled successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/toggle-object": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Toggle Object in Filters",
+        "description": "Toggles an object in the filters (add or remove).",
+        "operationId": "toggleObject",
+        "parameters": [
+          {
+            "name": "object",
+            "in": "query",
+            "description": "Object name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Object toggled successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/remove-subject": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Remove Subject from Filters",
+        "description": "Removes a subject from the filters.",
+        "operationId": "removeSubject",
+        "parameters": [
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "Subject name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request, subject not found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Subject removed successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/remove-predicate": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Remove Predicate from Filters",
+        "description": "Removes a predicate from the filters.",
+        "operationId": "removePredicate",
+        "parameters": [
+          {
+            "name": "predicate",
+            "in": "query",
+            "description": "Predicate name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Predicate removed successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, predicate not found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/remove-object": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Remove Object from Filters",
+        "description": "Removes an object from the filters.",
+        "operationId": "removeObject",
+        "parameters": [
+          {
+            "name": "object",
+            "in": "query",
+            "description": "Object name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad request, object not found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Object removed successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/add-subject": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Add Subject to Filters",
+        "description": "Adds a subject to the filters asynchronously.",
+        "operationId": "addSubject",
+        "parameters": [
+          {
+            "name": "subject",
+            "in": "query",
+            "description": "Subject name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subject added successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, missing or incorrect parameters",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/add-predicate": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Add Predicate to Filters",
+        "description": "Adds a predicate to the filters asynchronously.",
+        "operationId": "addPredicate",
+        "parameters": [
+          {
+            "name": "predicate",
+            "in": "query",
+            "description": "Predicate name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Predicate added successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/add-object": {
+      "post": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Add Object to Filters",
+        "description": "Adds an object to the filters asynchronously.",
+        "operationId": "addObject",
+        "parameters": [
+          {
+            "name": "object",
+            "in": "query",
+            "description": "Object name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Object added successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/visualize-table-page": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get Visualize Table Page",
+        "description": "Returns the template for visualizing dataset in a table.",
+        "operationId": "getVisualizePage",
+        "responses": {
+          "200": {
+            "description": "Visualize dataset table page returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/visualize-table-data": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get Table Data",
+        "description": "Retrieves paginated table data from a dataset.",
+        "operationId": "getTableData",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Table data retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/visualize-statistics": {
+      "get": {
+        "tags": [
+          "dataset-statistic-controller"
+        ],
+        "summary": "Get Dataset Statistics",
+        "description": "Returns statistics for the selected dataset asynchronously.",
+        "operationId": "getStatistics",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Statistics for the dataset returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request, missing or incorrect parameters",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/visualize-statistic-page": {
+      "get": {
+        "tags": [
+          "dataset-statistic-controller"
+        ],
+        "summary": "Visualize Statistics Page",
+        "description": "Returns the page for visualizing dataset statistics asynchronously.",
+        "operationId": "getStatisticPage",
+        "responses": {
+          "200": {
+            "description": "Statistics page returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/visualize-rdf-graph-page": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get Visualize RDF Graph Page",
+        "description": "Returns the template for visualizing dataset as an RDF graph.",
+        "operationId": "getVisualizeRDFPage",
+        "responses": {
+          "200": {
+            "description": "Visualize RDF graph page returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/visualize-rdf-data": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get RDF Data",
+        "description": "Retrieves RDF data for visualization.",
+        "operationId": "getRDFData",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "RDF data retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/visualize-compare-page": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get Dataset Comparison Page",
+        "description": "Returns the template for comparing two datasets.",
+        "operationId": "getComparePage",
+        "responses": {
+          "200": {
+            "description": "Comparison page returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/upload": {
+      "get": {
+        "tags": [
+          "dataset-controller"
+        ],
+        "summary": "Upload Dataset Form",
+        "description": "Returns asynchronous the template containing a form for selecting a dataset to upload.",
+        "operationId": "uploadDatasetPage",
+        "responses": {
+          "200": {
+            "description": "Upload Dataset Form returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/statistic-predicate": {
+      "get": {
+        "tags": [
+          "dataset-statistic-controller"
+        ],
+        "summary": "Get Predicate Object Distribution",
+        "description": "Returns the object distribution for a given predicate in the dataset.",
+        "operationId": "getObjectDistributionForPredicate",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "predicate",
+            "in": "query",
+            "description": "Predicate name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid dataset or predicate provided",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error while processing the dataset",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Object distribution for predicate returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/statistic-count": {
+      "get": {
+        "tags": [
+          "dataset-statistic-controller"
+        ],
+        "summary": "Get Count Statistics",
+        "description": "Returns count statistics for a dataset based on triple type.",
+        "operationId": "getCounts",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tripleType",
+            "in": "query",
+            "description": "Type of triples (e.g., subject, predicate, object)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Count statistics for the dataset returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error while processing the dataset",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid dataset or triple type provided",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/select-predicate": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Select RDF Predicates",
+        "description": "Retrieves a paginated list of predicates for selection in the dataset.",
+        "operationId": "getRDFDataPredicates2",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "first-request",
+            "in": "query",
+            "description": "Indicates if this is the first request",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "RDF predicates retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/save": {
+      "get": {
+        "tags": [
+          "dataset-controller"
+        ],
+        "summary": "Save Dataset Form",
+        "description": "Returns asynchronously the template for saving a dataset.",
+        "operationId": "saveDatasetPage",
+        "responses": {
+          "200": {
+            "description": "Save Dataset Form returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-subjects": {
+      "get": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Get All Subjects in Filters",
+        "description": "Returns a list of all subjects currently in the filters.",
+        "operationId": "getSubjects",
+        "responses": {
+          "200": {
+            "description": "List of subjects returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-predicates": {
+      "get": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Get All Predicates in Filters",
+        "description": "Returns a list of all predicates currently in the filters.",
+        "operationId": "getPredicates",
+        "responses": {
+          "200": {
+            "description": "List of predicates returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-objects": {
+      "get": {
+        "tags": [
+          "filter-contoller"
+        ],
+        "summary": "Get All Objects in Filters",
+        "description": "Returns a list of all objects currently in the filters.",
+        "operationId": "getObjects",
+        "responses": {
+          "200": {
+            "description": "List of objects returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generate-jsonld": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Generate JSON-LD Representation",
+        "description": "Generates and downloads a JSON-LD representation of the dataset.",
+        "operationId": "getJsonLDRepresentation",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "JSON-LD generated successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error in processing the data",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/generate-graph": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Generate Graph Representation",
+        "description": "Generates a visual representation of the dataset as a graph.",
+        "operationId": "getGraphRepresentation",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Graph representation generated successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/filter-subjects": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Filter RDF Subjects",
+        "description": "Filters RDF subjects in the dataset based on search criteria.",
+        "operationId": "getRDFDataSubjects",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "first-request",
+            "in": "query",
+            "description": "Indicates if this is the first request",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered RDF subjects retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/filter-predicates": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Filter RDF Predicates",
+        "description": "Filters RDF predicates in the dataset based on search criteria.",
+        "operationId": "getRDFDataPredicates",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "first-request",
+            "in": "query",
+            "description": "Indicates if this is the first request",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered RDF predicates retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/filter-objects": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Filter RDF Objects",
+        "description": "Filters RDF objects in the dataset based on search criteria.",
+        "operationId": "getRDFDataObjects",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "first-request",
+            "in": "query",
+            "description": "Indicates if this is the first request",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered RDF objects retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download-file": {
+      "get": {
+        "tags": [
+          "dataset-controller"
+        ],
+        "summary": "Download Dataset File",
+        "description": "Downloads a dataset file by its name.",
+        "operationId": "downloadDatasetFile",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "query",
+            "description": "Name of the file to download",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid file type",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error while downloading file",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "File downloaded successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/details-subject": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get Subject Node Details",
+        "description": "Retrieves details about a subject node.",
+        "operationId": "getSubjectNodeDetails",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Subject name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subject node details retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/details-object": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get Object Node Details",
+        "description": "Retrieves details about an object node.",
+        "operationId": "getObjectNodeDetails",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Object name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "object-type",
+            "in": "query",
+            "description": "Type of the object (resource or literal)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Object node details retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/details-edge": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Get Edge Details",
+        "description": "Retrieves details about an edge (predicate) in the dataset graph.",
+        "operationId": "getEdgeDetails",
+        "parameters": [
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Predicate name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Edge details retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete": {
+      "get": {
+        "tags": [
+          "dataset-controller"
+        ],
+        "summary": "Delete Dataset Form",
+        "description": "Returns asynchronously the template for deleting a dataset.",
+        "operationId": "deleteDatasetPage",
+        "responses": {
+          "200": {
+            "description": "Delete Dataset Form returned successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dataset-names": {
+      "get": {
+        "tags": [
+          "dataset-controller"
+        ],
+        "summary": "Get Dataset Names",
+        "description": "Returns a paginated list of dataset names available in the system.",
+        "operationId": "getFileNames",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number for pagination",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Optional name filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "action",
+            "in": "query",
+            "description": "Action type: 'item' for listing, 'save' for downloading or 'delete' for deleting",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "item"
+            }
+          },
+          {
+            "name": "actionUrl",
+            "in": "query",
+            "description": "Action URL for dataset interaction",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "target",
+            "in": "query",
+            "description": "Target for dataset display",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dataset names retrieved successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dataset-matcher": {
+      "get": {
+        "tags": [
+          "dataset-visualize-controller"
+        ],
+        "summary": "Compare Two Datasets",
+        "description": "Performs a comparison between two datasets.",
+        "operationId": "getMatches",
+        "parameters": [
+          {
+            "name": "first-dataset",
+            "in": "query",
+            "description": "First dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "second-dataset",
+            "in": "query",
+            "description": "Second dataset filename",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Comparison completed successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "home-page-controller"
+        ],
+        "summary": "Get Index Page",
+        "description": "Returns the home page view asynchronously.",
+        "operationId": "getIndex",
+        "responses": {
+          "200": {
+            "description": "Home page loaded successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete-file": {
+      "delete": {
+        "tags": [
+          "dataset-controller"
+        ],
+        "summary": "Delete Dataset File",
+        "description": "Deletes a dataset file from Fuseki.",
+        "operationId": "deleteDatasetFile",
+        "parameters": [
+          {
+            "name": "fileName",
+            "in": "query",
+            "description": "Name of the file to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server error while deleting file",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "File deleted successfully",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+
+  }
+}

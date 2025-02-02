@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="watr.png" width="80" height="80" alt="WATR logo">
+        <div class="status">WATR</div>
+      </div>
+      <h1>Web Data Commons Analyzer</h1>
+    </header>
+
+    <div role="contentinfo">
+      <ol role="directory">
+        <li><a href="#abstract"><span>1. </span>Abstract</a></li>
+        <li><a href="#introduction"><span>2. </span>Introduction</a></li>
+        <li><a href="#architecture"><span>3. </span>System Architecture</a>
+          <ol role="directory">
+            <li><a href="#design"><span>3.1 </span> Services Design </a></li>
+            <li><a href="#technologies"><span>3.2 </span> Technologies Used</a></li>
+            <li><a href="#data-flow"><span>3.3 </span> Data Flow </a></li>
+          </ol>
+        </li>
+        <li><a href="#functionalities"><span>4. </span> Core Functionalities</a>
+          <ol role="directory">
+            <li><a href="#dataset"><span>4.1 </span> Dataset Ingestion &amp; Preprocessing </a></li>
+            <li><a href="#visualization"><span>4.2 </span> Visualization </a></li>
+            <li><a href="#matching"><span>4.3 </span>  Vocabulary Matching </a></li>
+            <li><a href="#statistics"><span>4.4 </span>  Data Analytics &amp; Statistics </a></li>
+          </ol>
+        </li>
+        <li><a href="#implementation"><span>5. </span> Implementation &amp; Deployment</a>
+          <ol role="directory">
+            <li><a href="#backend"><span>5.1 </span> Backend: Spring Boot &amp; Jena Integration </a></li>
+            <li><a href="#Frontend"><span>5.2 </span>  Frontend: Thymeleaf &amp; HTMX Enhancements</a></li>
+            <li><a href="#api-query"><span>5.3 </span>  API Layer &amp; Internal Query Processing</a></li>
+            <li><a href="#deployment"><span>5.4 </span>  Deployment Strategy</a></li>
+          </ol>
+        </li>
+        <li><a href="#testing"><span>6. </span> Validation &amp; Testing</a>
+          <ol role="directory">
+            <li><a href="#performance"><span>6.1 </span>  Performance Evaluation </a></li>
+            <li><a href="#use-cases"><span>6.2 </span>  Usability &amp; Use Cases</a></li>
+          </ol>
+        </li>
+        <li><a href="#conclusion"><span>7. </span> Conclusion &amp; Future Work</a>
+          <ol role="directory">
+            <li><a href="#contributions"><span>7.1 </span> Summary of Contributions </a></li>
+            <li><a href="#enhancements"><span>7.2 </span>  Potential Enhancements</a></li>
+          </ol>
+        </li>
+        <li><a href="#references"><span>8. </span>References</a></li>
+      </ol>
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          Radulescu Richard-Andrei
+          &amp;
+          Buimestru Alexandru
+
+        </dd>
+        <dt>Project Repository</dt>
+        <dd>
+          <a href="https://github.com/RadulescuRichardAndrei/Watr">WATR Github</a>
+        </dd>
+        <dt>License</dt>
+        <dd>
+          <a href="https://opensource.org/license/cmu-license">MIT-CMU</a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2><span>1. </span>Abstract</h2>
+      <p>
+        This paper presents the design and implementation of a service-oriented web application for processing and analyzing
+        structured metadata in RDFa and HTML5 microdata formats. The system processes user-provided datasets and offers core
+        functionalities such as visualization, classification, comparison, and matching/alignment.
+        The system integrates internal query services (SPARQL) that process RDF data efficiently,
+        providing structured results in HTML and JSON-LD formats. Additionally, statistical
+        insights are derived and modeled using the RDF Data Cube vocabulary,
+        offering valuable analytical perspectives on the extracted metadata.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2><span>2. </span>Introduction</h2>
+      <p>
+        The rapid growth of structured data on the web has transformed how information is shared, discovered, and analyzed.
+        Formats like RDFa and HTML5 microdata, which enable web pages to embed machine-readable metadata,
+        are pivotal for the semantic web and improving data interoperability.
+        We provide a service-based web application designed to streamline the processing and analysis
+        of RDF data.  By focusing on a modular architecture, the system offers a minimal
+        set of core functionalities that can be easily expanded and integrated.
+        These functionalities include data visualization, classification, comparison and vocabulary matching.
+        The data is returned in user-friendly formats such as HTML and JSON-LD, making it accessible
+        for a wide range of users, from developers to researchers.
+        Additionally, the application generates statistical insights modeled using the RDF Data Cube vocabulary,
+        which helps in deriving meaningful analytical perspectives from the metadata.
+      </p>
+
+    </section>
+
+    <section id="architecture">
+      <h2><span>3. </span>System Architecture</h2>
+      <p>
+        The system is built on a Spring Boot application (which has the same architecture of Spring MVC) that follows a modular and service-oriented architecture,
+        enabling efficient management of datasets and their processing.
+      </p>
+
+      <section id="design">
+        <h3><a><span>3.1 </span> Services Design </a></h3>
+        <p>
+          The application is structured around multiple
+          controllers and services that handle different tasks. The Dataset Controller is responsible for
+          managing the lifecycle of datasets, allowing users to upload, save, and delete their data. Once uploaded,
+          the datasets are stored and loaded into an embedded Fuseki Jena server, providing a robust platform for querying and processing RDF data.
+          The Visualization Controller and Statistics Controller are responsible for generating dynamic visual representations and statistical insights, respectively.
+        </p>
+      </section>
+      <section id="technologies">
+        <h3> <a><span>3.2 </span> Technologies Used </a></h3>
+        <h4>View Layer with Thymeleaf and HTMX and Bootstrap for Responsive Design</h4>
+        <p>
+          The front-end of the application is built using Thymeleaf in combination with HTMX,
+          creating a dynamic and responsive user interface. Thymeleaf serves as the primary templating engine,
+          enabling the construction of robust HTML pages that are easily maintainable and reusable. HTMX enhances these pages by allowing seamless,
+          asynchronous updates without requiring a full-page reload.
+          Bootstrap is integrated to ensure that the application maintains a clean, responsive layout, allowing these visual components to adapt seamlessly across devices.
+        </p>
+        <h4>Model Layer with Embedded Jena Fuseki Server</h4>
+        <p>
+          On the backend, an embedded Jena Fuseki server is utilized to construct and manage the data model.
+          This powerful RDF data store is integrated into the application via dedicated service components,
+          which handle the ingestion, querying, and manipulation of RDF data. The services load user-uploaded
+          datasets into the Fuseki server, where the data is structured as RDF graphs, enabling querying using SPARQL.
+          By leveraging the capabilities of Jena Fuseki, the system ensures efficient data
+          processing and retrieval, which in turn supports dynamic content generation and detailed analytics presented to users.
+        </p>
+        <h4>Vis.js Networks for Triplet Visualization</h4>
+        <p>Vis.js provides a dynamic and interactive network visualization component that is ideal for displaying RDF triplets.
+          It enables users to explore relationships within the data by visually representing nodes and edges,
+          making it easier to understand complex connections. The interactive features, such as zooming, panning,
+          and node selection, enhance the user experience by allowing real-time exploration and manipulation of the network.</p>
+        <h4>Chart.js for Statistical Graphs</h4>
+        <p>
+          Chart.js is utilized to present statistical data in engaging, easy-to-understand graphs,
+          giving users clear insights through various chart types like line, bar, and pie charts.
+          Its simplicity and versatility make it an excellent tool for visual data analysis.
+        </p>
+      </section>
+      <section id="data-flow">
+        <h3> <a><span>3.3 </span> Data Flow </a></h3>  <!-- ALEX poti face diagrama MVC + jena triple store (vezi mai sus) -->
+      </section>
+
+    </section>
+
+    <section id="functionalities">
+      <h2><span>4. </span> Core Functionalities</h2>  <!-- RICHARD -->
+
+      <section id="dataset">
+        <h3><a><span>4.1 </span> Dataset Ingestion & Preprocessing </a></h3>
+      </section>
+      <section id="visualization">
+        <h3> <a><span>4.2 </span> Visualization </a></h3>
+      </section>
+      <section id="matching">
+        <h3> <a><span>4.3 </span> Vocabulary Matching </a></h3>
+      </section>
+      <section id="statistics">
+        <h3> <a><span>4.4 </span> Data Analytics & Statistics </a></h3>
+      </section>
+    </section>
+
+    <section id="implementation"> <!-- RICHARD -->
+      <h2><span>5. </span> Implementation & Deployment</h2>
+      <section id="backend">
+        <h3> <a><span>5.1 </span> Backend: Spring Boot & Jena Integration </a></h3>
+      </section>
+      <section id="Frontend">
+        <h3> <a><span>5.2 </span> Frontend: Thymeleaf & HTMX Enhancements</a></h3>
+      </section>
+      <section id="api-query">
+        <h3> <a><span>5.3 </span> API Layer & Internal Query Processing</a></h3>
+      </section>
+      <section id="deployment">
+        <h3> <a><span>5.4 </span> Deployment Strategy</a></h3>
+      </section>
+    </section>
+
+    <section id="testing">
+      <h2><span>6. </span> Validation & Testing</h2>
+      <section id="performance">
+        <h3> <a><span>6.1 </span> Performance Evaluation </a></h3><!-- RICHARD -->
+
+      </section>
+      <section id="use-cases">
+        <h3> <a><span>6.2 </span> Usability & Use Cases</a></h3><!--
+        adaugi un link catre o pagina to scholary html
+          also available as a Scholarly HTML document including screen-captures and explaining at least 3 case-studies
+          poti face diagrame de flow sau ceva asemanator
+          Use cases examples (daca nuti vin idei)
+          -upload
+          -details about predicate
+          -statistic predicate object distribution
+         -->
+      </section>
+    </section>
+
+    <section id="conclusion"><!-- RICHARD -->
+      <h2> <span>7. </span>Conclusion & Future Work</h2>
+      <section id="contributions">
+        <h3> <a><span>7.1 </span> Summary of Contributions </a></h3>
+      </section>
+      <section id="enhancements">
+      <h3> <a><span>7.2 </span> Potential Enhancements </a></h3>
+      </section>
+
+    </section>
+    <section id="references"> <!-- RICHARD -->
+      <h2><span>8. </span>References</h2>
+      <ul>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">Start Bootstrap SB Admin Template</span>.
+          <a href="https://startbootstrap.com/template/sb-admin" target="_blank" itemprop="url">
+            https://startbootstrap.com/template/sb-admin
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">HTMX Library</span>.
+          <a href="https://htmx.org/" target="_blank" itemprop="url">
+            https://htmx.org/
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">Bootstrap Library</span>.
+          <a href="https://getbootstrap.com/" target="_blank" itemprop="url">
+            https://getbootstrap.com/
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">Thymeleaf</span>.
+          <a href="https://www.thymeleaf.org/" target="_blank" itemprop="url">
+            https://www.thymeleaf.org/
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">Spring Boot</span>.
+          <a href="https://spring.io/projects/spring-boot" target="_blank" itemprop="url">
+            https://spring.io/projects/spring-boot
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">vis.js</span>.
+          <a href="https://visjs.org/" target="_blank" itemprop="url">
+            https://visjs.org/
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">Chart.js</span>.
+          <a href="https://www.chartjs.org/" target="_blank" itemprop="url">
+            https://www.chartjs.org/
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/CreativeWork">
+          <span itemprop="name">Fuseki Jena</span>.
+          <a href="https://jena.apache.org/documentation/fuseki2/" target="_blank" itemprop="url">
+            https://jena.apache.org/documentation/fuseki2/
+          </a>
+        </li>
+        <li itemprop="citation" itemscope itemtype="http://schema.org/ScholarlyArticle">
+          <span itemprop="name">Empirical Best Practices On Using Product-Specific Schema.org</span>.
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">Mayank Kejriwal</span>
+          </span>,
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Ravi Kiran Selvam</span>
+          </span>,
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Chien-Chun Ni</span>
+          </span>,
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Nicolas Torzec</span>
+          </span>.
+          <span>1 University of Southern California</span>.
+          <a href="https://cdn.aaai.org/ojs/17816/17816-13-21310-1-2-20210518.pdf" target="_blank" itemprop="url">
+            https://cdn.aaai.org/ojs/17816/17816-13-21310-1-2-20210518.pdf
+          </a>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
