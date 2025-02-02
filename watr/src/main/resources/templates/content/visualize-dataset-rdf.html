@@ -1,17 +1,30 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<div id="search-control" class="">
+<div class="container">
+    <div class="card search-card">
+        <div class="card-body">
+            <h4 class="card-title text-center text-primary">View Dataset in Graph</h4>
+            <p class="text-muted text-center">Search and view available datasets.</p>
 
-    <div hx-get="/dataset-names" hx-trigger="load"
-         hx-vals='{"actionUrl":"/visualize-rdf-data", "target":"#filter-search"}'
-            >
+            <div id="search-control" class="list-group">
 
+                <div hx-get="/dataset-names" hx-trigger="load"
+                     hx-vals='{"actionUrl":"/visualize-rdf-data", "target":"#filter-search"}'
+                >
+
+                </div>
+
+            </div>
+
+        </div>
     </div>
-    <div id="filter-search" class="d-flex justify-content-between gap-5"></div>
-
-
 
 </div>
+
+<div class="buttons-container">
+    <div id="filter-search" class="d-flex justify-content-between gap-5"></div>
+</div>
+
 <div class="container-fluid h-100 mt-3" id="graph-container">
 
 </div>

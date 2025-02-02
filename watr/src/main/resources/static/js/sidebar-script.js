@@ -23,27 +23,4 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
-    function setActiveButton(target) {
-        document.querySelectorAll(".nav-link").forEach(btn => btn.classList.remove("active"));
-        let activeButton = document.querySelector(`.nav-link[data-target="${target}"]`);
-        if (activeButton) {
-            activeButton.classList.add("active");
-        }
-    }
-
-    document.body.addEventListener("htmx:afterSwap", function (event) {
-        let target = event.detail.target.id;
-        setActiveButton(target);
-    });
-
-    window.openUploadSection = function () {
-        let datasetsSection = document.getElementById('collapseLayoutsDatasets');
-        if (datasetsSection && !datasetsSection.classList.contains('show')) {
-            document.querySelector('[data-bs-target="#collapseLayoutsDatasets"]').click();
-        }
-        setTimeout(() => {
-            document.getElementById("uploadBtn").click();
-        }, 300);
-    };
-
 });

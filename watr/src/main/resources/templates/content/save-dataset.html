@@ -1,8 +1,18 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<div id="search-control"
-     hx-get="/dataset-names" hx-trigger="load"
-     hx-vals='{"actionUrl":"/download-file", "target":"_blank", "action":"save"}'
-></div>
+<div class="container">
+    <div class="card search-card">
+        <div class="card-body">
+            <h4 class="card-title text-center text-primary">Save Dataset File</h4>
+            <p class="text-muted text-center">Search and download available datasets.</p>
+
+            <div id="search-control" class="list-group"
+                 hx-get="/dataset-names" hx-trigger="load"
+                 hx-vals='{"actionUrl":"/download-file", "target":"_blank", "action":"save"}'
+            ></div>
+
+        </div>
+    </div>
+</div>
 
 </html>

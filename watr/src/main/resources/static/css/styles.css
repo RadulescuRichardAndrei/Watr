@@ -1962,6 +1962,7 @@ progress {
 }
 .form-label {
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .col-form-label {
@@ -11240,4 +11241,87 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
+}
+
+/* Upload page */
+#upload-card {
+  max-width: 500px;
+  margin: 50px auto auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#spinner-upload {
+  display: none;
+}
+
+.htmx-request #spinner-upload {
+  display: inline-block;
+}
+
+/*------------*/
+
+#content {
+ /* height: 100vh; */
+}
+
+.search-card {
+  max-width: 600px;
+  margin: 50px auto auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#datasetDropdown {
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-menu {
+  width: 100%;
+  padding: 10px;
+}
+
+#datasetList {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#loading {
+  display: none;
+  text-align: center;
+  padding: 10px;
+}
+
+.buttons-container {
+  margin: 2rem auto;
+}
+
+#table {
+  margin-bottom: 3rem;
+}
+
+.delete-btn {
+  color: red;
+  border: none;
+}
+
+.delete-btn:hover {
+  color: red;
+  border: none;
+}
+
+.delete-name {
+  cursor: initial;
+}
+
+#statistics {
+  padding: 0.5rem;
+  margin: 1rem auto;
+}
+
+#dropdown-predicates {
+  margin: 1rem auto;
 }

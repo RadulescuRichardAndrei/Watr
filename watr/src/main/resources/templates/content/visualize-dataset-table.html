@@ -1,9 +1,19 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<div id="search-control"
-     hx-get="/dataset-names" hx-trigger="load"
-     hx-vals='{"actionUrl":"/visualize-table-data", "target":"#table"}'
-></div>
+<div class="container">
+    <div class="card search-card">
+        <div class="card-body">
+            <h4 class="card-title text-center text-primary">View Dataset in Table</h4>
+            <p class="text-muted text-center">Search and view available datasets.</p>
+
+            <div id="search-control" class="list-group"
+                 hx-get="/dataset-names" hx-trigger="load"
+                 hx-vals='{"actionUrl":"/visualize-table-data", "target":"#table"}'
+            ></div>
+
+        </div>
+    </div>
+</div>
 
 <div id="table"></div>
 </html>

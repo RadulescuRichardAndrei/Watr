@@ -2,6 +2,7 @@ package com.web.watr.controllers;
 
 import com.web.watr.utils.FileUploadException;
 import com.web.watr.utils.FileUtils;
+import com.web.watr.utils.SuccessDeleteException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -85,7 +86,8 @@ public class DatasetController {
             }
 
             Files.write(filePath, file.getBytes());
-            return ResponseEntity.status(HttpStatus.CREATED).body("<div>File uploaded successfully</div>");
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body("<div class=" + '"' + "alert alert-info" + '"' + ">File " + fileName + " uploaded successfully</div>");
         } catch (IOException e) {
             throw new FileUploadException("Failed to upload file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -161,14 +163,13 @@ public class DatasetController {
         try {
             String fileExtension = FileUtils.getFileExtension(fileName);
             if (!FileUtils.isValidFileType(fileExtension)) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                        .body(("Invalid file type. Only files with extensions: " + allowedExtensions).getBytes());
+                throw new FileUploadException("Invalid file type. Only files with extensions: "+ allowedExtensions, HttpStatus.BAD_REQUEST);
             }
 
             Path filePath = Paths.get(datasetPath, fileName);
 
             if (!Files.exists(filePath)) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+                throw new FileUploadException("File not found: " + fileName, HttpStatus.NOT_FOUND);
             }
 
             byte[] fileContent = Files.readAllBytes(filePath);
@@ -179,7 +180,7 @@ public class DatasetController {
                     .body(fileContent);
 
         } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+            throw new FileUploadException(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -196,17 +197,16 @@ public class DatasetController {
 
             // Verificăm dacă fișierul există
             if (!Files.exists(filePath)) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                        .body("File not found: " + fileName);
+                throw new FileUploadException("File not found: " + fileName, HttpStatus.NOT_FOUND);
             }
 
             // Ștergem fișierul
             Files.delete(filePath);
 
-            return ResponseEntity.ok("File deleted successfully: " + fileName);
+            //return ResponseEntity.ok("File deleted successfully: " + fileName);
+            throw new SuccessDeleteException("File deleted successfully: " + fileName, HttpStatus.OK);
         } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error deleting file: " + e.getMessage());
+            throw new FileUploadException("Error deleting file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
