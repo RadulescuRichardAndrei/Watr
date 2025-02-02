@@ -38,7 +38,7 @@
             <li class="dropdown-item text-center">
                 <button id="load-more-btn" class="btn btn-link" type="button"
                         th:disabled="${fileNames.size()<10}"
-                        hx-get="/dataset-names?page=${currentPage + 1}&name=${param.name}"
+                        th:hx-get="'/dataset-names?page='+${currentPage + 1} + '&name=' + ${name}"
                         hx-target="#datasetList"
                         hx-swap="beforeend"
                         hx-on="click: event.stopPropagation()">

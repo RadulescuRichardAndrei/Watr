@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <th:block th:fragment="filterSearch()">
 
-<div id="filter-search" class="d-flex flex-row gap-3">
+<div id="filter-search" class="d-flex justify-content-around">
 
     <th:block th:replace="~{fragments/filters/filter :: filter(${selectedDataset}, 'subjects', '/filter-subjects?first-request=true',
                                                                             '/get-subjects', '#subjects')}"/>

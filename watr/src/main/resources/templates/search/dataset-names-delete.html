@@ -7,8 +7,9 @@
         <a class="btn delete-name" th:text="${fileName}"></a>
         <a class="btn delete-btn"
                 th:hx-delete="@{${actionUrl}(fileName=${fileName})}"
-                hx-target="closest li"
+                hx-target="#toast-container"
                 hx-swap="outerHTML"
+                hx-on::after-request="this.parentElement.remove()"
                 hx-confirm="Are you sure you want to delete this file?">
             X
         </a>

@@ -148,6 +148,7 @@ public class DatasetController {
         if (name != null) {
             return CompletableFuture.completedFuture(viewFile);
         }else {
+            model.addAttribute("name", name);
             return CompletableFuture.completedFuture("/search/dataset-names");
         }
     }
