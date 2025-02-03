@@ -59,9 +59,14 @@
       <dl>
         <dt>Authors</dt>
         <dd>
-          Radulescu Richard-Andrei
+          <span about="#author1" typeof="schema:Person">
+  <span property="schema:name">Radulescu Richard-Andrei</span>
+</span>
           &amp;
-          Buimestru Alexandru
+          <span about="#author2" typeof="schema:Person">
+  <span property="schema:name">Buimestru Alexandru</span>
+</span>
+
 
         </dd>
         <dt>Project Repository</dt>
@@ -164,15 +169,85 @@
 
       <section id="dataset">
         <h3><a><span>4.1 </span> Dataset Ingestion & Preprocessing </a></h3>
+        <p>
+          The Dataset Ingestion & Preprocessing module of the web application provides a seamless interface for
+          managing datasets compatible with the embedded Jena Fuseki server. Users can upload datasets through
+          intuitive forms that support various semantic web formats, including .ttl, .rdf, .nt, .nq, .jsonld,
+          .trig, .owl, .trdf, .rt, .rpb, .pbrdf, .rj, and .trix. The system allows for efficient dataset storage and deletion,
+          ensuring flexibility in managing linked data resources. These uploaded datasets serve as the foundation for other
+          core functionalities within the application, enabling robust querying, analysis, and knowledge graph management.
+        </p>
       </section>
       <section id="visualization">
         <h3> <a><span>4.2 </span> Visualization </a></h3>
+        <p>
+          The Visualization component of the web application introduces a dynamic,
+          table-based interface designed for seamless data representation. This interface
+          presents datasets in a paginated table format, enabling users to easily navigate
+          through large amounts of information without overwhelming the display.
+          Although the current implementation does not include search or filtering functionalities,
+          the design focuses on providing a clean and straightforward user experience, ensuring that users can browse data efficiently.
+
+
+        </p>
+        <p>
+          In addition to its user-friendly appearance, the table is crafted to be machine-readable
+          by incorporating RDFa attributes into its markup. This dual-format approach not only
+          enhances accessibility for end-users but also supports automated data processing
+          and integration with other semantic web tools. By adhering to RDFa standards, the
+          visualization component ensures that both human readers and software agents can effectively
+          interpret and utilize the presented data, thereby extending the application's overall interoperability and functionality.
+        </p>
+        <p>
+          The second visualization approach employs the vis.js network library to provide a dynamic,
+          graphical representation of data triplets, rendered as node–edge–node structures (subject, predicate, object).
+          Users can interact with the graph through intuitive filters that control the display of each element
+          type—allowing for the selective addition or removal of subjects, predicates, or objects.
+          The graph comes equipped with interactive features such as zooming, panning, and dragging,
+          making navigation and exploration seamless even as the complexity of the network increases.
+
+        </p>
+        <p>
+          When users click on any element within the graph, a detailed information panel
+          is presented, divided into three key sections. The first section outlines the core
+          identifiers and terminological descriptors, offering essential context about the data's structure.
+          The second section delves into relational properties, displaying connections such as equivalencies and subclass relationships,
+          which are enriched by external data sourced from DBpedia and Wikidata.
+          The third section provides statistical insights, including counts, appearance frequencies, and the in/out degrees of nodes,
+          empowering users with both qualitative and quantitative perspectives on the dataset.
+        </p>
+        <p>
+          This graphical representation can be saved as an image and in json-ld format.
+        </p>
       </section>
       <section id="matching">
         <h3> <a><span>4.3 </span> Vocabulary Matching </a></h3>
+        <p>
+          The Vocabulary Matching functionality is designed to identify and reconcile corresponding
+          elements between two selected datasets. Initially, the system extracts all subjects, predicates,
+          and objects—categorizing them based on RDF resource types (IRIs)—from the datasets provided via a form.
+          Two distinct approaches are then combined to perform the matching. The first method involves a
+          similarity measure, using the Levenshtein distance, based on comparing the local names extracted from each resource's identifier,
+          applying a predetermined criterion to include the most similar pairs. In parallel,
+          the system leverages external knowledge sources such as DBpedia and Wikidata to
+          validate and detect equivalencies based on established semantic relationships.
+          The matching results are organized into clearly segmented tables, categorizing
+          findings by the type of matching: one for the string-based approach, one for
+          DBpedia, and one for Wikidata, with each table further subdividing the data based on subjects, predicates, and objects.
+        </p>
       </section>
       <section id="statistics">
         <h3> <a><span>4.4 </span> Data Analytics & Statistics </a></h3>
+        <p>
+          The Data Analytics & Statistics section offers users comprehensive insights into dataset
+          distributions through an intuitive, form-based interface. Users can examine the top 10 most frequently occurring subjects,
+          predicates, and objects within a dataset. Additionally,
+          when a specific predicate is selected, the system displays a detailed distribution
+          of its associated objects. The visualization adapts to the nature of the data: if the objects are
+          numeric values, the data is depicted using a bar chart, whereas non-numeric data is presented in a pie chart.
+          These dynamic charts are rendered using the Chart.js library, ensuring interactive and aesthetically
+          pleasing graphical representations that support effective data exploration and analysis.
+        </p>
       </section>
     </section>
 
@@ -180,15 +255,109 @@
       <h2><span>5. </span> Implementation & Deployment</h2>
       <section id="backend">
         <h3> <a><span>5.1 </span> Backend: Spring Boot & Jena Integration </a></h3>
+        <p>
+          The backend of the application is built using Spring Boot, with an embedded Apache Jena Fuseki server to handle
+          RDF data storage and querying. The integration ensures that the application can manage
+          linked data efficiently while enabling internal SPARQL querying within the application.
+          The Fuseki server is configured to load datasets from a specified directory, making it accessible for data ingestion, retrieval, and analysis.
+        </p>
+        <p>
+          To facilitate interaction with the RDF data, the application is structured into specialized
+          service layers. One set of services focuses on managing dataset files—handling ingestion, storage,
+          and removal—ensuring that data is correctly integrated into the Jena triple store. The second set
+          of services is dedicated to querying the Fuseki server using SPARQL, further divided into
+          a general-purpose service for retrieving RDF data and a statistics service that extracts analytical insights,
+          such as entity distributions and relationships. Queries are constructed dynamically using parameterized queries
+          and query builders, improving flexibility and security.
+        </p>
+        <p>
+          These services interact with Spring Boot controllers, which process the retrieved data
+          and construct the model used by the Thymeleaf template engine. The templates dynamically
+          generate asynchronous content, ensuring that users receive up-to-date information without requiring
+          full-page reloads. This architecture enables an efficient, responsive, and structured approach to
+          managing and visualizing RDF datasets within the web application.
+        </p>
       </section>
       <section id="Frontend">
         <h3> <a><span>5.2 </span> Frontend: Thymeleaf & HTMX Enhancements</a></h3>
+        <p>
+          The frontend leverages Thymeleaf as the templating engine, seamlessly integrating with HTMX to
+          enhance dynamic content updates without requiring full-page reloads. HTMX allows for efficient
+          server-driven UI updates by handling AJAX requests declaratively, making it a natural fit for
+          Thymeleaf-based applications. The use of <code>hx-boost</code> further improves navigation by transforming
+          traditional links into asynchronous requests, enabling a smooth and responsive user experience
+          while keeping the complexity on the backend. This combination ensures a clean separation between
+          logic and presentation while maintaining high performance and minimal JavaScript overhead.
+        </p>
       </section>
       <section id="api-query">
         <h3> <a><span>5.3 </span> API Layer & Internal Query Processing</a></h3>
+        <p>
+          The application exposes a RESTful API that conforms to standard web architecture principles.
+          The API is defined via an <a href="open-api.json" target="_blank">OpenAPI specification</a>, providing a clear and organized contract for
+          client-server interaction. Endpoints are grouped by functionality (e.g., dataset management, visualization, statistics, and filtering)
+          to promote modularity and maintainability.
+        </p>
+        <h4>Query 1: Count Predicates for a Given Object</h4>
+        <p>
+          The first query dynamically constructs a SPARQL query to count how many subjects are associated
+          with each predicate that connects them to a specific <u>object</u>. In the query, the value of the variable
+          <code>object</code> is inserted into the triple pattern. The query groups the results by <code> predicate</code>
+          so that for each predicate found, the total number of related subjects is computed.
+        </p>
+        <p>The resulting query string is similar to:</p>
+        <pre><code>SELECT ?predicate (COUNT(?subject) AS ?count)
+WHERE {
+  ?subject ?predicate <u>[object]</u> .
+}
+GROUP BY ?predicate
+        </code>
+        </pre>
+        <p>
+          Here, the variable <u>[object]</u> represents the dynamically inserted value. This query is useful for obtaining a statistical distribution of predicates based on a fixed object value.
+        </p>
+
+        <h4>Query 2: Retrieve Equivalent RDF Properties via a Federated Query</h4>
+        <p>
+          The second query is designed to find pairs of properties that are considered equivalent according to the <code>owl:equivalentProperty</code> relation. It uses a federated query (via the <code>SERVICE</code> keyword) to query an external SPARQL endpoint – for example, DBpedia – to retrieve this information.
+        </p>
+        <p>
+          In this query, two sets of property values are injected into the query via the variables <code>firstString</code> and <code>secondString</code>. The query then checks for either direction of the equivalence relation (i.e. <code>?prop1 owl:equivalentProperty ?prop2</code> or vice versa) to ensure all possible equivalent pairs are captured. The <code>SELECT DISTINCT</code> ensures that duplicate pairs are not returned.
+        </p>
+        <p>The resulting query string looks like this:</p>
+        <pre><code>PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+SELECT DISTINCT ?prop1 ?prop2
+WHERE {
+  SERVICE &lt;<u>[dbpediaEndpoint]</u>&gt; {
+    VALUES ?prop1 { <u>[firstString]</u> }
+    VALUES ?prop2 { <u>[secondString]</u> }
+    { ?prop1 owl:equivalentProperty ?prop2 }
+    UNION
+    { ?prop2 owl:equivalentProperty ?prop1 }
+  }
+}
+</code></pre>
+        <p>
+          In the example above, <u>[dbpediaEndpoint]</u>, <u>[firstString]</u>, and <u>[secondString]</u> denote variables that hold the endpoint URL and the lists of property values, respectively. This federated query design allows the system to seamlessly integrate external semantic data to enhance internal processing and data enrichment.
+        </p>
+
+
       </section>
       <section id="deployment">
         <h3> <a><span>5.4 </span> Deployment Strategy</a></h3>
+        <p>
+          Our deployment strategy leverages Maven to build an executable JAR file that contains
+          all necessary dependencies. By configuring our <code>pom.xml</code> appropriately,
+          we package the application into a “fat JAR” during the Maven build process. This JAR is
+          fully self-contained and can be deployed on any machine that has a compatible Java Runtime Environment (JRE).
+        </p>
+        <p>
+          Once built, the JAR can be easily deployed to a specific server, where it is executed as a
+          standalone application. This approach not only simplifies the deployment process but also ensures
+          that the application is platform-independent, making it straightforward to deploy in various environments.
+          Additionally, the integration of Maven with our continuous integration pipeline allows for automated builds
+          and testing, enhancing the reliability and maintainability of our deployment process.
+        </p>
       </section>
     </section>
 
@@ -215,9 +384,41 @@
       <h2> <span>7. </span>Conclusion & Future Work</h2>
       <section id="contributions">
         <h3> <a><span>7.1 </span> Summary of Contributions </a></h3>
+        <ul>
+          <li about="#author1" typeof="schema:Person">
+            <strong property="schema:name">Radulescu Richard-Andrei</strong>
+            <ul>
+              <li>Visualization</li>
+              <li>Dataset Management (in collaboration)</li>
+              <li>Statistics (in collaboration)</li>
+              <li>Documentation &amp; Source Control (in collaboration)</li>
+              <li>User Interface (in collaboration)</li>
+              <li>Deployment</li>
+            </ul>
+          </li>
+          <li about="#author2" typeof="schema:Person">
+            <strong property="schema:name">Buimestru Alexandru</strong>
+            <ul>
+              <li>Dataset Management (in collaboration)</li>
+              <li>Statistics (in collaboration)</li>
+              <li>Documentation &amp; Source Control (in collaboration)</li>
+              <li>User Interface (in collaboration)</li>
+            </ul>
+          </li>
+        </ul>
+
       </section>
       <section id="enhancements">
       <h3> <a><span>7.2 </span> Potential Enhancements </a></h3>
+        <p>
+          Future work on the project may focus on the following enhancements:
+        </p>
+        <ul>
+          <li>Adding more user-useful statistics to provide deeper insights.</li>
+          <li>Enabling better exploration of datasets through improved table-based interfaces.</li>
+          <li>Improving the API for enhanced performance and flexibility.</li>
+          <li>Developing user-specific workspaces and a share system to facilitate collaboration.</li>
+        </ul>
       </section>
 
     </section>
