@@ -159,7 +159,7 @@
         </p>
       </section>
       <section id="data-flow">
-        <h3> <a><span>3.3 </span> Data Flow </a></h3>  <!-- ALEX poti face diagrama MVC + jena triple store (vezi mai sus) -->
+        <h3> <a><span>3.3 </span> Data Flow </a></h3>  <!-- ALEX  -->
         <p>
           The system architecture follows the Model-View-Controller (MVC) pattern, separating concerns between data management, 
           business logic and user interface. The data flow begins when a user uploads a dataset in the allowed format. 
@@ -187,7 +187,7 @@
               HTML tables with RDFa metadata are rendered via Thymeleaf templates.
             </li>
             <li>
-              <b>Export</b>: Processed data can be exported in JSON-LD format or PNG image for further use.
+              <b>Export</b>: Processed data can be exported in JSON-LD format or as a PNG image for further use.
             </li>
           </ul>
         </p>
@@ -400,15 +400,42 @@ WHERE {
 
       </section>
       <section id="use-cases">
-        <h3> <a><span>6.2 </span> Usability & Use Cases</a></h3><!--
-        adaugi un link catre o pagina to scholary html
-          also available as a Scholarly HTML document including screen-captures and explaining at least 3 case-studies
-          poti face diagrame de flow sau ceva asemanator
-          Use cases examples (daca nuti vin idei)
-          -upload
-          -details about predicate
-          -statistic predicate object distribution
-         -->
+        <h3> <a><span>6.2 </span> Usability & Use Cases</a></h3><!-- ALEX -->
+          <h4>Uploading a Dataset</h4>
+          <p>
+            Users can upload a dataset containing RDF metadata through the web interface. 
+            The system validates the file format before storing it in the Apache Jena Fuseki triple store. 
+            A confirmation message is displayed once the upload is successful.
+          </p>
+          <img src="images/uploadDataset.PNG" alt="uploadDataset" class="responsive-img">
+          <h4>Visualizing RDF Data as Graphs</h4>
+          <p>
+            Users can explore the dataset structure using an interactive Vis.js-powered graph. 
+            RDF triplets are rendered as subject-predicate-object relationships, with filtering options to refine the visualization. 
+            Clicking on nodes displays detailed metadata and linked data sources (e.g., DBpedia, Wikidata).
+          </p>
+          <img src="images/graphView.PNG" alt="graphView" class="responsive-img">
+          <h4>Exporting Processed Data</h4>
+          <p>
+            After analyzing the dataset, users can export the processed data in JSON-LD format or as a PNG image. 
+            In particular, JSON-LD format ensures compatibility with other semantic web tools and facilitates integration 
+            with external applications.
+          </p>
+          <img src="images/exportData.PNG" alt="exportData" class="responsive-img">
+          <h4>Querying Predicate Details</h4>
+          <p>
+            Users can select a specific predicate to view its details, including associated subjects and objects. 
+            Upon selection, a dynamically generated interactive graph provides the visual insights about predicate
+            relationships, and additional details, relations and statistics are presented in dedicated sections. 
+            This feature enhances data exploration by revealing semantic connections.
+          </p>
+          <img src="images/predicateDetails.PNG" alt="predicateDetails" class="responsive-img">
+          <h4>Statistical Analysis of Predicate-Object Distribution</h4>
+          <p>
+            The system generates statistical insights about predicates, displaying them using dynamic pie charts. 
+            When a predicate is selected, the associated objects are analyzed, and their distribution is visualized.
+          </p>
+          <img src="images/pieChart.PNG" alt="uploadDataset" class="responsive-img">
       </section>
     </section>
 
