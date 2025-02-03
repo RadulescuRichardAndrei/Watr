@@ -178,12 +178,13 @@
               <b>Storage</b>: The validated datasets are stored in an embedded Apache Jena Fuseki server using.
             </li>
             <li>
-              <b>Query Processing</b>: The application executes SPARQL queries on the stored data via the DatasetQueryService, 
-              GenericQueryService and StatisticQueryService to extract relevant information.
+              <b>Query Processing</b>: The application executes SPARQL queries on the stored data via the DatasetQueryService
+               and StatisticQueryService to extract relevant information.
             </li>
             <li>
-              <b>Visualization</b>: DatasetVisualizeController handles graph-based visualization using Vis.js. 
-              DatasetStatisticController generates statistical insights using Chart.js.
+              <b>Visualization</b>: The DatasetVisualizeController provides an API that supports both table-based and 
+              graph-based visualizations on the front end using Vis.js. In contrast, the DatasetStatisticController 
+              generates statistical insights, presenting them in a user-friendly format through Chart.js.
               HTML tables with RDFa metadata are rendered via Thymeleaf templates.
             </li>
             <li>
@@ -191,7 +192,9 @@
             </li>
           </ul>
         </p>
-        <img src="images/MVCDiagram.png" alt="MVC Diagram" class="responsive-img">
+        <a href="images/MVCDiagram.png" target="_blank">
+          <img src="images/MVCDiagram.png" alt="MVC Diagram" class="responsive-img">
+        </a>
       </section>
 
     </section>
