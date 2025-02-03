@@ -160,6 +160,38 @@
       </section>
       <section id="data-flow">
         <h3> <a><span>3.3 </span> Data Flow </a></h3>  <!-- ALEX poti face diagrama MVC + jena triple store (vezi mai sus) -->
+        <p>
+          The system architecture follows the Model-View-Controller (MVC) pattern, separating concerns between data management, 
+          business logic and user interface. The data flow begins when a user uploads a dataset in the allowed format. 
+          The application processes this data and stores it in an Apache Jena Fuseki triple store. After this, user can execute 
+          queries to extract insights about data, which are visualized using various front-end tools. Also, for the future, it is 
+          possible to download the stored dataset files, or delete them from the triple store.
+        </p>
+        <h4>Data Flow Steps</h4>
+        <p>
+          <ul>
+            <li>
+              <b>Data Ingestion</b>: Users upload structured metadata files through the DatasetController. 
+              The system verifies their format before ingestion.
+            </li>
+            <li>
+              <b>Storage</b>: The validated datasets are stored in an embedded Apache Jena Fuseki server using.
+            </li>
+            <li>
+              <b>Query Processing</b>: The application executes SPARQL queries on the stored data via the DatasetQueryService, 
+              GenericQueryService and StatisticQueryService to extract relevant information.
+            </li>
+            <li>
+              <b>Visualization</b>: DatasetVisualizeController handles graph-based visualization using Vis.js. 
+              DatasetStatisticController generates statistical insights using Chart.js.
+              HTML tables with RDFa metadata are rendered via Thymeleaf templates.
+            </li>
+            <li>
+              <b>Export</b>: Processed data can be exported in JSON-LD format or PNG image for further use.
+            </li>
+          </ul>
+        </p>
+        <img src="images/MVCDiagram.png" alt="MVC Diagram" class="responsive-img">
       </section>
 
     </section>
