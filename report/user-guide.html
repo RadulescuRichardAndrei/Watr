@@ -1,30 +1,112 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Scholarly HTML</title>
-    <link rel="stylesheet" href="css/scholarly.min.css">
-</head>
-<body prefix="schema: http://schema.org">
-<header>
-    <div class="banner">
-        <img src="watr.png" width="80" height="80" alt="WATR logo">
-        <div class="status">WATR</div>
-    </div>
-    <h1>Web Data Commons Analyzer - User Guide</h1>
-</header>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <title>Scholarly HTML</title>
+        <link rel="stylesheet" href="css/scholarly.min.css">
+    </head>
+    <body prefix="schema: http://schema.org">
+        <header>
+            <div class="banner">
+                <img src="watr.png" width="80" height="80" alt="WATR logo">
+                <div class="status">WATR</div>
+            </div>
+            <h1>Web Data Commons Analyzer - User Guide</h1>
+        </header>
 
-<div role="contentinfo">
-    <ol role="directory">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ol>
-</div>
-<section></section>
-<section></section>
-<section></section>
-
-</body>
+        <div role="contentinfo">
+            <ol role="directory">
+                <li><a href="#mainPage"><span>1. </span>Main Page</a></li>
+                <li><a href="#uploadDataset"><span>2. </span>Upload Dataset</a></li>
+                <li><a href="#saveDataset"><span>3. </span>Download Dataset</a></li>
+                <li><a href="#deleteDataset"><span>4. </span>Delete Dataset</a></li>
+                <li><a href="#tableDataset"><span>5. </span>Visualize Dataset In Table</a></li>
+                <li><a href="#graphDataset"><span>6. </span>Visualize Dataset In Graph</a></li>
+                <li><a href="#compareSchemas"><span>7. </span>Compare Schemas</a></li>
+                <li><a href="#statistics"><span>8. </span>View Statistics</a></li>
+            </ol>
+        </div>
+        <section id="mainPage">
+            <h3> <a><span>1.</span> Main Page</a></h3>
+            <p>
+                On the main page, the left sidebar presents the app menu and quick links to the main functionalities.
+            </p>
+            <img src="images/mainPage.PNG" alt="img" class="responsive-img">
+        </section>
+        <section id="uploadDataset">
+            <h3> <a><span>2.</span> Upload Dataset</a></h3>
+            <p>
+                Choose a dataset file in an allowed format (.ttl, .rdf, .nt, .nq, .jsonld, .trig, .owl, .trdf, .rt, .rpb, .pbrdf, .rj, .trix)
+                 and press the upload button. 
+                A confirmation message will be displayed upon successful upload.
+            </p>
+            <img src="images/uploadDataset.PNG" alt="img" class="responsive-img">
+        </section>
+        <section id="saveDataset">
+            <h3> <a><span>3.</span> Download Dataset</a></h3>
+            <p>
+                Select a dataset file and press the download button. You can also search for a specific file by name for easier access.
+            </p>
+            <img src="images/saveDataset.PNG" alt="img" class="responsive-img">
+        </section>
+        <section id="deleteDataset">
+            <h3> <a><span>4.</span> Delete Dataset</a></h3>
+            <p>
+                Select a dataset file and click the 'X' button to delete it from storage. 
+                You can also search for a specific file by name for easier access.
+            </p>
+            <img src="images/saveDataset.PNG" alt="img" class="responsive-img">
+            <p>
+                A confirmation message will be displayed after success delete.
+            </p>
+            <img src="images/successDelete.PNG" alt="img" class="responsive-img">
+        </section>
+        <section id="tableDataset">
+            <h3> <a><span>5.</span> Visualize Dataset In Table</a></h3>
+            <p>
+                Select a dataset file and press the button to view the data in a table. 
+                You can also search for a specific file by name for easier access.
+            </p>
+            <img src="images/tableView.PNG" alt="img" class="responsive-img">
+        </section>
+        <section id="graphDataset">
+            <h3> <a><span>6.</span> Visualize Dataset In Graph</a></h3>
+            <p>
+                Select a dataset file and press the button to view the data in a graph. 
+                You can also search for a specific file by name for easier access.
+                After selecting a dataset, filtering options become available to refine the visualization. 
+                Clicking on nodes displays details, relationships, and statistics related to the selected option. 
+                Finally, the processed data can be exported in JSON-LD format or as a PNG image by pressing the dedicated buttons.
+            </p>
+            <img src="images/graphView.PNG" alt="img" class="responsive-img">
+        </section>
+        <section id="compareSchemas">
+            <h3> <a><span>7.</span> Compare Schemas</a></h3>
+            <p>
+                Select two datasets and press the button to find matches between subjects, predicates, and objects. 
+                DBpedia and Wikidata matches will also be displayed.
+            </p>
+            <img src="images/compareSchemas.PNG" alt="img" class="responsive-img">
+        </section>
+        <section id="statistics">
+            <h3> <a><span>8.</span> View Statistics</a></h3>
+            <p>
+                Select a dataset file and press the button to view statistics. 
+                You can also search for a specific file by name for easier access.
+                First option is to view count statistics by every of the triple types.
+            </p>
+            <img src="images/countStatistics.PNG" alt="img" class="responsive-img">
+            <p>
+                Second option is to view object distribution for selected predicate from dataset. 
+                Click the button to select a predicate. You can also search for a specific predicate for easier access. 
+                The distribution will be displayed as a bar chart for numeric object values,
+            </p>
+            <img src="images/barChart.PNG" alt="img" class="responsive-img">
+            <p>
+                or by a pie chart for non-numeric object values.
+            </p>
+            <img src="images/pieChart.PNG" alt="img" class="responsive-img">
+        </section>
+    </body>
 </html>
